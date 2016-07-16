@@ -4,6 +4,7 @@ set nobackup
 set expandtab
 set ignorecase
 set smartcase
+
 " 显示行号
 set number 
 set fileencodings=utf-8,gb2312,gbk,gb18030
