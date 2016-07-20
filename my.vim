@@ -14,6 +14,7 @@ set encoding=prc
 set autoindent
 set nowrap
 set nowrapscan
+set autoread "文件被修改后自动加载"
 
 " {{{ 折叠
 " set foldlevel=99
