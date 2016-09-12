@@ -4,6 +4,7 @@ set nobackup
 set expandtab
 set ignorecase
 set smartcase
+set incsearch
 
 " 显示行号
 set number 
