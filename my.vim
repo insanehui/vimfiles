@@ -1,3 +1,7 @@
+set nocompatible
+filetype off
+syntax on
+
 set tabstop=4
 set shiftwidth=4
 set nobackup
@@ -40,3 +44,26 @@ fu MyFoldText()
 	return line . ']'
 endf
 " }}}
+
+
+function! TabCmd(cmd) " {{{
+  redir => message
+
+  " 如果不用silent的话，会产生需要和用户交互的环节（比如“按Enter键继续”等）
+  silent execute a:cmd
+
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
+    " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
+    tabnew
+    " 如果不设置以下选项，会出现一些不方便的情况
+    " 比如，关闭时要询问是否保存
+    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+    silent put=message
+  endif
+endfunction
+command! -nargs=+ -complete=command TabCmd call TabCmd(<q-args>) 
+" }}}
+
