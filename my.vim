@@ -14,7 +14,9 @@ filetype plugin indent on
 syntax on
 
 colorscheme desert
-" set background=light
+
+" 同一个主题，似乎背景也可以有dark和light的模式
+" set background=light 
 
 set tabstop=4
 set shiftwidth=4
@@ -23,6 +25,10 @@ set expandtab
 set ignorecase
 set smartcase
 set incsearch
+
+" 光标的坐标线
+" set cursorline
+" set cursorcolumn
 
 " 显示行号
 set number 
