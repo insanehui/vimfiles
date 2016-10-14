@@ -1,6 +1,20 @@
 set nocompatible
+
+" vundle要求filetype off
 filetype off
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'phd'
+
+call vundle#end()
+filetype plugin indent on
 syntax on
+
+colorscheme desert
+" set background=light
 
 set tabstop=4
 set shiftwidth=4
@@ -16,11 +30,18 @@ set fileencodings=utf-8,gb2312,gbk,gb18030
 set termencoding=utf-8
 set fileformats=unix,dos
 set encoding=prc
+
 " 自动缩进
 set autoindent
 set nowrap
 set nowrapscan
 set autoread "文件被修改后自动加载"
+set showcmd
+
+" 快捷复制和粘贴到系统剪贴板
+map <Leader>y "+y
+map <Leader>p "+p
+
 
 " {{{ 折叠
 " set foldlevel=99
@@ -29,7 +50,7 @@ set foldcolumn=8
 set fillchars=vert:\|,fold:\ 
 set foldtext=MyFoldText()
 
-fu MyFoldText()
+function! MyFoldText()
 	let line = getline(v:foldstart)
     
     "以下操作对空格的处理只去掉一个，多余的空格将会保留
@@ -44,7 +65,6 @@ fu MyFoldText()
 	return line . ']'
 endf
 " }}}
-
 
 function! TabCmd(cmd) " {{{
   redir => message
@@ -64,6 +84,21 @@ function! TabCmd(cmd) " {{{
     silent put=message
   endif
 endfunction
+
+" 定义成Ex命令
 command! -nargs=+ -complete=command TabCmd call TabCmd(<q-args>) 
 " }}}
+
+" {{{ 其他一些供参考的配置 
+
+" 让配置变更立即生效
+" autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+" 全屏函数
+" fun! ToggleFullscreen()
+"     call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
+" endf
+
+"  }}}
+
 
