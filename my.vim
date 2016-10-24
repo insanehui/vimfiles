@@ -1,7 +1,15 @@
 set nocompatible
 
+" {{{ vundle配置
 " vundle要求filetype off，具体原因不详
 filetype off
+
+" 在这之前要先下载vundle，从github克隆即可
+" 官方建议: git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" 当然不克隆到建议的目录，也是可以的。
+" 由于~/.vim/bunble/是vundle的默认工作目录，这样方便vundle自己管理自己
+set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -11,6 +19,7 @@ Plugin 'phd'
 
 call vundle#end()
 " 在vundle end之后，开启plugin indent syntax on，这样实际上filetype也相当于是on的？
+" }}}
 
 filetype plugin indent on
 syntax on
