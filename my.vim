@@ -1,6 +1,6 @@
 set nocompatible
 
-" vundle要求filetype off
+" vundle要求filetype off，具体原因不详
 filetype off
 call vundle#begin()
 
@@ -10,13 +10,16 @@ Plugin 'tomasr/molokai'
 Plugin 'phd'
 
 call vundle#end()
+" 在vundle end之后，开启plugin indent syntax on，这样实际上filetype也相当于是on的？
+
 filetype plugin indent on
 syntax on
 
-colorscheme desert
-
+" {{{ 主题设置
 " 同一个主题，似乎背景也可以有dark和light的模式
+" colorscheme desert
 " set background=light 
+" }}}
 
 set tabstop=4
 set shiftwidth=4
@@ -45,6 +48,7 @@ set autoread "文件被修改后自动加载"
 set showcmd
 
 " 快捷复制和粘贴到系统剪贴板
+" 但好像还是有问题
 map <Leader>y "+y
 map <Leader>p "+p
 
