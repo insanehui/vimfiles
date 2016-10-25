@@ -13,6 +13,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'fatih/vim-go'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'phd'
@@ -56,10 +57,17 @@ set nowrapscan
 set autoread "文件被修改后自动加载"
 set showcmd
 
+" 自动读、自动加载（不再弹出文件已经被修改，是否重新加载的提示框）
+set autoread
+
+" 自动写
+
 " 快捷复制和粘贴到系统剪贴板
 " 但好像还是有问题
 map <Leader>y "+y
 map <Leader>p "+p
+
+
 
 
 " {{{ 折叠
