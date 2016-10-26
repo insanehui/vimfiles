@@ -20,11 +20,38 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
+
+"{{{ 主题配色
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'phd'
-" markdown预览的插件
+"}}}
+
+"{{{ markdown预览的插件 
 Plugin 'iamcco/markdown-preview.vim'
+let g:mkdp_path_to_chrome = "C:/Program Files (x86)/Tencent/QQBrowser/QQBrowser.exe"
+" 设置 chrome 浏览器的路径（或是启动 chrome（或其他现代浏览器）的命令）
+
+let g:mkdp_auto_start = 0
+" 设置为 1 可以在打开 markdown 文件的时候自动打开浏览器预览，只在打开
+" markdown 文件的时候打开一次
+
+let g:mkdp_auto_open = 0
+" 设置为 1 在编辑 markdown 的时候检查预览窗口是否已经打开，否则自动打开预
+" 览窗口
+
+let g:mkdp_auto_close = 1
+" 在切换 buffer 的时候自动关闭预览窗口，设置为 0 则在切换 buffer 的时候不
+" 自动关闭预览窗口
+
+let g:mkdp_refresh_slow = 0
+" 设置为 1 则只有在保存文件，或退出插入模式的时候更新预览，默认为 0，实时
+" 更新预览
+
+let g:mkdp_command_for_global = 0
+" 设置为 1 则所有文件都可以使用 MarkdownPreview 进行预览，默认只有 markdown
+" 文件可以使用改命令
+"}}}
 
 call vundle#end()
 " 在vundle end之后，开启plugin indent syntax on，这样实际上filetype也相当于是on的？
