@@ -1,6 +1,6 @@
 set nocompatible
 
-" {{{ vundle配置
+"{{{ vundle配置 
 " vundle要求filetype off，具体原因不详
 filetype off
 
@@ -8,8 +8,14 @@ filetype off
 " 官方建议: git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " 当然不克隆到建议的目录，也是可以的。
 " 由于~/.vim/bunble/是vundle的默认工作目录，这样方便vundle自己管理自己
-set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=~/.vim/bundle/Vundle.vim 
+" vundle用let来代替set rtp，见下：
 
+" 参考自：https://github.com/VundleVim/Vundle.vim/wiki/Tips-and-Tricks 
+let win_shell = (has('win32') || has('win64')) && &shellcmdflag =~ '/'
+let vimDir = win_shell ? '$HOME/.vim' : '$HOME/.vim' "这里windows和linux一样
+let &runtimepath .= ',' . expand(vimDir . '/bundle/Vundle.vim')
+" call vundle#begin(expand(vimDir . '/bundle'))
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -17,6 +23,8 @@ Plugin 'fatih/vim-go'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'phd'
+" markdown预览的插件
+Plugin 'iamcco/markdown-preview.vim'
 
 call vundle#end()
 " 在vundle end之后，开启plugin indent syntax on，这样实际上filetype也相当于是on的？
@@ -25,7 +33,7 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 
-" {{{ 主题设置
+"{{{ 主题设置 
 " 同一个主题，似乎背景也可以有dark和light的模式
 " colorscheme desert
 " set background=light 
@@ -59,8 +67,9 @@ set showcmd
 
 " 自动读、自动加载（不再弹出文件已经被修改，是否重新加载的提示框）
 set autoread
+" 自动写，比如在make，next等命令等待的时候，可以保存文件
+set autowrite
 
-" 自动写
 
 " 快捷复制和粘贴到系统剪贴板
 " 但好像还是有问题
@@ -70,7 +79,7 @@ map <Leader>p "+p
 
 
 
-" {{{ 折叠
+"{{{ 折叠 
 " set foldlevel=99
 set foldmethod=marker
 set foldcolumn=8
@@ -116,16 +125,22 @@ endfunction
 command! -nargs=+ -complete=command TabCmd call TabCmd(<q-args>) 
 " }}}
 
-" {{{ 其他一些供参考的配置 
-
-" 让配置变更立即生效
-" autocmd BufWritePost $MYVIMRC source $MYVIMRC
-
-" 全屏函数
+"{{{ 自动最大化 
+" 全屏函数（for Linux）
 " fun! ToggleFullscreen()
 "     call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
 " endf
 
-"  }}}
+fun! Maximize() "for Windows
+    call system("nircmdc win max class Vim")
+endf
+autocmd GUIEnter * call Maximize()
+"}}}
 
+"{{{ 其他一些供参考的配置 
+
+" 让配置变更立即生效
+" autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+"  }}}
 
