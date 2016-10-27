@@ -20,6 +20,11 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
+Plugin 'godlygeek/tabular'
+
+"{{{ markdown 
+Plugin 'plasticboy/vim-markdown'
+"}}}
 
 "{{{ 主题配色
 Plugin 'altercation/vim-colors-solarized'
