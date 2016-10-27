@@ -69,7 +69,7 @@ syntax on
 
 "{{{ 主题设置 
 " 同一个主题，似乎背景也可以有dark和light的模式
-" colorscheme desert
+colorscheme vs
 " set background=light 
 " }}}
 
