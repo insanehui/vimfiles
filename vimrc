@@ -23,6 +23,7 @@ Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'flazz/vim-colorschemes'
+"Plugin 'FavEx'
 
 "{{{ markdown 
 Plugin 'plasticboy/vim-markdown'
@@ -111,8 +112,6 @@ map <Leader>y "+y
 map <Leader>p "+p
 
 
-
-
 "{{{ 折叠 
 " set foldlevel=99
 set foldmethod=marker
@@ -169,6 +168,14 @@ fun! Maximize() "for Windows
     call system("nircmdc win max class Vim")
 endf
 autocmd GUIEnter * call Maximize()
+"}}}
+
+"{{{ 保存状态 
+" autocmd QuitPre * mks! ~/.vimses
+" autocmd VimEnter * so ~/.vimses
+" command! S mks! ~/.vimses
+command! Q mks! ~/.vimses | xa
+command! L so ~/.vimses
 "}}}
 
 "{{{ 其他一些供参考的配置 
