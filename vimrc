@@ -21,6 +21,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
+Plugin 'jeetsukumaran/vim-indentwise'
+Plugin 'flazz/vim-colorschemes'
 
 "{{{ markdown 
 Plugin 'plasticboy/vim-markdown'
