@@ -23,7 +23,16 @@ Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'flazz/vim-colorschemes'
-"Plugin 'FavEx'
+Plugin 'TabBar'
+" Plugin 'FavEx'
+
+"{{{ neocomplete 
+Plugin 'Shougo/neocomplete.vim'
+"}}}
+
+"{{{ nerdtree 
+Plugin 'scrooloose/nerdtree'
+""}}}
 
 "{{{ markdown 
 Plugin 'plasticboy/vim-markdown'
