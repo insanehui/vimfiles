@@ -32,10 +32,18 @@ Plugin 'Shougo/neocomplete.vim'
 
 "{{{ nerdtree 
 Plugin 'scrooloose/nerdtree'
+
 " 自动打开nerdtree，并打开书签
-autocmd vimenter * NERDTree | set number | exec 'normal B' 
+" autocmd vimenter * NERDTree | set number | exec 'normal B' 
+
+" 启动空vim的时候，打开nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | set number | exec 'normal Bj' | endif
 " 只剩nerdtree的时候，自觉退出vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+map <C-n> :NERDTreeToggle<CR>
+
 ""}}}
 
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
