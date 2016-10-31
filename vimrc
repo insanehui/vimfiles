@@ -97,6 +97,7 @@ colorscheme vs
 " set background=light 
 " }}}
 
+set backspace =indent,eol,start "使插入状态下能正常使用退格键
 set tabstop=4
 set shiftwidth=4
 set nobackup
