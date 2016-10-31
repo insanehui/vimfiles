@@ -32,7 +32,13 @@ Plugin 'Shougo/neocomplete.vim'
 
 "{{{ nerdtree 
 Plugin 'scrooloose/nerdtree'
+" 自动打开nerdtree，并打开书签
+autocmd vimenter * NERDTree | set number | exec 'normal B' 
+" 只剩nerdtree的时候，自觉退出vim
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 ""}}}
+
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 "{{{ markdown 
 Plugin 'plasticboy/vim-markdown'
@@ -90,6 +96,10 @@ set expandtab
 set ignorecase
 set smartcase
 set incsearch
+" 显示坐标、当前位置百分比
+set ruler
+" 切换buffer不需要保存
+set hidden
 
 " 光标的坐标线
 " set cursorline
@@ -100,6 +110,8 @@ set number
 set fileencodings=utf-8,gb2312,gbk,gb18030
 set termencoding=utf-8
 set fileformats=unix,dos
+
+" 如果设成utf-8的话，windows的菜单将不能正常显示
 set encoding=prc
 
 " 自动缩进
