@@ -37,6 +37,14 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'TabBar'
 " Plugin 'FavEx'
 
+"{{{ vimproc 
+Plugin 'Shougo/vimproc.vim'
+"}}}
+
+"{{{ vimshell 
+Plugin 'Shougo/vimshell.vim'
+"}}}
+
 "{{{ neocomplete 
 Plugin 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup = 1
@@ -117,6 +125,13 @@ set expandtab
 set ignorecase
 set smartcase
 set incsearch
+
+" 自动CD到当前目录
+" set autochdir
+autocmd BufEnter * silent! lcd %:p:h
+
+map <C-h> :set hls!<CR>
+
 " 显示坐标、当前位置百分比
 set ruler
 " 切换buffer不需要保存
@@ -128,12 +143,15 @@ set hidden
 
 " 显示行号
 set number 
+
+"{{{ 编码设置 
 set fileencodings=utf-8,gb2312,gbk,gb18030
 set termencoding=utf-8
 set fileformats=unix,dos
 
 " 如果设成utf-8的话，windows的菜单将不能正常显示
 set encoding=prc
+"}}}
 
 " 自动缩进
 set autoindent
