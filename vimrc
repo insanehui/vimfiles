@@ -38,7 +38,7 @@ Plugin 'TabBar'
 " Plugin 'FavEx'
 
 "{{{ vimproc 
-Plugin 'Shougo/vimproc.vim'
+" Plugin 'Shougo/vimproc.vim'
 "}}}
 
 "{{{ vimshell 
@@ -145,12 +145,21 @@ set hidden
 set number 
 
 "{{{ 编码设置 
+
+set encoding=utf-8
 set fileencodings=utf-8,gb2312,gbk,gb18030
+" windows gvim忽略该选项
 set termencoding=utf-8
 set fileformats=unix,dos
 
-" 如果设成utf-8的话，windows的菜单将不能正常显示
-set encoding=prc
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+" 以下这两行据说是解决菜单问题，但是没起作用，也不知道是什么含义
+set langmenu=zh_CN.UTF-8
+language message zh_CN.UTF-8
+
+
 "}}}
 
 " 自动缩进
