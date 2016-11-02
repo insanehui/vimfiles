@@ -33,12 +33,15 @@ let g:go_fmt_command = "goimports"
 
 Plugin 'godlygeek/tabular'
 Plugin 'jeetsukumaran/vim-indentwise'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'TabBar'
 " Plugin 'FavEx'
 
+"{{{ git相关 
+Plugin 'tpope/vim-fugitive'
+"}}}
+
 "{{{ vimproc 
-" Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimproc.vim'
 "}}}
 
 "{{{ vimshell 
@@ -66,13 +69,17 @@ map <C-n> :NERDTreeToggle<CR>
 
 ""}}}
 
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 "{{{ markdown 
 Plugin 'plasticboy/vim-markdown'
 "}}}
 
 "{{{ 主题配色
+
+" 大合集
+Plugin 'flazz/vim-colorschemes'
+
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'phd'
