@@ -75,6 +75,10 @@ map <C-n> :NERDTreeToggle<CR>
 Plugin 'pangloss/vim-javascript'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'elzr/vim-json'
+
+Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+
 "}}}
 
 "{{{ markdown 
