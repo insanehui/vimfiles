@@ -69,7 +69,13 @@ map <C-n> :NERDTreeToggle<CR>
 
 ""}}}
 
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+"{{{ 前端 
+Plugin 'pangloss/vim-javascript'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'elzr/vim-json'
+"}}}
 
 "{{{ markdown 
 Plugin 'plasticboy/vim-markdown'
