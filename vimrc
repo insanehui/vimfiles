@@ -28,7 +28,9 @@ Plugin 'fatih/vim-go'
 " let g:go_highlight_types = 1
 " let g:go_highlight_operators = 1
 " let g:go_highlight_build_constraints = 1
+"
 let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 0
 "}}}
 
 Plugin 'godlygeek/tabular'
@@ -61,7 +63,7 @@ Plugin 'scrooloose/nerdtree'
 
 " 启动空vim的时候，打开nerdtree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | set number | exec 'normal Bj' | endif
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | set number | exec 'normal Bj' | endif
 " 只剩nerdtree的时候，自觉退出vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -261,7 +263,7 @@ command! Q mks! ~/.vimses | xa
 command! L so ~/.vimses
 "}}}
 
-"{{{ 快捷键
+"{{{ 快捷键 keymaps
 
 " 快速编辑vimrc
 nnoremap <leader>ev :e $MYVIMRC<cr>
@@ -269,8 +271,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " 快捷复制和粘贴到系统剪贴板
 " 但好像还是有问题
-map <Leader>y "+y
-map <Leader>p "+p
+noremap <Leader>y "+y
+noremap <Leader>p "+p
 
 " tabular
 " ？现在暂时不会如何映射成operator pending的模式
@@ -282,7 +284,10 @@ vnoremap <Leader><Space> :Tabularize /<Bar><cr>
 noremap <C-h> :set hls!<CR>
 
 " nerdtree相关
-map <C-n> :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<CR>
+
+" 查看oldfiles
+noremap <Leader>o :browse old<cr>
 
 "}}}
 
