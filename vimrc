@@ -65,11 +65,13 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | set number
 " 只剩nerdtree的时候，自觉退出vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-map <C-n> :NERDTreeToggle<CR>
-
 ""}}}
 
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+"{{{ 状态栏 
+Plugin 'vim-airline/vim-airline'
+"}}}
 
 "{{{ 前端 
 Plugin 'pangloss/vim-javascript'
@@ -134,6 +136,7 @@ colorscheme vs
 " set background=light 
 " }}}
 
+
 set backspace =indent,eol,start "使插入状态下能正常使用退格键
 set tabstop=4
 set shiftwidth=4
@@ -147,8 +150,6 @@ set incsearch
 " set autochdir
 autocmd BufEnter * silent! lcd %:p:h
 
-map <C-h> :set hls!<CR>
-
 " 显示坐标、当前位置百分比
 set ruler
 " 切换buffer不需要保存
@@ -159,7 +160,8 @@ set hidden
 " set cursorcolumn
 
 " 显示行号
-set number 
+" set number 
+set relativenumber
 
 "{{{ 编码设置 
 
@@ -190,12 +192,7 @@ set showcmd
 set autoread
 " 自动写，比如在make，next等命令等待的时候，可以保存文件
 set autowrite
-
-
-" 快捷复制和粘贴到系统剪贴板
-" 但好像还是有问题
-map <Leader>y "+y
-map <Leader>p "+p
+set scrolloff=3
 
 
 "{{{ 折叠 
@@ -217,7 +214,7 @@ function! MyFoldText()
 	let line = substitute(line, '{{'.'{', '[', 'g') "这里使用.来连接字符串于是为了防止产生折叠
     "删掉各种语言的注释标记
     let line = substitute(line, '<!--\|-->\|^"\|//\|#\|/\*\|\*/', '', 'g')
-	return line . ']'
+	return line . ' ]'
 endf
 " }}}
 
@@ -262,6 +259,31 @@ autocmd GUIEnter * call Maximize()
 " command! S mks! ~/.vimses
 command! Q mks! ~/.vimses | xa
 command! L so ~/.vimses
+"}}}
+
+"{{{ 快捷键
+
+" 快速编辑vimrc
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" 快捷复制和粘贴到系统剪贴板
+" 但好像还是有问题
+map <Leader>y "+y
+map <Leader>p "+p
+
+" tabular
+" ？现在暂时不会如何映射成operator pending的模式
+vnoremap <Leader>t :Tabularize /
+vnoremap <Leader><Space> :Tabularize /<Bar><cr>
+
+
+" 切换查找高亮
+noremap <C-h> :set hls!<CR>
+
+" nerdtree相关
+map <C-n> :NERDTreeToggle<CR>
+
 "}}}
 
 "{{{ 其他一些供参考的配置 
