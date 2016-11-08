@@ -18,3 +18,7 @@ function! MyGoFoldText()
     let fend = getline(v:foldend)
     return line . '...' . fend
 endf
+
+nnoremap <buffer> <Leader>f :GoFmt<cr>
+" nnoremap <buffer> <Leader>b <Plug>(go-build)
+nnoremap <buffer> <Leader>b :GoBuild<cr>

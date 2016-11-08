@@ -34,8 +34,9 @@ let g:go_fmt_autosave = 0
 "}}}
 
 Plugin 'godlygeek/tabular'
+Plugin 'bufexplorer.zip'
 Plugin 'jeetsukumaran/vim-indentwise'
-Plugin 'TabBar'
+" Plugin 'TabBar'
 " Plugin 'FavEx'
 
 "{{{ git相关 
@@ -263,11 +264,13 @@ command! Q mks! ~/.vimses | xa
 command! L so ~/.vimses
 "}}}
 
+" au FileType go nmap <leader>b <Plug>(go-build)
+
 "{{{ 快捷键 keymaps
 
 " 快速编辑vimrc
-nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>vc :e $MYVIMRC<cr>
+nnoremap <leader>sc :source $MYVIMRC<cr>
 
 " 快捷复制和粘贴到系统剪贴板
 " 但好像还是有问题
@@ -288,6 +291,8 @@ noremap <C-n> :NERDTreeToggle<CR>
 
 " 查看oldfiles
 noremap <Leader>o :browse old<cr>
+" 打开当前文件，这里传到vimproc#system处要转义一次"\"
+noremap <Leader>e :call vimproc#system('explorer /select,' . substitute(expand('%:p'), '\\', '\\\\', 'g'))<cr>
 
 "}}}
 
