@@ -38,6 +38,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'bufexplorer.zip'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'mru.vim'
+Plugin 'tpope/vim-commentary'
 " Plugin 'TabBar'
 " Plugin 'FavEx'
 
@@ -274,6 +275,13 @@ command! L so ~/.vimses
 " 快速编辑vimrc
 nnoremap <leader>vc :e $MYVIMRC<cr>
 nnoremap <leader>sc :source $MYVIMRC<cr>
+
+" 重映射commentary.vim的快捷键
+map <Leader><Bslash> gc
+map <Leader><Bslash><Space> gcgc
+
+" 将词移到右边（交换两个词的位置）
+nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>:nohlsearch<CR>
 
 " 快捷复制和粘贴到系统剪贴板
 " 但好像还是有问题
