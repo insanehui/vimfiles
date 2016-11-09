@@ -31,11 +31,13 @@ Plugin 'fatih/vim-go'
 "
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 0
+
 "}}}
 
 Plugin 'godlygeek/tabular'
 Plugin 'bufexplorer.zip'
 Plugin 'jeetsukumaran/vim-indentwise'
+Plugin 'mru.vim'
 " Plugin 'TabBar'
 " Plugin 'FavEx'
 
@@ -143,6 +145,7 @@ colorscheme vs
 set backspace =indent,eol,start "使插入状态下能正常使用退格键
 set tabstop=4
 set shiftwidth=4
+set smarttab
 set nobackup
 set expandtab
 set ignorecase
