@@ -39,6 +39,17 @@ Plugin 'bufexplorer.zip'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'mru.vim'
 Plugin 'tpope/vim-commentary'
+
+"{{{ snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+let g:UltiSnipsJumpForwardTrigger        = "<c-k>"
+let g:UltiSnipsJumpBackwardTrigger       = "<c-j>"
+let g:UltiSnipsSnippetsDir = "~/vimfiles/UltiSnips"
+
+
+"}}}
+
 " Plugin 'TabBar'
 " Plugin 'FavEx'
 
