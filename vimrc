@@ -32,6 +32,9 @@ Plugin 'fatih/vim-go'
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 0
 
+" 缺省用guru全能工具来转到定义，但仅仅是找定义这一块，还是godef做得更好
+let g:go_def_mode = 'godef'
+
 "}}}
 
 Plugin 'godlygeek/tabular'
