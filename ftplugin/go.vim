@@ -22,3 +22,11 @@ endf
 nnoremap <buffer> <Leader>f :GoFmt<cr>
 " nnoremap <buffer> <Leader>b <Plug>(go-build)
 nnoremap <buffer> <Leader>b :GoBuild<cr>
+
+" 快速切换到liteide
+" 这里要用vimproc, 如果只使用vim自己的system的话，无法生效
+function! LiteIDE()
+    call vimproc#system("nircmdc win activate ititle 'liteide -'") 
+    call vimproc#system("nircmdc win max ititle 'liteide -'")
+endf
+nnoremap <buffer> <Leader>i :call LiteIDE()<cr>
