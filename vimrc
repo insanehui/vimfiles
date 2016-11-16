@@ -20,6 +20,17 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'godlygeek/tabular'
+Plugin 'bufexplorer.zip'
+Plugin 'jeetsukumaran/vim-indentwise'
+Plugin 'tpope/vim-commentary'
+Plugin 'Shougo/unite.vim'
+
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'TabBar'
+" Plugin 'FavEx'
+" Plugin 'mru.vim'
+
 "{{{ vim-go 
 Plugin 'fatih/vim-go'
 " let g:go_highlight_functions = 1
@@ -37,12 +48,6 @@ let g:go_def_mode = 'godef'
 
 "}}}
 
-Plugin 'godlygeek/tabular'
-Plugin 'bufexplorer.zip'
-Plugin 'jeetsukumaran/vim-indentwise'
-Plugin 'mru.vim'
-Plugin 'tpope/vim-commentary'
-
 "{{{ snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -52,9 +57,6 @@ let g:UltiSnipsSnippetsDir = "~/vimfiles/UltiSnips"
 
 
 "}}}
-
-" Plugin 'TabBar'
-" Plugin 'FavEx'
 
 "{{{ git相关 
 Plugin 'tpope/vim-fugitive'
@@ -86,8 +88,6 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 ""}}}
-
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 "{{{ 状态栏 
 Plugin 'vim-airline/vim-airline'
