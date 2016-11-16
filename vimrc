@@ -321,6 +321,16 @@ noremap <Leader>e :call vimproc#system('explorer /select,' . substitute(expand('
 
 "}}}
 
+" 切换字符编码
+function! ToggleEncoding()
+    if &encoding == "utf-8"
+        set encoding=prc
+    else
+        set encoding=utf-8
+    endif
+endf
+nnoremap <c-q> :call ToggleEncoding()<cr>
+
 "{{{ 其他一些供参考的配置 
 
 " 让配置变更立即生效
