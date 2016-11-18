@@ -25,6 +25,7 @@ Plugin 'bufexplorer.zip'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/neomru.vim'
 
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'TabBar'
