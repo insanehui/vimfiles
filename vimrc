@@ -93,7 +93,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 ""}}}
 
 "{{{ 状态栏 
-Plugin 'vim-airline/vim-airline'
+" 由于不支持prc的编码，只能不用该插件
+" Plugin 'vim-airline/vim-airline'
 "}}}
 
 "{{{ 前端 
