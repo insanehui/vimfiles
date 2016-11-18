@@ -6,8 +6,7 @@ func ${1:test}(w http.ResponseWriter, r *http.Request) {
 }
 endsnippet
 
-snippet funct "a test case" !b
-func ${1:test}(w http.ResponseWriter, r *http.Request) {
-	${2}
-}
+# log printf
+snippet lf "log.Printf(...)"
+log.Printf("$1")
 endsnippet
