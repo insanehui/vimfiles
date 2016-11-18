@@ -54,8 +54,9 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 let g:UltiSnipsJumpForwardTrigger        = "<c-k>"
 let g:UltiSnipsJumpBackwardTrigger       = "<c-j>"
-let g:UltiSnipsSnippetsDir = "~/vimfiles/UltiSnips"
 
+" 手动建了该目录之后，貌似默认会设为该路径
+" let g:UltiSnipsSnippetsDir = "~/vimfiles/UltiSnips"
 
 "}}}
 
