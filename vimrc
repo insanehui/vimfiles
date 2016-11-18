@@ -150,6 +150,10 @@ call vundle#end()
 " 在vundle end之后，开启plugin indent syntax on，这样实际上filetype也相当于是on的？
 " }}}
 
+"{{{ 插件的配置
+source ~/vimfiles/unite-everything.vim
+"}}}
+
 filetype plugin indent on
 syntax on
 
