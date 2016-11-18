@@ -26,6 +26,7 @@ Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
+Plugin 'sgur/unite-everything'
 
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'TabBar'
@@ -336,7 +337,7 @@ nnoremap <c-q> :call ToggleEncoding()<cr>
 "{{{ 其他一些供参考的配置 
 
 " 让配置变更立即生效
-" autocmd BufWritePost $MYVIMRC source $MYVIMRC
-
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+autocmd BufWritePost ~/vimfiles/*.vim source %
 "  }}}
 
