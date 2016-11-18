@@ -1,8 +1,40 @@
-# 这个例子仅供学习试验
-# 官方的snippet库已经有本snippet: funch
-snippet httphandlefunc "http handle func" !b
-func ${1:test}(w http.ResponseWriter, r *http.Request) {
-	${2}
+
+# 覆盖 vim-go: func
+snippet func "func Function(...) [error] { ... }"
+// ${1:func}
+func ${2:name}(${3:params}) ${4} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# 覆盖 vim-go: error panic
+snippet errp "error check" !b
+if err := ${0:${VISUAL}}; err != nil {
+	panic(err)
+}
+${0}
+endsnippet
+
+
+# json http handler
+snippet hfjson "json http func" !b
+// ${1:a http handler}
+func ${2:NewFunc}(w http.ResponseWriter, r *http.Request) {
+
+	// 传入参数
+	var q struct {
+	}
+
+	// 返回
+	var ret struct {
+		Err
+		Data interface{} \`json:"data"\`
+	}
+
+	H.JsonDo(w, r, &q, &ret, func() {
+		${0}
+	})
+
 }
 endsnippet
 

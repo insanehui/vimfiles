@@ -57,7 +57,7 @@ let g:UltiSnipsJumpForwardTrigger        = "<c-k>"
 let g:UltiSnipsJumpBackwardTrigger       = "<c-j>"
 
 " 手动建了该目录之后，貌似默认会设为该路径
-" let g:UltiSnipsSnippetsDir = "~/vimfiles/UltiSnips"
+let g:UltiSnipsSnippetsDir = "~/vimfiles/UltiSnips"
 
 "}}}
 

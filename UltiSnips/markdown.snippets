@@ -1,0 +1,28 @@
+snippet composer_api "comoser api doc tpl" b
+## ${1:ApiName} ${2:ApiDesc}
+### 参数
+
+|               | 说明    | 是否必选      | 类型               |
+| ------------- | ------- | ------------- | -------------      |
+| ${0:para1}         | 模板id  | √             | string             |
+| values        | 见示例  | √             | json string        |
+| op            | 操作    |               | 可选值："get_yaml" |
+\`\`\`
+当op为get_yaml时，将直接下载yaml文件，不返回json格式
+\`\`\`
+
+### 调用示例
+\`\`\`
+?tpl_id=xxxxx&values={"aa" : 123, "bb" : 456}
+\`\`\`
+### 返回示例
+\`\`\`
+{
+	"code": 0,
+	"msg": "",
+
+	// 如果参数有误，比如values不符合规则，则不会生成蓝图，会返回出错信息
+	"data": ... // 为蓝图的文本内容
+}
+\`\`\`
+endsnippet
