@@ -40,5 +40,11 @@ endsnippet
 
 # log printf
 snippet lf "log.Printf(...)"
-log.Printf("$1")
+log.Printf("%+v", $0)
 endsnippet
+
+# log println
+snippet lp "log.Println"
+log.Println(${0:${VISUAL}})
+endsnippet
+
