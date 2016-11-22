@@ -21,7 +21,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'godlygeek/tabular'
-Plugin 'bufexplorer.zip'
+" Plugin 'bufexplorer.zip'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'Shougo/unite.vim'
@@ -156,6 +156,7 @@ call vundle#end()
 
 "{{{ 插件的配置
 source ~/vimfiles/unite-everything.vim
+source ~/vimfiles/unite.vim
 "}}}
 
 filetype plugin indent on
@@ -192,7 +193,7 @@ set hidden
 " set cursorcolumn
 
 " 显示行号
-" set number 
+set number 
 set relativenumber
 
 "{{{ 编码设置 
@@ -323,7 +324,7 @@ vnoremap <Leader><Space> :Tabularize /<Bar><cr>
 noremap <C-h> :set hls!<CR>
 
 " 查看oldfiles
-noremap <Leader>o :browse old<cr>
+" noremap <Leader>o :browse old<cr>
 " 打开当前文件，这里传到vimproc#system处要转义一次"\"
 noremap <Leader>e :call vimproc#system('explorer /select,' . substitute(expand('%:p'), '\\', '\\\\', 'g'))<cr>
 
@@ -342,7 +343,7 @@ nnoremap <c-q> :call ToggleEncoding()<cr>
 "{{{ 其他一些供参考的配置 
 
 " 让配置变更立即生效
-autocmd BufWritePost $MYVIMRC source $MYVIMRC
-autocmd BufWritePost ~/vimfiles/*.vim source %
+" autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" autocmd BufWritePost ~/vimfiles/*.vim source %
 "  }}}
 

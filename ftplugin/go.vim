@@ -19,9 +19,9 @@ function! MyGoFoldText()
     return line . '...' . fend
 endf
 
-nnoremap <buffer> <Leader>f :GoFmt<cr>
+nnoremap <buffer> ,f :GoFmt<cr>
 " nnoremap <buffer> <Leader>b <Plug>(go-build)
-nnoremap <buffer> <Leader>b :GoBuild<cr>
+nnoremap <buffer> ,b :GoBuild<cr>
 
 " 快速切换到liteide
 " 这里要用vimproc, 如果只使用vim自己的system的话，无法生效
