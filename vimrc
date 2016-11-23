@@ -8,14 +8,22 @@ filetype off
 " 官方建议: git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " 当然不克隆到建议的目录，也是可以的。
 " 由于~/.vim/bunble/是vundle的默认工作目录，这样方便vundle自己管理自己
-" set rtp+=~/.vim/bundle/Vundle.vim 
-" vundle用let来代替set rtp，见下：
+set rtp+=~/.vim/bundle/Vundle.vim 
 
+" 如果是linux
+if !has('win32')
+    set rtp+=~/vimfiles
+endif
+
+" vundle用let来代替set rtp，见下：
 " 参考自：https://github.com/VundleVim/Vundle.vim/wiki/Tips-and-Tricks 
-let win_shell = (has('win32') || has('win64')) && &shellcmdflag =~ '/'
-let vimDir = win_shell ? '$HOME/.vim' : '$HOME/.vim' "这里windows和linux一样
-let &runtimepath .= ',' . expand(vimDir . '/bundle/Vundle.vim')
+" let win_shell = (has('win32') || has('win64')) && &shellcmdflag =~ '/'
+" let vimDir = win_shell ? '$HOME/.vim' : '$HOME/.vim' "这里windows和linux一样
+" let &runtimepath .= ',' . expand(vimDir . '/bundle/Vundle.vim')
+
+
 " call vundle#begin(expand(vimDir . '/bundle'))
+
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
