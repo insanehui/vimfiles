@@ -261,6 +261,22 @@ function! MyFoldText()
 endf
 " }}}
 
+"{{{ 自动最大化 
+" 全屏函数（for Linux）
+" fun! ToggleFullscreen()
+"     call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
+" endf
+
+fun! Maximize() "for Windows
+    call system("nircmdc win max class Vim")
+endf
+autocmd GUIEnter * call Maximize()
+"}}}
+
+" au FileType go nmap <leader>b <Plug>(go-build)
+
+"{{{ 命令
+
 function! TabCmd(cmd) " {{{
   redir => message
 
@@ -280,41 +296,28 @@ function! TabCmd(cmd) " {{{
   endif
 endfunction
 
-" 定义成Ex命令
-command! -nargs=+ -complete=command TabCmd call TabCmd(<q-args>) 
 " }}}
+command! -nargs=+ -complete=command TabCmd call TabCmd(<q-args>) 
 
-"{{{ 自动最大化 
-" 全屏函数（for Linux）
-" fun! ToggleFullscreen()
-"     call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
-" endf
+" 加载vimrc
+command! -complete=command Vc e $MYVIMRC
+command! -complete=command Sc so $MYVIMRC
 
-fun! Maximize() "for Windows
-    call system("nircmdc win max class Vim")
-endf
-autocmd GUIEnter * call Maximize()
 "}}}
-
-"{{{ 保存状态 
-" autocmd QuitPre * mks! ~/.vimses
-" autocmd VimEnter * so ~/.vimses
-" command! S mks! ~/.vimses
-command! Q mks! ~/.vimses | xa
-command! L so ~/.vimses
-"}}}
-
-" au FileType go nmap <leader>b <Plug>(go-build)
 
 "{{{ 快捷键 keymaps
 
-" 快速编辑vimrc
-nnoremap <leader>vc :e $MYVIMRC<cr>
-nnoremap <leader>sc :source $MYVIMRC<cr>
+" unite的快捷键设置
+nnoremap <silent> <Leader>b  :<C-u>Unite -no-split buffer<CR>
+nnoremap <silent> <Leader>f  :<C-u>Unite -no-split file<CR>
+nnoremap <silent> <Leader>x  :<C-u>Unite -no-split -start-insert everything<CR>
+nnoremap <silent> <Leader>o  :<C-u>Unite -no-split file_mru<CR>
+nnoremap <silent> <space>  :<C-u>Unite -no-split -start-insert line<CR>
+
 
 " 重映射commentary.vim的快捷键
 map <Leader><Bslash> gc
-map <Leader><Bslash><Space> gcgc
+map <Leader><Space> gcgc
 
 " 将词移到右边（交换两个词的位置）
 nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>:nohlsearch<CR>
@@ -329,18 +332,16 @@ noremap <Leader>p "+p
 vnoremap <Leader>t :Tabularize /
 vnoremap <Leader><Space> :Tabularize /<Bar><cr>
 
-
 " 切换查找高亮
 noremap <C-h> :set hls!<CR>
 
 " 查看oldfiles
 " noremap <Leader>o :browse old<cr>
+
 " 打开当前文件，这里传到vimproc#system处要转义一次"\"
 noremap <Leader>e :call vimproc#system('explorer /select,' . substitute(expand('%:p'), '\\', '\\\\', 'g'))<cr>
 
-"}}}
-
-" 切换字符编码
+"{{{ 切换字符编码
 function! ToggleEncoding()
     if &encoding == "utf-8"
         set encoding=prc
@@ -348,7 +349,10 @@ function! ToggleEncoding()
         set encoding=utf-8
     endif
 endf
+"}}}
 nnoremap <c-q> :call ToggleEncoding()<cr>
+
+"}}}
 
 "{{{ 其他一些供参考的配置 
 
