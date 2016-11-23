@@ -3,7 +3,7 @@
 nnoremap    [unite]   <Nop>
 nmap   <Leader> [unite]
 
-nnoremap <silent> [unite]b  :<C-u>Unite -no-split -start-insert buffer<CR>
+nnoremap <silent> [unite]b  :<C-u>Unite -no-split buffer<CR>
 nnoremap <silent> [unite]f  :<C-u>Unite -no-split -start-insert everything<CR>
 nnoremap <silent> [unite]o  :<C-u>Unite -no-split file_mru<CR>
 nnoremap <silent> <space>  :<C-u>Unite -no-split -start-insert line<CR>
