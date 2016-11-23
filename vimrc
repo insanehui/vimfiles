@@ -317,7 +317,7 @@ nnoremap <silent> <space>  :<C-u>Unite -no-split -start-insert line<CR>
 
 " 重映射commentary.vim的快捷键
 map <Leader><Bslash> gc
-map <Leader><Space> gcgc
+map <Leader><Space> gcc
 
 " 将词移到右边（交换两个词的位置）
 nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>:nohlsearch<CR>
@@ -330,6 +330,7 @@ noremap <Leader>p "+p
 " tabular
 " ？现在暂时不会如何映射成operator pending的模式
 vnoremap <Leader>t :Tabularize /
+" !!注：与 注释 的快捷键重复，但由于场景不同，不会产生歧义
 vnoremap <Leader><Space> :Tabularize /<Bar><cr>
 
 " 切换查找高亮
