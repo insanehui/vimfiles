@@ -216,8 +216,8 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
 " 以下这两行据说是解决菜单问题，但是没起作用，也不知道是什么含义
-set langmenu=zh_CN.UTF-8
-language message zh_CN.UTF-8
+" set langmenu=zh_CN.UTF-8
+" language message zh_CN.UTF-8
 
 
 "}}}
