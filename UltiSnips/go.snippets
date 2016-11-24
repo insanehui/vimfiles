@@ -15,6 +15,14 @@ if err := ${0:${VISUAL}}; err != nil {
 ${0}
 endsnippet
 
+# 覆盖 vim-go 的 errn
+snippet errn "Error return " !b
+if err != nil {
+	return
+}
+${0}
+endsnippet
+
 
 # json http handler
 snippet hfjson "json http func" !b

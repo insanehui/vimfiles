@@ -29,7 +29,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'godlygeek/tabular'
-" Plugin 'bufexplorer.zip'
+Plugin 'bufexplorer.zip'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'Shougo/unite.vim'
@@ -308,7 +308,6 @@ command! -complete=command Sc so $MYVIMRC
 "{{{ 快捷键 keymaps
 
 " unite的快捷键设置
-nnoremap <silent> <Leader>b  :<C-u>Unite -no-split buffer<CR>
 nnoremap <silent> <Leader>f  :<C-u>Unite -no-split file<CR>
 nnoremap <silent> <Leader>x  :<C-u>Unite -no-split -start-insert everything<CR>
 nnoremap <silent> <Leader>o  :<C-u>Unite -no-split file_mru<CR>
