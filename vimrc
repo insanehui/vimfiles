@@ -34,6 +34,7 @@ Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
+Plugin 'Shougo/vimfiler.vim'
 Plugin 'sgur/unite-everything'
 Plugin 'Konfekt/FastFold'
 
@@ -307,8 +308,13 @@ command! -complete=command Sc so $MYVIMRC
 
 "{{{ 快捷键 keymaps
 
+let g:bufExplorerDisableDefaultKeyMapping=1    " Disable mapping.
+nnoremap <silent> <Leader>b :BufExplorer<CR>
+
+
 " unite的快捷键设置
 nnoremap <silent> <Leader>f  :<C-u>Unite -no-split file<CR>
+nnoremap <silent> <Leader>m  :<C-u>Unite -no-split bookmark<CR>
 nnoremap <silent> <Leader>x  :<C-u>Unite -no-split -start-insert everything<CR>
 nnoremap <silent> <Leader>o  :<C-u>Unite -no-split file_mru<CR>
 nnoremap <silent> <space>  :<C-u>Unite -no-split -start-insert line<CR>
