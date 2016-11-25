@@ -307,18 +307,19 @@ command! -complete=command Sc so $MYVIMRC
 
 "}}}
 
-"{{{ 快捷键 keymaps
+"{{{ 全局快捷键 keymaps
+" 非全局的快捷键建议放在对应插件的文件中
 
 let g:bufExplorerDisableDefaultKeyMapping=1    " Disable mapping.
 nnoremap <silent> <Leader>b :BufExplorer<CR>
 
 
 " unite的快捷键设置
-nnoremap <silent> <Leader>f  :<C-u>Unite -no-split file<CR>
-nnoremap <silent> <Leader>m  :<C-u>Unite -no-split bookmark<CR>
-nnoremap <silent> <Leader>x  :<C-u>Unite -no-split -start-insert everything<CR>
-nnoremap <silent> <Leader>o  :<C-u>Unite -no-split file_mru<CR>
-nnoremap <silent> <space>  :<C-u>Unite -no-split -start-insert line<CR>
+nnoremap <silent> <Leader>f  :<C-u>Unite -vertical-preview -no-split file<CR>
+nnoremap <silent> <Leader>m  :<C-u>Unite -vertical-preview -no-split bookmark<CR>
+nnoremap <silent> <Leader>x  :<C-u>Unite -vertical-preview -no-split -start-insert everything<CR>
+nnoremap <silent> <Leader>o  :<C-u>Unite -vertical-preview -no-split file_mru<CR>
+nnoremap <silent> <space>    :<C-u>Unite -vertical-preview -no-split -start-insert line<CR>
 
 
 " 重映射commentary.vim的快捷键
