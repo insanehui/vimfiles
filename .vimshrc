@@ -1,0 +1,5 @@
+# 这些都很容易cd进去，就暂时不设变量了
+# let $desktop = '~/Desktop'
+# let $vimfiles = '~/vimfiles'
+alias gs='git status'
+alias gcl='git clone'
