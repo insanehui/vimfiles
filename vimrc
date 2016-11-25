@@ -166,6 +166,7 @@ call vundle#end()
 "{{{ 插件的配置
 source ~/vimfiles/unite-everything.vim
 source ~/vimfiles/unite.vim
+source ~/vimfiles/vimshell.vim
 "}}}
 
 filetype plugin indent on
