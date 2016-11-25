@@ -20,6 +20,7 @@ function! s:unite_my_settings() "{{{
 
     " s 打开vimshell
     nnoremap <silent><buffer><expr> s  unite#smart_map('s', unite#do_action('vimshell'))
+    nnoremap <silent><buffer><expr> f  unite#smart_map('f', unite#do_action('vimfiler'))
 
     " let unite = unite#get_current_unite()
     " if unite.profile_name ==# 'search'

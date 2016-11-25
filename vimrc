@@ -167,6 +167,7 @@ call vundle#end()
 source ~/vimfiles/unite-everything.vim
 source ~/vimfiles/unite.vim
 source ~/vimfiles/vimshell.vim
+source ~/vimfiles/vimfiler.vim
 "}}}
 
 filetype plugin indent on
