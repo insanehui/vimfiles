@@ -326,7 +326,8 @@ nnoremap <silent> <space>    :<C-u>Unite -vertical-preview -no-split -start-inse
 nnoremap <silent> <Leader>d  :<C-u>Unite -buffer-name=directory -default-action=vimshell neomru/directory<CR>
 
 " vimfiler
-nnoremap <silent> <Leader>f  :<C-u>:VimFilerCurrentDir<CR>
+nnoremap <silent> <Leader>f  :<C-u>:VimFilerCurrentDir -buffer-name=vimfiler<CR>
+nnoremap <silent> <Leader>p  :<C-u>:VimFiler -project -buffer-name=vimfiler<CR>
 
 " vimshell
 " 后面根据需要再映射 当前目录，buffer目录等
@@ -344,7 +345,8 @@ nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\
 " 快捷复制和粘贴到系统剪贴板
 " 但好像还是有问题
 noremap <Leader>y "+y
-noremap <Leader>p "+p
+" 用 shift + insert 粘贴，不用\p
+" noremap <Leader>p "+p
 
 " tabular
 " ？现在暂时不会如何映射成operator pending的模式
