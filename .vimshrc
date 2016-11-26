@@ -3,6 +3,7 @@
 # let $vimfiles = '~/vimfiles'
 # 注：命令长度达到3字符的，会有自动neocomplete，2以下的则不会。
 # 这应该是neocomplete的设定，而非bug
+# commit相关的操作，还是使用fugitive吧:)
 alias gs='git status'
 alias gcl='git clone'
 alias gh='git push'

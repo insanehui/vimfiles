@@ -29,7 +29,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'godlygeek/tabular'
-Plugin 'bufexplorer.zip'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'Shougo/unite.vim'
@@ -37,11 +36,13 @@ Plugin 'Shougo/neomru.vim'
 Plugin 'Shougo/vimfiler.vim'
 Plugin 'sgur/unite-everything'
 Plugin 'Konfekt/FastFold'
+Plugin 'insanehui/bufexplorer.zip'
 
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'TabBar'
 " Plugin 'FavEx'
 " Plugin 'mru.vim'
+" Plugin 'bufexplorer.zip'
 
 "{{{ vim-go 
 Plugin 'fatih/vim-go'
@@ -302,6 +303,7 @@ endfunction
 
 " }}}
 command! -nargs=+ -complete=command TabCmd call TabCmd(<q-args>) 
+command! -nargs=* -complete=command Pi PluginInstall <args>
 
 " 加载vimrc
 command! -complete=command Vc e $MYVIMRC
