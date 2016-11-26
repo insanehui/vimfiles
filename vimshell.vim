@@ -1,3 +1,7 @@
+" 默认的快捷键备忘
+" insert mode:
+" <c-l> 打开命令历史的unite
+
 " 下面是抄的示例
 let g:vimshell_prompt_expr =
 \ 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
@@ -15,5 +19,6 @@ let g:vimshell_vimshrc_path = expand('~/vimfiles/.vimshrc')
 
 autocmd FileType vimshell call s:my_settings()
 function! s:my_settings() "{{{
+    " 测试
     call vimshell#altercmd#define('g', 'git')
-endfunction"}}}
+endfunction "}}}

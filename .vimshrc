@@ -1,5 +1,12 @@
 # 这些都很容易cd进去，就暂时不设变量了
 # let $desktop = '~/Desktop'
 # let $vimfiles = '~/vimfiles'
+# 注：命令长度达到3字符的，会有自动neocomplete，2以下的则不会。
+# 这应该是neocomplete的设定，而非bug
 alias gs='git status'
 alias gcl='git clone'
+alias gh='git push'
+alias gl='git pull'
+
+alias l='ls --color=auto -lrtahF'
+

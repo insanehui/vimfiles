@@ -311,16 +311,27 @@ command! -complete=command Sc so $MYVIMRC
 "{{{ 全局快捷键 keymaps
 " 非全局的快捷键建议放在对应插件的文件中
 
-let g:bufExplorerDisableDefaultKeyMapping=1    " Disable mapping.
+" bufexplorer
+" 仅取消 \be, \bs等
+let g:bufExplorerDisableDefaultKeyMapping=1
 nnoremap <silent> <Leader>b :BufExplorer<CR>
 
 
-" unite的快捷键设置
-nnoremap <silent> <Leader>f  :<C-u>Unite -vertical-preview -no-split file<CR>
+" unite
+" nnoremap <silent> <Leader>f  :<C-u>Unite -vertical-preview -no-split file<CR>
 nnoremap <silent> <Leader>m  :<C-u>Unite -vertical-preview -no-split bookmark<CR>
 nnoremap <silent> <Leader>x  :<C-u>Unite -vertical-preview -no-split -start-insert everything<CR>
 nnoremap <silent> <Leader>o  :<C-u>Unite -vertical-preview -no-split file_mru<CR>
 nnoremap <silent> <space>    :<C-u>Unite -vertical-preview -no-split -start-insert line<CR>
+nnoremap <silent> <Leader>d  :<C-u>Unite -buffer-name=directory -default-action=vimshell neomru/directory<CR>
+
+" vimfiler
+nnoremap <silent> <Leader>f  :<C-u>:VimFilerCurrentDir<CR>
+
+" vimshell
+" 后面根据需要再映射 当前目录，buffer目录等
+nnoremap <silent> <Leader>sp   :<C-u>:VimShell -project<CR>
+
 
 
 " 重映射commentary.vim的快捷键
