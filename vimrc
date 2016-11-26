@@ -278,7 +278,8 @@ autocmd GUIEnter * call Maximize()
 
 " au FileType go nmap <leader>b <Plug>(go-build)
 
-"{{{ 命令
+"{{{ 命令、全局快捷键 keymaps
+" 非全局的快捷键建议放在对应插件的文件中
 
 function! TabCmd(cmd) " {{{
   redir => message
@@ -306,11 +307,6 @@ command! -nargs=+ -complete=command TabCmd call TabCmd(<q-args>)
 command! -complete=command Vc e $MYVIMRC
 command! -complete=command Sc so $MYVIMRC
 
-"}}}
-
-"{{{ 全局快捷键 keymaps
-" 非全局的快捷键建议放在对应插件的文件中
-
 " bufexplorer
 " 仅取消 \be, \bs等
 let g:bufExplorerDisableDefaultKeyMapping=1
@@ -326,13 +322,14 @@ nnoremap <silent> <space>    :<C-u>Unite -vertical-preview -no-split -start-inse
 nnoremap <silent> <Leader>d  :<C-u>Unite -buffer-name=directory -default-action=vimshell neomru/directory<CR>
 
 " vimfiler
-nnoremap <silent> <Leader>f  :<C-u>:VimFilerCurrentDir -buffer-name=vimfiler<CR>
-nnoremap <silent> <Leader>p  :<C-u>:VimFiler -project -buffer-name=vimfiler<CR>
+nnoremap <silent> <Leader>f  :<C-u>:VimFilerCurrentDir -auto-cd -buffer-name=vimfiler<CR>
+nnoremap <silent> <Leader>p  :<C-u>:VimFiler -project  -auto-cd -buffer-name=vimfiler<CR>
 
 " vimshell
 " 后面根据需要再映射 当前目录，buffer目录等
-nnoremap <silent> <Leader>sp   :<C-u>:VimShell -project<CR>
-
+" nnoremap <silent> <Leader>sp   :<C-u>:VimShell -project<CR>
+" nnoremap <silent> <Leader>sc   :<C-u>:VimShellCurrentDir<CR>
+command! -complete=command S VimShellCurrentDir
 
 
 " 重映射commentary.vim的快捷键
