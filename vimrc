@@ -316,6 +316,9 @@ command! -complete=command Sc so $MYVIMRC
 let g:bufExplorerDisableDefaultKeyMapping=1
 nnoremap <silent> <Leader>b :BufExplorer<CR>
 
+" ultisnips
+command! -complete=command Use UltiSnipsEdit
+
 
 " unite
 " nnoremap <silent> <Leader>f  :<C-u>Unite -vertical-preview -no-split file<CR>
