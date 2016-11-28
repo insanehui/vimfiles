@@ -38,6 +38,8 @@ Plugin 'sgur/unite-everything'
 Plugin 'Konfekt/FastFold'
 Plugin 'insanehui/bufexplorer.zip'
 
+" Plugin 'kana/vim-textobj-entire'
+" Plugin 'textobj-entire'
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'TabBar'
 " Plugin 'FavEx'
@@ -324,8 +326,8 @@ nnoremap <silent> <space>    :<C-u>Unite -vertical-preview -no-split -start-inse
 nnoremap <silent> <Leader>d  :<C-u>Unite -buffer-name=directory -default-action=vimshell neomru/directory<CR>
 
 " vimfiler
-nnoremap <silent> <Leader>f  :<C-u>:VimFilerCurrentDir -auto-cd -buffer-name=vimfiler<CR>
-nnoremap <silent> <Leader>p  :<C-u>:VimFiler -project  -auto-cd -buffer-name=vimfiler<CR>
+nnoremap <silent> <Leader>f  :<C-u>VimFilerCurrentDir -auto-cd -buffer-name=vimfiler<CR>
+nnoremap <silent> <Leader>p  :<C-u>VimFiler -project  -auto-cd -buffer-name=vimfiler<CR>
 
 " vimshell
 " 后面根据需要再映射 当前目录，buffer目录等
@@ -333,10 +335,14 @@ nnoremap <silent> <Leader>p  :<C-u>:VimFiler -project  -auto-cd -buffer-name=vim
 " nnoremap <silent> <Leader>sc   :<C-u>:VimShellCurrentDir<CR>
 command! -complete=command S VimShellCurrentDir
 
+" fugitive
+nnoremap <silent> gs  :<C-u>Gstatus<CR>
+nnoremap <silent> gh  :<C-u>Gpush<CR>
 
-" 重映射commentary.vim的快捷键
+" commentary.vim 
 map <Leader><Bslash> gc
-map <Leader><Space> gcc
+" !!注：与 tabular 排版的快捷键重复，但其是在visual mode，因此不冲突
+nmap <Leader><Space> gcc
 
 " 将词移到右边（交换两个词的位置）
 nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>:nohlsearch<CR>
@@ -350,7 +356,7 @@ noremap <Leader>y "+y
 " tabular
 " ？现在暂时不会如何映射成operator pending的模式
 vnoremap <Leader>t :Tabularize /
-" !!注：与 注释 的快捷键重复，但由于场景不同，不会产生歧义
+" !!注：与 注释 的快捷键重复，但其是normal mode
 vnoremap <Leader><Space> :Tabularize /<Bar><cr>
 
 " 切换查找高亮

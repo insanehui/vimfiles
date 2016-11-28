@@ -30,3 +30,5 @@ function! LiteIDE()
     call vimproc#system("nircmdc win max ititle 'liteide -'")
 endf
 nnoremap <buffer> <Leader>i :call LiteIDE()<cr>
+
+nmap <buffer> gf gd
