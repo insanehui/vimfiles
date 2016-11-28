@@ -1,3 +1,15 @@
+snippet fp "log.Printf(...)"
+fmt.Println($1)
+endsnippet
+
+snippet fr "函数表达式来wrap"
+${1:func}(${0:${VISUAL}})
+endsnippet
+
+snippet "I "import utils io" !b
+${1:I} "utils/io"
+endsnippet
+
 # 导入yaml
 snippet "yaml "import yaml" !b
 "github.com/ghodss/yaml"
