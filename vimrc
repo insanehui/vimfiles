@@ -334,7 +334,7 @@ nnoremap <silent> <Leader>p  :<C-u>VimFiler -project  -auto-cd -buffer-name=vimf
 " 后面根据需要再映射 当前目录，buffer目录等
 " nnoremap <silent> <Leader>sp   :<C-u>:VimShell -project<CR>
 " nnoremap <silent> <Leader>sc   :<C-u>:VimShellCurrentDir<CR>
-command! -complete=command S VimShellCurrentDir
+command! -complete=command S VimShellCurrentDir -buffer-name=sss
 
 " fugitive
 nnoremap <silent> gs  :<C-u>Gstatus<CR>
@@ -367,7 +367,10 @@ noremap <C-h> :set hls!<CR>
 " noremap <Leader>o :browse old<cr>
 
 " 打开当前文件，这里传到vimproc#system处要转义一次"\"
-noremap <Leader>e :call vimproc#system('explorer /select,' . substitute(expand('%:p'), '\\', '\\\\', 'g'))<cr>
+noremap ge :call vimproc#system('explorer /select,' . substitute(expand('%:p'), '\\', '\\\\', 'g'))<cr>
+
+" 打开git bash
+noremap gb :call vimproc#system('C:\\Program\ Files\\Git\\git-bash.exe --cd=' . substitute(expand('%:p:h'), '\\', '\\\\', 'g'))<cr>
 
 "{{{ 切换字符编码
 function! ToggleEncoding()

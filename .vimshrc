@@ -8,6 +8,7 @@ alias gs='git status'
 alias gcl='git clone'
 alias gh='git push'
 alias gl='git pull'
+alias gt='go test -run'
 
 alias l='ls --color=auto -lrtahF'
 

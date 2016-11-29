@@ -1,3 +1,13 @@
+snippet rv "reflect.ValueOf" b
+${1:rv} := reflect.ValueOf(${0:${VISUAL}})
+endsnippet
+
+snippet init "func init"
+func init() {
+	$0
+}
+endsnippet
+
 snippet fp "log.Printf(...)"
 fmt.Println($1)
 endsnippet
@@ -13,6 +23,10 @@ endsnippet
 # 导入yaml
 snippet "yaml "import yaml" !b
 "github.com/ghodss/yaml"
+endsnippet
+
+snippet "stdout "import log to stdout" !b
+_ "utils/log/stdout"
 endsnippet
 
 # 覆盖 vim-go: func
