@@ -176,7 +176,7 @@ source ~/vimfiles/vimfiler.vim
 filetype plugin indent on
 syntax on
 
-"{{{ 主题设置 
+"{{{ 主题设置
 " 同一个主题，似乎背景也可以有dark和light的模式
 if has('win32')
     colorscheme vs
@@ -258,11 +258,23 @@ function! MyFoldText()
     "以后查看看有没有trim之类的函数自动去除两端空白字符
 
     "删掉折叠标记
-	let line = substitute(line, '{{'.'{', '', 'g') "这里使用.来连接字符串于是为了防止产生折叠
+    let line = substitute(line, '{{'.'{', '[', 'g') "这里使用.来连接字符串于是为了防止产生折叠
     "删掉各种语言的注释标记
     let line = substitute(line, '<!--\|-->\|^"\|//\|#\|/\*\|\*/', '', 'g')
-	return '[ ' . line . ' ]'
+	return line . ' ]'
 endf
+
+function! SyntaxFoldText()
+	let begin = getline(v:foldstart)
+
+    " 似乎没有必要把\t转成空格吧
+    " let line = substitute(line, '\t', '    ', 'g')
+    let fend = getline(v:foldend)
+    let fend = substitute(fend, '^\s*', '', 'g') 
+
+    return begin . '...' . fend
+endf
+
 " }}}
 
 "{{{ 自动最大化 
