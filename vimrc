@@ -382,7 +382,7 @@ noremap <C-h> :set hls!<CR>
 noremap ge :call vimproc#system('explorer /select,' . substitute(expand('%:p'), '\\', '\\\\', 'g'))<cr>
 
 " 打开git bash
-noremap gb :call vimproc#system('C:\\Program\ Files\\Git\\git-bash.exe --cd=' . substitute(expand('%:p:h'), '\\', '\\\\', 'g'))<cr>
+noremap gb :call vimproc#system_bg('C:\\Program\ Files\\Git\\git-bash.exe --cd=' . substitute(expand('%:p:h'), '\\', '\\\\', 'g'))<cr>
 
 "{{{ 切换字符编码
 function! ToggleEncoding()

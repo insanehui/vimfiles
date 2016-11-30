@@ -1,3 +1,7 @@
+snippet span. "<span> with class" w
+<span`!p snip.rv=' class="' if t[1] else ""`${1:name}`!p snip.rv = '"' if t[1] else ""`>${0:${VISUAL}}</span>
+endsnippet
+
 snippet t "just test" 
 <${1:div}>
 	hello fuck
