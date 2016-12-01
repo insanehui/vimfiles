@@ -30,13 +30,27 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'godlygeek/tabular'
 Plugin 'jeetsukumaran/vim-indentwise'
+
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-surround'
+" 以下这个fork支持函数
+Plugin 'LeszekSwirski/vim-surround'
+
+Plugin 'tpope/vim-repeat'
+
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
 Plugin 'Shougo/vimfiler.vim'
+Plugin 'Shougo/vinarise.vim'
+
 Plugin 'sgur/unite-everything'
 Plugin 'Konfekt/FastFold'
 Plugin 'insanehui/bufexplorer.zip'
+" tpope大神也写了一个
+Plugin 'plasticboy/vim-markdown'
+
+Plugin 't9md/vim-choosewin'
 
 " Plugin 'kana/vim-textobj-entire'
 " Plugin 'textobj-entire'
@@ -72,10 +86,6 @@ let g:UltiSnipsJumpBackwardTrigger       = "<c-j>"
 " 手动建了该目录之后，貌似默认会设为该路径
 let g:UltiSnipsSnippetsDir = "~/vimfiles/UltiSnips"
 
-"}}}
-
-"{{{ git相关 
-Plugin 'tpope/vim-fugitive'
 "}}}
 
 "{{{ vimproc 
@@ -120,10 +130,6 @@ Plugin 'elzr/vim-json'
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 
-"}}}
-
-"{{{ markdown 
-Plugin 'plasticboy/vim-markdown'
 "}}}
 
 "{{{ 主题配色
@@ -332,11 +338,14 @@ command! -complete=command Use UltiSnipsEdit
 
 " unite
 " nnoremap <silent> <Leader>f  :<C-u>Unite -vertical-preview -no-split file<CR>
+" bookmark可以指定多个收藏夹，缺省为default。暂时用一个default够用
 nnoremap <silent> <Leader>m  :<C-u>Unite -vertical-preview -no-split bookmark<CR>
 nnoremap <silent> <Leader>x  :<C-u>Unite -vertical-preview -no-split -start-insert everything<CR>
 nnoremap <silent> <Leader>o  :<C-u>Unite -vertical-preview -no-split file_mru<CR>
 nnoremap <silent> <space>    :<C-u>Unite -vertical-preview -no-split -start-insert line<CR>
-nnoremap <silent> <Leader>d  :<C-u>Unite -buffer-name=directory -default-action=vimshell neomru/directory<CR>
+nnoremap <silent> <Leader>d  :<C-u>Unite -buffer-name=directory -no-split -start-insert -default-action=vimshell neomru/directory<CR>
+" unite还提供了vimgrep, 但功能好像跟这个类似
+nnoremap <silent> <Leader>g  :<C-u>Unite -vertical-preview -no-split grep<CR><CR>
 
 " vimfiler
 nnoremap <silent> <Leader>f  :<C-u>VimFilerCurrentDir -auto-cd -buffer-name=vimfiler<CR>
@@ -356,6 +365,9 @@ nnoremap <silent> gh  :<C-u>Gpush<CR>
 map <Leader><Bslash> gc
 " !!注：与 tabular 排版的快捷键重复，但其是在visual mode，因此不冲突
 nmap <Leader><Space> gcc
+
+" choosewin -------------------
+nmap  -  <Plug>(choosewin)
 
 " 将词移到右边（交换两个词的位置）
 nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>:nohlsearch<CR>
