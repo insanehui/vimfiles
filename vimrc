@@ -52,6 +52,9 @@ Plugin 'plasticboy/vim-markdown'
 
 Plugin 't9md/vim-choosewin'
 
+Plugin 'mhinz/vim-signify'
+" Plugin 'chrisbra/changesPlugin'
+
 " Plugin 'kana/vim-textobj-entire'
 " Plugin 'textobj-entire'
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -299,6 +302,11 @@ autocmd GUIEnter * call Maximize()
 
 "{{{ 命令、全局快捷键 keymaps
 " 非全局的快捷键建议放在对应插件的文件中
+
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
 
 function! TabCmd(cmd) " {{{
   redir => message
