@@ -52,7 +52,12 @@ Plugin 'plasticboy/vim-markdown'
 
 Plugin 't9md/vim-choosewin'
 
-Plugin 'mhinz/vim-signify'
+Plugin 'amerlyq/nou.vim'
+
+" 每次保存都要弹出一个cmd框，故去掉
+" Plugin 'mhinz/vim-signify'
+
+" 这个插件居然要vim 8？
 " Plugin 'chrisbra/changesPlugin'
 
 " Plugin 'kana/vim-textobj-entire'
@@ -203,6 +208,7 @@ set expandtab
 set ignorecase
 set smartcase
 set incsearch
+set shiftround
 
 " 自动CD到当前目录
 " set autochdir
