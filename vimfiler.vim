@@ -11,9 +11,11 @@ call vimfiler#custom#profile('default', 'context', {
 autocmd FileType vimfiler call s:my_settings()
 function! s:my_settings() "{{{
     nmap <buffer> <Esc> <Plug>(vimfiler_hide)
-    nunmap Cc
-    nunmap Cm
-    nunmap Cp
+
+    " 注：不能通过以下方法来阻止默认的映射
+    " nunmap Cc
+    " nunmap Cm
+    " nunmap Cp
     nmap <buffer> <c-c>			<Plug>(vimfiler_clipboard_copy_file)
     nmap <buffer> <c-x>			<Plug>(vimfiler_clipboard_move_file)
     nmap <buffer> <c-v>			<Plug>(vimfiler_clipboard_paste)
