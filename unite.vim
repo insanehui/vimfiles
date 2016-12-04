@@ -13,10 +13,10 @@ function! s:unite_my_settings() "{{{
 
     " 数字键快速选择
     " 注：
-    nmap <buffer> 1 1G<cr>
-    nmap <buffer> 2 2G<cr>
-    nmap <buffer> 3 3G<cr>
-    nmap <buffer> 4 4G<cr>
+    nmap <buffer> ,1 1G<cr>
+    nmap <buffer> ,2 2G<cr>
+    nmap <buffer> ,3 3G<cr>
+    nmap <buffer> ,4 4G<cr>
     
 
     " 预览功能开关
