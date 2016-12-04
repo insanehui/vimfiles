@@ -309,7 +309,7 @@ autocmd GUIEnter * call Maximize()
 
 " au FileType go nmap <leader>b <Plug>(go-build)
 
-"{{{ 命令、全局快捷键 keymaps
+"{{{ 命令、全局快捷键 keymaps ================================
 " 非全局的快捷键建议放在对应插件的文件中
 
 " 对于一些使用到 localleader 的插件，比如vimoutliner, 暂时将leader定为","
@@ -346,6 +346,9 @@ command! -nargs=* -complete=command Pi PluginInstall <args>
 " 加载vimrc
 command! -complete=command Vc e $MYVIMRC
 command! -complete=command Sc so $MYVIMRC
+
+" utl ------------------------------
+nnoremap <c-cr> :Utl<cr>
 
 " bufexplorer
 " 仅取消 \be, \bs等
