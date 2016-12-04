@@ -5,7 +5,10 @@
 # 这应该是neocomplete的设定，而非bug
 # commit相关的操作，还是使用fugitive吧:)
 alias gs='git status'
-alias gcl='git clone'
+
+# git clone不频繁使用，暂不alias
+# alias gcl='git clone'
+
 alias gh='git push'
 alias gl='git pull'
 alias gt='go test -run'
