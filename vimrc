@@ -53,6 +53,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 't9md/vim-choosewin'
 
 Plugin 'amerlyq/nou.vim'
+Plugin 'vimoutliner/vimoutliner'
+Plugin 'utl.vim'
 
 " 每次保存都要弹出一个cmd框，故去掉
 " Plugin 'mhinz/vim-signify'
@@ -264,9 +266,9 @@ set scrolloff=3
 set foldmethod=marker
 set foldcolumn=8
 set fillchars=vert:\|,fold:\ 
-set foldtext=MyFoldText()
+set foldtext=MyFoldText20161203()
 
-function! MyFoldText()
+function! MyFoldText20161203()
 	let line = getline(v:foldstart)
     
     "以下操作对空格的处理只去掉一个，多余的空格将会保留
