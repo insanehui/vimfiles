@@ -311,6 +311,9 @@ autocmd GUIEnter * call Maximize()
 "{{{ 命令、全局快捷键 keymaps
 " 非全局的快捷键建议放在对应插件的文件中
 
+" 对于一些使用到 localleader 的插件，比如vimoutliner, 暂时将leader定为","
+let maplocalleader=','
+
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
