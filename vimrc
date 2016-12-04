@@ -53,7 +53,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 't9md/vim-choosewin'
 
 Plugin 'amerlyq/nou.vim'
-Plugin 'vimoutliner/vimoutliner'
+" Plugin 'vimoutliner/vimoutliner'
+Plugin 'insanehui/vimoutliner'
 Plugin 'utl.vim'
 
 " 每次保存都要弹出一个cmd框，故去掉

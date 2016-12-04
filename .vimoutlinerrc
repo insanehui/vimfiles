@@ -30,8 +30,11 @@ let g:vo_modules_load .= ':newhoist'
 "setlocal smartcase			" searches use smart case
 "setlocal wrapmargin=5
 "setlocal tw=78
-"setlocal tabstop=4			" tabstop and shiftwidth must match
-"setlocal shiftwidth=4			" values from 2 to 8 work well
+
+setlocal cursorline
+setlocal cursorcolumn
+setlocal tabstop=2			" tabstop and shiftwidth must match
+setlocal shiftwidth=2			" values from 2 to 8 work well
 "setlocal background=dark		" for dark backgrounds
 "setlocal nowrap
 
