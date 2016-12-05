@@ -311,6 +311,8 @@ autocmd GUIEnter * call Maximize()
 
 "{{{ 命令、全局快捷键 keymaps ================================
 " 非全局的快捷键建议放在对应插件的文件中
+" 注：可以用来作leader的按键有：
+" <Bslash>, <bspace>, F1~F12, -, <tab>, <Enter>等
 
 " 对于一些使用到 localleader 的插件，比如vimoutliner, 暂时将leader定为","
 let maplocalleader=','
