@@ -202,6 +202,7 @@ endif
 " }}}
 
 
+set viewdir=~/.vimview
 set backspace =indent,eol,start "使插入状态下能正常使用退格键
 set tabstop=4
 set shiftwidth=4
@@ -309,13 +310,7 @@ autocmd GUIEnter * call Maximize()
 
 " au FileType go nmap <leader>b <Plug>(go-build)
 
-"{{{ 命令、全局快捷键 keymaps ================================
-" 非全局的快捷键建议放在对应插件的文件中
-" 注：可以用来作leader的按键有：
-" <Bslash>, <bspace>, F1~F12, -, <tab>, <Enter>等
-
-" 对于一些使用到 localleader 的插件，比如vimoutliner, 暂时将leader定为","
-let maplocalleader=','
+"{{{ 全局命令
 
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
@@ -349,6 +344,29 @@ command! -nargs=* -complete=command Pi PluginInstall <args>
 command! -complete=command Vc e $MYVIMRC
 command! -complete=command Sc so $MYVIMRC
 
+" ultisnips
+command! -complete=command Use UltiSnipsEdit
+
+" vimshell
+" 后面根据需要再映射 当前目录，buffer目录等
+" nnoremap <silent> <Leader>sp   :<C-u>:VimShell -project<CR>
+" nnoremap <silent> <Leader>sc   :<C-u>:VimShellCurrentDir<CR>
+command! -complete=command S VimShellCurrentDir -buffer-name=sss
+
+"}}}
+
+"{{{ 全局快捷键 keymaps ================================
+" 非全局的快捷键建议放在对应插件的文件中
+" 注：可以用来作leader的按键有：
+" <Bslash>, <bspace>, F1~F12, -, <tab>, <Enter>等
+
+" 对于一些使用到 localleader 的插件，比如vimoutliner, 暂时将leader定为","
+let maplocalleader=','
+
+" 用于vimoutliner ------------------------------
+nmap ,x ,cb,cx
+
+
 " utl ------------------------------
 nnoremap <c-cr> :Utl<cr>
 
@@ -356,9 +374,6 @@ nnoremap <c-cr> :Utl<cr>
 " 仅取消 \be, \bs等
 let g:bufExplorerDisableDefaultKeyMapping=1
 nnoremap <silent> <Leader>b :BufExplorer<CR>
-
-" ultisnips
-command! -complete=command Use UltiSnipsEdit
 
 
 " unite
@@ -376,12 +391,6 @@ nnoremap <silent> <Leader>g  :<C-u>Unite -vertical-preview -no-split grep<CR><CR
 nnoremap <silent> <Leader>f  :<C-u>VimFilerCurrentDir -auto-cd -buffer-name=vimfiler<CR>
 nnoremap <silent> <Leader>p  :<C-u>VimFiler -project  -auto-cd -buffer-name=vimfiler<CR>
 
-" vimshell
-" 后面根据需要再映射 当前目录，buffer目录等
-" nnoremap <silent> <Leader>sp   :<C-u>:VimShell -project<CR>
-" nnoremap <silent> <Leader>sc   :<C-u>:VimShellCurrentDir<CR>
-command! -complete=command S VimShellCurrentDir -buffer-name=sss
-
 " fugitive
 nnoremap <silent> gs  :<C-u>Gstatus<CR>
 nnoremap <silent> gh  :<C-u>Gpush<CR>
@@ -392,7 +401,8 @@ map <Leader><Bslash> gc
 nmap <Leader><Space> gcc
 
 " choosewin -------------------
-nmap  -  <Plug>(choosewin)
+" ctrl加-
+nmap   <Plug>(choosewin)
 
 " 将词移到右边（交换两个词的位置）
 nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>:nohlsearch<CR>
@@ -410,7 +420,11 @@ vnoremap <Leader>t :Tabularize /
 vnoremap <Leader><Space> :Tabularize /<Bar><cr>
 
 " 切换查找高亮
-noremap <C-h> :set hls!<CR>
+nnoremap <F3> :set hls!<CR>
+
+" 左右移屏
+nnoremap <c-h> zh
+nnoremap <c-l> zl
 
 " 查看oldfiles
 " noremap <Leader>o :browse old<cr>
