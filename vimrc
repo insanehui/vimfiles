@@ -56,6 +56,7 @@ Plugin 'amerlyq/nou.vim'
 " Plugin 'vimoutliner/vimoutliner'
 Plugin 'insanehui/vimoutliner'
 Plugin 'utl.vim'
+let g:utl_cfg_hdl_mt_text_html='VIM'
 
 " 每次保存都要弹出一个cmd框，故去掉
 " Plugin 'mhinz/vim-signify'
