@@ -4,3 +4,15 @@ function! s:my_settings() "{{{
 	$0
 endfunction "}}}
 endsnippet
+
+# 覆盖snipmate的版本
+snippet aug "augroup ... autocmd block" b
+augroup ${1:AU_NAME}
+	" this one is which you're most likely to use?
+	autocmd ${2:BufRead,BufNewFile} ${3:*.ext,*.ext3|<buffer[=N]>} ${0}
+augroup end
+endsnippet
+
+snippet au "autocmd" b
+autocmd ${2:BufRead,BufNewFile} ${3:*.ext,*.ext3|<buffer[=N]>} ${0}
+endsnippet

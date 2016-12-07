@@ -214,10 +214,6 @@ set smartcase
 set incsearch
 set shiftround
 
-" 自动CD到当前目录
-" set autochdir
-autocmd BufEnter * silent! lcd %:p:h
-
 " 显示坐标、当前位置百分比
 set ruler
 " 切换buffer不需要保存
@@ -296,8 +292,10 @@ endf
 
 " }}}
 
-"{{{ 自动最大化 
-" 全屏函数（for Linux）
+"{{{ 自动命令 ======================================
+"
+" 全屏 -------------------------------------
+" （for Linux）
 " fun! ToggleFullscreen()
 "     call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
 " endf
@@ -306,9 +304,17 @@ fun! Maximize() "for Windows
     call system("nircmdc win max class Vim")
 endf
 autocmd GUIEnter * call Maximize()
-"}}}
 
-" au FileType go nmap <leader>b <Plug>(go-build)
+" 自动CD到当前目录 --------------------------
+" set autochdir
+autocmd BufEnter * silent! lcd %:p:h
+
+" 自动保存和加载view
+autocmd BufRead *.otl loadview
+autocmd BufWritePost *.otl mkview
+" autocmd FileType help echo 'haha'
+
+"}}}
 
 "{{{ 全局命令
 

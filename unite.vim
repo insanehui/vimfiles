@@ -12,12 +12,15 @@ function! s:unite_my_settings() "{{{
     nmap <buffer> <Esc> <Plug>(unite_exit)
 
     " 数字键快速选择
-    " 注：
     nmap <buffer> ,1 1G<cr>
     nmap <buffer> ,2 2G<cr>
     nmap <buffer> ,3 3G<cr>
     nmap <buffer> ,4 4G<cr>
-    
+    nmap <buffer> ,5 5G<cr>
+    nmap <buffer> ,6 6G<cr>
+    nmap <buffer> ,7 7G<cr>
+    nmap <buffer> ,8 8G<cr>
+    nmap <buffer> ,9 9G<cr>
 
     " 预览功能开关
     nmap <buffer> <C-p>     <Plug>(unite_toggle_auto_preview)
