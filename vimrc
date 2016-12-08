@@ -317,7 +317,7 @@ autocmd BufWritePost *.otl mkview
 
 
 " 如果是index.js, 定义快速拷贝到playground目录的快捷键
-autocmd BufRead index.js nnoremap <buffer> <s-cr> :call system('xcopy ' . expand('%:p:h') . '\*.* ' . expand('~/tmp') . ' /e /y')<cr>
+autocmd BufRead index.js nnoremap <buffer> <s-cr> :call system('xcopy ' . expand('%:p:h') . '\*.* ' . expand('~/react_playground/src') . ' /e /y')<cr>
 
 "}}}
 
