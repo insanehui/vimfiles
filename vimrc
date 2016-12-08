@@ -315,6 +315,10 @@ autocmd BufRead *.otl loadview
 autocmd BufWritePost *.otl mkview
 " autocmd FileType help echo 'haha'
 
+
+" 如果是index.js, 定义快速拷贝到playground目录的快捷键
+autocmd BufRead index.js nnoremap <buffer> <s-cr> :call system('xcopy ' . expand('%:p:h') . '\*.* ' . expand('~/tmp') . ' /e /y')<cr>
+
 "}}}
 
 "{{{ 全局命令
@@ -366,6 +370,12 @@ command! -complete=command S VimShellCurrentDir -buffer-name=sss
 " 非全局的快捷键建议放在对应插件的文件中
 " 注：可以用来作leader的按键有：
 " <Bslash>, <bspace>, F1~F12, -, <tab>, <Enter>等
+
+" 体验一下用jk来代替<esc>
+" 好像在ex command中这样映射会有问题，所以只映射插入模式
+" 但好像jk不能体验<esc>那种强迫症的狂按的感觉，想想还是取消吧
+" imap <esc> <Nop>
+" inoremap jk <esc>
 
 " 对于一些使用到 localleader 的插件，比如vimoutliner, 暂时将leader定为","
 let maplocalleader=','
