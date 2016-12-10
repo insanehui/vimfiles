@@ -358,6 +358,10 @@ command! -complete=command Sc so $MYVIMRC
 " ultisnips
 command! -complete=command Use UltiSnipsEdit
 
+" 切换到QQBrowser
+command! -complete=command Qb call vimproc#system("nircmdc win activate class 'QQBrowser_WidgetWin_1'") | call vimproc#system("nircmdc win max class 'QQBrowser_WidgetWin_1'")
+
+
 " vimshell
 " 后面根据需要再映射 当前目录，buffer目录等
 " nnoremap <silent> <Leader>sp   :<C-u>:VimShell -project<CR>
