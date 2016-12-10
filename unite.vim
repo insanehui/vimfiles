@@ -1,6 +1,10 @@
-" 据说这个函数可以设置一些统一的配置，no-split不管用？
+
+" 默认开启insert mode. 会影响所有sources
+" 所以暂时不需要，仅用于演示配置的方法
+" 这个 unite#custom#profile 可以设置很多东西，详见帮助
+"
 " call unite#custom#profile('default', 'context', {
-" \   'no-split': 1,
+" \   'start_insert' : 1
 " \ })
 
 autocmd FileType unite call s:unite_my_settings()
