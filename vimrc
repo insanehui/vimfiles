@@ -403,11 +403,11 @@ nnoremap <silent> <Leader>b :BufExplorer<CR>
 " unite
 " nnoremap <silent> <Leader>f  :<C-u>Unite -vertical-preview -no-split file<CR>
 " bookmark可以指定多个收藏夹，缺省为default。暂时用一个default够用
-nnoremap <silent> <Leader>m  :<C-u>Unite -vertical-preview -no-split bookmark<CR>
+nnoremap <silent> <Leader>m  :<C-u>Unite -vertical-preview -no-split -default-action=vimfiler bookmark<CR>
 nnoremap <silent> <Leader>x  :<C-u>Unite -vertical-preview -no-split -start-insert everything<CR>
 nnoremap <silent> <Leader>o  :<C-u>Unite -vertical-preview -no-split file_mru<CR>
 nnoremap <silent> <space>    :<C-u>Unite -vertical-preview -no-split -start-insert line<CR>
-nnoremap <silent> <Leader>d  :<C-u>Unite -buffer-name=directory -no-split -start-insert -default-action=vimshell neomru/directory<CR>
+nnoremap <silent> <Leader>d  :<C-u>Unite -buffer-name=directory -no-split -start-insert -default-action=vimfiler neomru/directory<CR>
 " unite还提供了vimgrep, 但功能好像跟这个类似
 nnoremap <silent> <Leader>g  :<C-u>Unite -vertical-preview -no-split grep<CR><CR>
 
