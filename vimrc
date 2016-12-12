@@ -91,7 +91,10 @@ let g:go_def_mode = 'godef'
 
 "{{{ snippets
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+
+" snips太多不方便管理，这个库仅供参考，自己的snips自己维护更好
+" Plugin 'honza/vim-snippets'
+
 let g:UltiSnipsJumpForwardTrigger        = "<c-k>"
 let g:UltiSnipsJumpBackwardTrigger       = "<c-j>"
 
