@@ -1,3 +1,30 @@
+snippet index "init a index file" b
+import React, { Component } from 'react';
+import { render } from 'react-dom'
+
+function App(props) {
+	return <h1>
+		Haha {props.name}
+	</h1>
+}
+
+render(<App/>, document.getElementById('root'))
+endsnippet
+
+snippet cmp "init a component file" b
+import React, { Component } from 'react';
+import Radium from 'radium';
+
+class ${1:Test} extends Component {
+	render() {
+		return ${2:<div>${3:test}</div>}
+	}
+}
+
+export default Radium($1);
+
+endsnippet
+
 snippet rcc "react create class" b
 const ${1:X} = React.createClass({
 	render(){
@@ -9,7 +36,7 @@ const ${1:X} = React.createClass({
 endsnippet
 
 snippet crc "class extends react component" b
-class ${1:X} extends React.Component {
+class ${1:X} extends Component {
 	render() {
 		return <div>${0:Test}</div>
 	}
@@ -19,4 +46,5 @@ endsnippet
 snippet /x "comments in jsx" 
 {/* $0 */}
 endsnippet
+
 
