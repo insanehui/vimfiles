@@ -1,14 +1,11 @@
 snippet index "init a index file" b
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom'
 
-function App(props) {
-	return <h1>
-		Haha {props.name}
-	</h1>
-}
+import App from './App.js'
 
-render(<App/>, document.getElementById('root'))
+render(<App />, document.getElementById('root'))
+
 endsnippet
 
 snippet cmp "init a component file" b
