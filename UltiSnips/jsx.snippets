@@ -1,5 +1,63 @@
+# 自己常用的 js snips 都放这里，实际上不再区分jsx
+
+# ------------ console调试相关 ---------------------
+snippet cg "console.group" b
+console.group("${1:label}");
+${VISUAL}$0
+console.groupEnd();
+endsnippet
+
+snippet cl "console.log" b
+console.log(${1:"${2:value}"});
+endsnippet
+
+# ----------- 函数 --------------
+
+snippet fun "普通函数" b
+function ${1:function_name}(${2:argument}) {
+	${VISUAL}$0
+}
+
+endsnippet
+
+snippet (f "自调用函数、闭包调用" b
+(function(${1}) {
+	${0}
+}(${2}));
+
+endsnippet
+
+snippet {f "类成员方法" b
+${1:name}(${2:arg}) {
+	$0
+}
+
+endsnippet
+
+# ------------------------------------
+
+snippet if "if语句" b
+if ( ${1:con} ) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet p "this.props" b
+let p = this.props
+$0
+endsnippet
+
+snippet s "this.state" b
+let s = this.state
+$0
+endsnippet
+
+snippet ss "this.setState" b
+this.setState({ $0 })
+endsnippet
+
 snippet index "init a index file" b
-import React from 'react';
+import React from 'react'
 import { render } from 'react-dom'
 
 import App from './App.js'
@@ -9,8 +67,12 @@ render(<App />, document.getElementById('root'))
 endsnippet
 
 snippet cmp "init a component file" b
-import React, { Component } from 'react';
-import Radium from 'radium';
+import React, { Component } from 'react'
+import Radium from 'radium'
+import { } from './utils/cssobj.js'
+
+const S = {
+}
 
 class ${1:Test} extends Component {
 	render() {
@@ -18,7 +80,10 @@ class ${1:Test} extends Component {
 	}
 }
 
-export default Radium($1);
+$1.protoTypes = {
+}
+
+export default Radium($1)
 
 endsnippet
 
@@ -44,4 +109,39 @@ snippet /x "comments in jsx"
 {/* $0 */}
 endsnippet
 
+snippet =x "jsx里属性赋值" w
+${1:attr}={${2:val}} 
+endsnippet
+
+snippet bind "用于事件响应函数的bind" w
+this.${1:method}.bind(this${2:, arg})
+endsnippet
+
+snippet Tab_trigger "Description" b
+
+endsnippet
+
+# ----------- 导出 -------------
+snippet exf "导出函数" b
+export function ${1:func_name}(${2:arg}){
+	$0
+}
+endsnippet
+
+# ------------------- 导入 -----------------------
+snippet imp "import" b
+import $1 from '$0'
+endsnippet
+
+snippet hotkeys "react-hotkeys" b
+import {HotKeys} from 'react-hotkeys'
+endsnippet
+
+snippet css "cssobj.js" b
+import {${1:ptr}} from './utils/cssobj.js'
+endsnippet
+
+snippet _ "lodash" b
+import _ from 'lodash'
+endsnippet
 
