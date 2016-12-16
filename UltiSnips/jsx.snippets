@@ -1,6 +1,7 @@
 # 自己常用的 js snips 都放这里，实际上不再区分jsx
 
 # ------------ console调试相关 ---------------------
+
 snippet cg "console.group" b
 console.group("${1:label}");
 ${VISUAL}$0
@@ -11,16 +12,63 @@ snippet cl "console.log" b
 console.log(${1:"${2:value}"});
 endsnippet
 
+# ------------------ 常用流程 ------------------
+
+snippet if "if语句" w
+if ( ${1:con} ) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet if" "if 判断字符串" w
+if ( ${1:v} === '${2:str}' ) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet null "判断是否为null" w
+if ( ${1:!}_.isNull(${2:${VISUAL}}) ) {
+	$0
+}
+endsnippet
+
+snippet undef "判断是否为undefined" w
+if ( ${1:!}_.isUndefined(${2:${VISUAL}}) ) {
+	$0
+}
+endsnippet
+
+snippet num "判断是否为number" w
+if ( ${1:!}_.isNumber(${2:${VISUAL}}) ) {
+	$0
+}
+endsnippet
+
+snippet forofa "for ... of array" b
+for (let ${1:i} of ${2:arr}) {
+	${3:console.log($1)}
+}
+endsnippet
+
+# ------------ 对象 -------------
+
+snippet :o "增加一个属性，该属性是个对象" b
+${1:key} : {
+	$0
+},
+
+endsnippet
+
 # ----------- 函数 --------------
 
-snippet fun "普通函数" b
+snippet fun "普通函数" w
 function ${1:function_name}(${2:argument}) {
 	${VISUAL}$0
 }
 
 endsnippet
 
-snippet (f "自调用函数、闭包调用" b
+snippet (f "自调用函数、闭包调用" w
 (function(${1}) {
 	${0}
 }(${2}));
@@ -34,13 +82,7 @@ ${1:name}(${2:arg}) {
 
 endsnippet
 
-# ------------------------------------
-
-snippet if "if语句" b
-if ( ${1:con} ) {
-	${0:${VISUAL}}
-}
-endsnippet
+# ----------- react ---------------
 
 snippet p "this.props" b
 let p = this.props
@@ -68,11 +110,10 @@ endsnippet
 
 snippet cmp "init a component file" b
 import React, { Component } from 'react'
-import Radium from 'radium'
-import { } from './utils/cssobj.js'
+import { css } from './utils/cssobj.js'
 
-const S = {
-}
+const S = css({
+})
 
 class ${1:Test} extends Component {
 	render() {
@@ -83,8 +124,23 @@ class ${1:Test} extends Component {
 $1.protoTypes = {
 }
 
-export default Radium($1)
+export default $1
 
+endsnippet
+
+snippet ct "构造函数constructor" b
+constructor(p) {
+	super(p)
+
+	this.state = {}
+}
+$0
+endsnippet
+
+snippet wrp "componentWillReceiveProps" b
+componentWillReceiveProps(np) {
+}
+$0
 endsnippet
 
 snippet rcc "react create class" b
@@ -105,6 +161,16 @@ class ${1:X} extends Component {
 }
 endsnippet
 
+snippet bind "用于事件响应函数的bind" w
+this.${1:method}.bind(this${2:, arg})
+endsnippet
+
+# -------------- jsx内部 ------------------
+
+snippet t "jsx" b
+<$1>$0</$1>
+endsnippet
+
 snippet /x "comments in jsx" 
 {/* $0 */}
 endsnippet
@@ -113,19 +179,16 @@ snippet =x "jsx里属性赋值" w
 ${1:attr}={${2:val}} 
 endsnippet
 
-snippet bind "用于事件响应函数的bind" w
-this.${1:method}.bind(this${2:, arg})
-endsnippet
-
-snippet Tab_trigger "Description" b
-
+snippet .= "className=" w
+className={${1:cx(${2:cls}${3:, \{ ${4:key} : ${5:con} \}})}}
 endsnippet
 
 # ----------- 导出 -------------
-snippet exf "导出函数" b
+snippet ef "导出函数" b
 export function ${1:func_name}(${2:arg}){
 	$0
 }
+
 endsnippet
 
 # ------------------- 导入 -----------------------
@@ -145,3 +208,6 @@ snippet _ "lodash" b
 import _ from 'lodash'
 endsnippet
 
+snippet cx "classnames" b
+import cx from 'classnames'
+endsnippet
