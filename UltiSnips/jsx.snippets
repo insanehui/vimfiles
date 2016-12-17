@@ -3,13 +3,13 @@
 # ------------ console调试相关 ---------------------
 
 snippet cg "console.group" b
-console.group("${1:label}");
+console.group("${1:label}")
 ${VISUAL}$0
-console.groupEnd();
+console.groupEnd()
 endsnippet
 
 snippet cl "console.log" b
-console.log(${1:"${2:value}"});
+console.log(${1:"${2:value}"${3:, $2}})
 endsnippet
 
 # ------------------ 常用流程 ------------------
@@ -71,7 +71,7 @@ endsnippet
 snippet (f "自调用函数、闭包调用" w
 (function(${1}) {
 	${0}
-}(${2}));
+}(${2}))
 
 endsnippet
 
@@ -167,8 +167,8 @@ endsnippet
 
 # -------------- jsx内部 ------------------
 
-snippet t "jsx" b
-<$1>$0</$1>
+snippet t "jsx" w
+<$1>${0:${VISUAL}}</$1>
 endsnippet
 
 snippet /x "comments in jsx" 
