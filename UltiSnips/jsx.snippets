@@ -44,19 +44,50 @@ if ( ${1:!}_.isNumber(${2:${VISUAL}}) ) {
 }
 endsnippet
 
-snippet forofa "for ... of array" b
+snippet obj "判断是否为obj" w
+if ( ${1:!}_.isObject(${2:${VISUAL}}) ) {
+	$0
+}
+endsnippet
+
+snippet forof[ "for ... of array" b
 for (let ${1:i} of ${2:arr}) {
 	${3:console.log($1)}
 }
 endsnippet
 
-# ------------ 对象 -------------
+snippet _.map "_.map" w
+_.map(${1:${VISUAL}}, (${2:item}, ${3:i} ) => {
+	$0
+})
+endsnippet
 
-snippet :o "增加一个属性，该属性是个对象" b
+# ------------ 对象、数组内部 -------------
+
+snippet : "增加一个普通属性" b
+${1:key} : ${2:val},
+endsnippet
+
+snippet :{ "增加一个属性，该属性是个对象" b
 ${1:key} : {
 	$0
 },
+endsnippet
 
+snippet :[ "增加一个数组属性" b
+${1:key} : [
+	$0
+],
+endsnippet
+
+snippet :' "增加一个字符串属性" b
+${1:key} : '${2:val}',
+endsnippet
+
+snippet {, "增加一个数组元素，该元素是一个对象" b
+{
+	$0
+},
 endsnippet
 
 # ----------- 函数 --------------
@@ -73,6 +104,12 @@ snippet (f "自调用函数、闭包调用" w
 	${0}
 }(${2}))
 
+endsnippet
+
+snippet (f) "闭包" w
+(()=>{
+	return ${1:${VISUAL}}
+})()
 endsnippet
 
 snippet {f "类成员方法" b
@@ -109,11 +146,7 @@ render(<App />, document.getElementById('root'))
 endsnippet
 
 snippet cmp "init a component file" b
-import React, { Component } from 'react'
-import { css } from './utils/cssobj.js'
-
-const S = css({
-})
+import React, { Component, PropTypes } from 'react'
 
 class ${1:Test} extends Component {
 	render() {
@@ -121,7 +154,8 @@ class ${1:Test} extends Component {
 	}
 }
 
-$1.protoTypes = {
+let { number } = PropTypes
+$1.propTypes = {
 }
 
 export default $1
@@ -165,18 +199,26 @@ snippet bind "用于事件响应函数的bind" w
 this.${1:method}.bind(this${2:, arg})
 endsnippet
 
+snippet isr "isRequired" w
+isRequired
+endsnippet
+
 # -------------- jsx内部 ------------------
 
-snippet t "jsx" w
+snippet < "jsx" w
 <$1>${0:${VISUAL}}</$1>
+endsnippet
+
+snippet </ "<xxx />" w
+<$1 />
 endsnippet
 
 snippet /x "comments in jsx" 
 {/* $0 */}
 endsnippet
 
-snippet =x "jsx里属性赋值" w
-${1:attr}={${2:val}} 
+snippet ={ "jsx里属性赋值" w
+${1:attr}={${2:val}} $0
 endsnippet
 
 snippet .= "className=" w
@@ -184,11 +226,26 @@ className={${1:cx(${2:cls}${3:, \{ ${4:key} : ${5:con} \}})}}
 endsnippet
 
 # ----------- 导出 -------------
+
+snippet ed "export default" b
+export default $0
+endsnippet
+
+snippet ed{ "export default { ... }" b
+export default { $0 }
+endsnippet
+
 snippet ef "导出函数" b
 export function ${1:func_name}(${2:arg}){
 	$0
 }
 
+endsnippet
+
+snippet e{ "导出对象" b
+export const ${1:obj} = {
+	$0
+}
 endsnippet
 
 # ------------------- 导入 -----------------------
@@ -201,7 +258,11 @@ import {HotKeys} from 'react-hotkeys'
 endsnippet
 
 snippet css "cssobj.js" b
-import {${1:ptr}} from './utils/cssobj.js'
+import {${1:css}} from './utils/cssobj.js'
+
+const S = css({
+})
+
 endsnippet
 
 snippet _ "lodash" b
