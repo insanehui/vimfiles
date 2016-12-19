@@ -9,10 +9,14 @@ console.groupEnd()
 endsnippet
 
 snippet cl "console.log" b
-console.log(${1:"${2:value}"${3:, $2}})
+console.log(${1:"${2:value}"${3:, ${4:$2}}})
 endsnippet
 
 # ------------------ 常用流程 ------------------
+
+snippet con "const声明" w
+const ${1:name} = ${2:${VISUAL}}
+endsnippet
 
 snippet if "if语句" w
 if ( ${1:con} ) {
@@ -65,7 +69,7 @@ endsnippet
 # ------------ 对象、数组内部 -------------
 
 snippet : "增加一个普通属性" b
-${1:key} : ${2:val},
+${1:key} : ${2:val}, $0
 endsnippet
 
 snippet :{ "增加一个属性，该属性是个对象" b
@@ -90,6 +94,12 @@ snippet {, "增加一个数组元素，该元素是一个对象" b
 },
 endsnippet
 
+snippet :f "增加一个函数成员" b
+${1:key} : ()=>{
+	$0
+},
+endsnippet
+
 # ----------- 函数 --------------
 
 snippet fun "普通函数" w
@@ -103,6 +113,10 @@ snippet f( "匿名函数" w
 (${2:argument}) => {
 	${VISUAL}$0
 }
+endsnippet
+
+snippet f() "同一行内的匿名函数" w
+(${2:argument}) => {${VISUAL}$0}
 endsnippet
 
 snippet (f "自调用函数、闭包调用" w
@@ -125,16 +139,21 @@ ${1:name}(${2:arg}) {
 
 endsnippet
 
+# ----------- eslint ---------------
+
+snippet lintpascal "忽略pascal的要求" b
+/* eslint-disable react/jsx-pascal-case */
+endsnippet
+
 # ----------- react ---------------
 
 snippet p "this.props" b
-let p = this.props
+const p = this.props
 $0
 endsnippet
 
 snippet s "this.state" b
-let s = this.state
-$0
+const s = this.state $0
 endsnippet
 
 snippet ss "this.setState" b
@@ -160,7 +179,7 @@ class ${1:Test} extends Component {
 	}
 }
 
-let { number } = PropTypes
+const { number } = PropTypes
 $1.propTypes = {
 }
 
@@ -193,7 +212,7 @@ const ${1:X} = React.createClass({
 })
 endsnippet
 
-snippet crc "class extends react component" b
+snippet cc "class extends react component" b
 class ${1:X} extends Component {
 	render() {
 		return <div>${0:Test}</div>
@@ -205,25 +224,45 @@ snippet bind "用于事件响应函数的bind" w
 this.${1:method}.bind(this${2:, arg})
 endsnippet
 
+snippet cbind "在构造函数中的手动bind" b
+this.${1:method} = this.$1.bind(this)
+endsnippet
+
 snippet isr "isRequired" w
 isRequired
 endsnippet
 
+snippet pt "引入PropTypes" b
+const { ${1:number} } = React.PropTypes
+endsnippet
+
+snippet pt= "设置propTypes" b
+${1:Component}.propTypes = {
+	$0
+}
+endsnippet
+
 # -------------- jsx内部 ------------------
 
-snippet < "jsx" w
+snippet < "换行的jsx" w
+<$1>
+	${0:${VISUAL}}
+</$1>
+endsnippet
+
+snippet <> "jsx" w
 <$1>${0:${VISUAL}}</$1>
 endsnippet
 
-snippet </ "<xxx />" w
+snippet << "<xxx />" w
 <$1 />
 endsnippet
 
-snippet /x "comments in jsx" 
-{/* $0 */}
+snippet {/ "jsx注释" 
+{/* ${1:${VISUAL}} */}
 endsnippet
 
-snippet ={ "jsx里属性赋值" w
+snippet =x "jsx里属性赋值" w
 ${1:attr}={${2:val}} $0
 endsnippet
 
@@ -277,4 +316,12 @@ endsnippet
 
 snippet cx "classnames" b
 import cx from 'classnames'
+endsnippet
+
+snippet immu "immutable" b
+import Immu from 'immutable'
+endsnippet
+
+snippet uuid "uuid" b
+import uuid from 'uuid/v1' $0
 endsnippet
