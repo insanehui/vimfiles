@@ -391,6 +391,7 @@ command! -complete=command S VimShellCurrentDir -buffer-name=sss
 let maplocalleader=','
 
 " 用于vimoutliner ------------------------------
+" TODO: 可以优化成自动加上时间
 nmap ,x ,cb,cx
 
 

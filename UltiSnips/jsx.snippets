@@ -8,7 +8,7 @@ ${VISUAL}$0
 console.groupEnd()
 endsnippet
 
-snippet cl "console.log" b
+snippet cl "console.log" w
 console.log(${1:"${2:value}"${3:, ${4:$2}}})
 endsnippet
 
@@ -18,22 +18,32 @@ snippet con "const声明" w
 const ${1:name} = ${2:${VISUAL}}
 endsnippet
 
-snippet if "if语句" w
-if ( ${1:con} ) {
-	${0:${VISUAL}}
-}
+snippet let "let声明" w
+let ${1:name} = ${2:${VISUAL}}
 endsnippet
 
-snippet if" "if 判断字符串" w
+snippet if "if语句" w
+if ( ${1:con} ) {
+	${2:${VISUAL}}
+} $0
+endsnippet
+
+snippet ifs "if 判断字符串" w
 if ( ${1:v} === '${2:str}' ) {
-	${0:${VISUAL}}
+	${3:${VISUAL}}
+}$0
+endsnippet
+
+snippet else "else" w
+else {
+	$0
 }
 endsnippet
 
 snippet null "判断是否为null" w
 if ( ${1:!}_.isNull(${2:${VISUAL}}) ) {
-	$0
-}
+	$3
+}$0
 endsnippet
 
 snippet undef "判断是否为undefined" w
@@ -148,8 +158,7 @@ endsnippet
 # ----------- react ---------------
 
 snippet p "this.props" b
-const p = this.props
-$0
+const p = this.props $0
 endsnippet
 
 snippet s "this.state" b
@@ -228,6 +237,10 @@ snippet cbind "在构造函数中的手动bind" b
 this.${1:method} = this.$1.bind(this)
 endsnippet
 
+snippet bbind "bind方法赋给同名属性" w
+${1:attr}={this.${2:$1}.bind(this)} $0
+endsnippet
+
 snippet isr "isRequired" w
 isRequired
 endsnippet
@@ -240,6 +253,27 @@ snippet pt= "设置propTypes" b
 ${1:Component}.propTypes = {
 	$0
 }
+endsnippet
+
+# -------------- immutable相关 ------------------
+
+snippet iset "immu set" w
+${1:v} = $1.set('${2:key}', ${3:$2})$0
+endsnippet
+
+snippet iget "immu get" w
+${1:v}.get('${3:key}')$0
+endsnippet
+
+snippet idel "immu del" w
+${1:v} = $1.delete(${3:'${4:key}'})$0
+endsnippet
+
+# -------------- redux ------------------
+snippet df "inject a dispatch to props" b
+${1:name}(${2:args}){
+	d({ type: '${3:$1}', ${4:$2}})
+},$0
 endsnippet
 
 # -------------- jsx内部 ------------------
@@ -266,8 +300,8 @@ snippet =x "jsx里属性赋值" w
 ${1:attr}={${2:val}} $0
 endsnippet
 
-snippet .= "className=" w
-className={${1:cx(${2:cls}${3:, \{ ${4:key} : ${5:con} \}})}}
+snippet clsn "className=" w
+className={${1:cx(${2:cls}${3:, \{ ${4:key} : ${5:con} \}})}} $0
 endsnippet
 
 # ----------- 导出 -------------
