@@ -14,6 +14,10 @@ endsnippet
 
 # ------------------ 常用流程 ------------------
 
+snippet /* "块注释" w
+/* $1 */$0
+endsnippet
+
 snippet con "const声明" w
 const ${1:name} = ${2:${VISUAL}}
 endsnippet
@@ -78,17 +82,27 @@ endsnippet
 
 # ------------ 对象、数组内部 -------------
 
+snippet oo "对象化" w
+{ 
+	${1:key} : ${2:${VISUAL}},
+}$0
+endsnippet
+
+snippet ooo "行内对象化" w
+{ ${1:key} : ${2:${VISUAL}}, }$0
+endsnippet
+
 snippet : "增加一个普通属性" b
 ${1:key} : ${2:val}, $0
 endsnippet
 
-snippet :{ "增加一个属性，该属性是个对象" b
+snippet :o "增加一个属性，该属性是个对象" b
 ${1:key} : {
 	$0
 },
 endsnippet
 
-snippet :[ "增加一个数组属性" b
+snippet :a "增加一个数组属性" b
 ${1:key} : [
 	$0
 ],
@@ -155,6 +169,10 @@ snippet lintpascal "忽略pascal的要求" b
 /* eslint-disable react/jsx-pascal-case */
 endsnippet
 
+snippet nolint "对下一行不检查" b
+// eslint-disable-next-line
+endsnippet
+
 # ----------- react ---------------
 
 snippet p "this.props" b
@@ -207,8 +225,14 @@ endsnippet
 
 snippet wrp "componentWillReceiveProps" b
 componentWillReceiveProps(np) {
-}
-$0
+	$1
+}$0
+endsnippet
+
+snippet dm "componentDidMount" b
+componentDidMount(){
+	$1
+}$0
 endsnippet
 
 snippet rcc "react create class" b
