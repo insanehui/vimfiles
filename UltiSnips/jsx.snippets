@@ -74,8 +74,14 @@ for (let ${1:i} of ${2:arr}) {
 }
 endsnippet
 
-snippet _.map "_.map" w
-_.map(${1:${VISUAL}}, (${2:item}, ${3:i} ) => {
+snippet map "map" w
+map(${1:${VISUAL}}, (${2:item}, ${3:i} ) => {
+	$0
+})
+endsnippet
+
+snippet each "each" w
+each(${1:datas}, (${2:v}, ${3:i} ) => {
 	$0
 })
 endsnippet
@@ -92,7 +98,7 @@ snippet ooo "行内对象化" w
 { ${1:key} : ${2:${VISUAL}}, }$0
 endsnippet
 
-snippet : "增加一个普通属性" b
+snippet : "增加一个普通属性" w
 ${1:key} : ${2:val}, $0
 endsnippet
 
@@ -108,7 +114,7 @@ ${1:key} : [
 ],
 endsnippet
 
-snippet :' "增加一个字符串属性" b
+snippet :' "增加一个字符串属性" w
 ${1:key} : '${2:val}',
 endsnippet
 
@@ -117,6 +123,11 @@ snippet {, "增加一个数组元素，该元素是一个对象" b
 	$0
 },
 endsnippet
+
+snippet {}, "增加一个数组元素，该元素是一个对象，行内" w
+{ ${1:${VISUAL}} },$0
+endsnippet
+
 
 snippet :f "增加一个函数成员" b
 ${1:key} : ()=>{
@@ -383,3 +394,12 @@ endsnippet
 snippet uuid "uuid" b
 import uuid from 'uuid/v1' $0
 endsnippet
+
+snippet radium "radium" b
+import Radium from 'radium'$0
+endsnippet
+
+snippet modash "modash" b
+import {${1:test,}} from './utils/modash.js'$0
+endsnippet
+
