@@ -154,14 +154,7 @@ snippet f() "同一行内的匿名函数" w
 (${2:argument}) => {${VISUAL}$0}
 endsnippet
 
-snippet (f "自调用函数、闭包调用" w
-(function(${1}) {
-	${0}
-}(${2}))
-
-endsnippet
-
-snippet (f) "闭包" w
+snippet (f "闭包" w
 (()=>{
 	return ${1:${VISUAL}}
 })()
@@ -196,6 +189,10 @@ endsnippet
 
 snippet ss "this.setState" b
 this.setState({ $0 })
+endsnippet
+
+snippet st "style=..." w
+style={${1:\{$2\}}} $0
 endsnippet
 
 snippet index "init a index file" b
@@ -290,6 +287,37 @@ ${1:Component}.propTypes = {
 }
 endsnippet
 
+# ----------- redux ---------------
+
+snippet rcmp "redux component" b
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux'
+
+class ${1:ComponentName} extends PureComponent {
+
+	render() {
+		return <div>
+		</div>
+	}
+}
+
+const sm = (s) => {
+	return {
+	}
+}
+
+const dm = (d) => {
+	return {
+		some_action(){
+			// d({ type: 'some_action', })
+		},
+	}
+}
+
+export default connect(sm, dm)($1)
+
+endsnippet
+
 # -------------- immutable相关 ------------------
 
 snippet iset "immu set" w
@@ -372,10 +400,7 @@ import {HotKeys} from 'react-hotkeys'
 endsnippet
 
 snippet css "cssobj.js" b
-import {${1:css}} from './utils/cssobj.js'
-
-const S = css({
-})
+import {${1:w}} from './utils/cssobj.js'
 
 endsnippet
 
