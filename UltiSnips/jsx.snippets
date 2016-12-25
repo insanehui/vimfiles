@@ -128,13 +128,6 @@ snippet {}, "增加一个数组元素，该元素是一个对象，行内" w
 { ${1:${VISUAL}} },$0
 endsnippet
 
-
-snippet :f "增加一个函数成员" b
-${1:key} : ()=>{
-	$0
-},
-endsnippet
-
 # ----------- 函数 --------------
 
 snippet fun "普通函数" w
@@ -162,9 +155,8 @@ endsnippet
 
 snippet {f "类成员方法" b
 ${1:name}(${2:arg}) {
-	$0
-}
-
+	$3
+}$0
 endsnippet
 
 # ----------- eslint ---------------
@@ -216,6 +208,12 @@ class ${1:Test} extends PureComponent {
 
 export default $1
 
+endsnippet
+
+snippet fcmp "函数来表示一个对象" w
+function ${1:Name}(p){
+	return $2
+} $0
 endsnippet
 
 snippet ct "构造函数constructor" b
