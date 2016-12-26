@@ -20,9 +20,21 @@ snippet "I "import utils io" !b
 ${1:I} "utils/io"
 endsnippet
 
-# 导入yaml
+# -------------- 导入 -----------------------------
 snippet "yaml "import yaml" !b
 "github.com/ghodss/yaml"
+endsnippet
+
+snippet "U "自己的utils" b
+U "utils"
+endsnippet
+
+snippet "validator "govalidator" b
+V "github.com/asaskevich/govalidator"
+endsnippet
+
+snippet "J "自己的json utils" b
+J "utils/json"
 endsnippet
 
 snippet "stdout "import log to stdout" !b
@@ -71,6 +83,25 @@ func ${2:NewFunc}(w http.ResponseWriter, r *http.Request) {
 
 	H.JsonDo(w, r, &q, &ret, func() {
 		${0}
+	})
+
+}
+endsnippet
+
+snippet rhfj "httprouter的json func" b
+func ${1:NewFunc}(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+
+	// 传入参数
+	var q struct {
+	}
+
+	// 返回
+	var ret struct {
+		Err
+		// Data interface{} \`json:"data"\`
+	}
+
+	H.JsonDo(w, r, &q, &ret, func() {
 	})
 
 }

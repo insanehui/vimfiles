@@ -128,6 +128,12 @@ snippet {}, "增加一个数组元素，该元素是一个对象，行内" w
 { ${1:${VISUAL}} },$0
 endsnippet
 
+snippet :f "函数作为成员" b
+${1:name}(${2:arg}) {
+	$3
+},$0
+endsnippet
+
 # ----------- 函数 --------------
 
 snippet fun "普通函数" w
@@ -310,6 +316,12 @@ const dm = (d) => {
 
 export default connect(sm, dm)($1)
 
+endsnippet
+
+snippet thunk "生成一个thunk" w
+(d${1:, getState}) => {
+	${2:const s = getState()}
+}$0
 endsnippet
 
 # -------------- immutable相关 ------------------
