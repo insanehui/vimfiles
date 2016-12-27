@@ -319,9 +319,18 @@ autocmd BufWritePost *.otl mkview
 " autocmd FileType help echo 'haha'
 
 
-" 如果是index.js, 定义快速拷贝到playground目录的快捷键
-autocmd BufRead index.js nnoremap <buffer> <s-cr> :call system('xcopy ' . expand('%:p:h') . '\*.* ' . expand('~/react_playground/src') . ' /e /y')<cr>
-
+" 如果是index.js，定义一些快捷命令
+function! IndexJsCopy() 
+    call system('xcopy ' . expand('%:p:h') . '\*.* ' . expand('~/react_playground/src') . ' /e /y')
+endfunction
+function! IndexJsBuild() 
+    call IndexJsCopy()
+    execute ('!cd ' . expand('~/react_playground/src') . '&& npm run build ')
+endfunction
+" 快速拷贝到playground目录的快捷键
+autocmd BufRead index.js nnoremap <buffer> <s-cr> :call IndexJsCopy()<cr>
+" 编译快捷键，与go的保持一致
+autocmd BufRead index.js nnoremap <buffer> ,b :call IndexJsBuild()<cr>
 "}}}
 
 "{{{ 全局命令
