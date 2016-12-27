@@ -32,7 +32,13 @@ if ( ${1:con} ) {
 } $0
 endsnippet
 
-snippet ifs "if 判断字符串" w
+snippet if1 "if语句" w
+if ( ${1:val} === $2 ) {
+	${3:${VISUAL}}
+} $0
+endsnippet
+
+snippet if' "if 判断字符串" w
 if ( ${1:v} === '${2:str}' ) {
 	${3:${VISUAL}}
 }$0
@@ -243,6 +249,12 @@ componentDidMount(){
 }$0
 endsnippet
 
+snippet cwum "componentWillUnmout" b
+componentWillUnmount(){
+	$1
+}$0
+endsnippet
+
 snippet rcc "react create class" b
 const ${1:X} = React.createClass({
 	render(){
@@ -343,6 +355,13 @@ snippet df "inject a dispatch to props" b
 ${1:name}(${2:args}){
 	d({ type: '${3:$1}', ${4:$2}})
 },$0
+endsnippet
+
+snippet rdc "reducer" b
+// ！！记得加到reducer_table里面！！！
+function ${1:name}(s${2:, a}) {
+	return s
+}
 endsnippet
 
 # -------------- jsx内部 ------------------
