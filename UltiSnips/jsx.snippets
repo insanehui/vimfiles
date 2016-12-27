@@ -231,13 +231,13 @@ constructor(p) {
 $0
 endsnippet
 
-snippet wrp "componentWillReceiveProps" b
+snippet cwrp "componentWillReceiveProps" b
 componentWillReceiveProps(np) {
 	$1
 }$0
 endsnippet
 
-snippet dm "componentDidMount" b
+snippet cdm "componentDidMount" b
 componentDidMount(){
 	$1
 }$0
@@ -407,7 +407,12 @@ endsnippet
 
 snippet css "cssobj.js" b
 import {${1:w}} from './utils/cssobj.js'
+endsnippet
 
+snippet jss "定义jss对象" b
+const C = css({
+	$1
+})$0
 endsnippet
 
 snippet _ "lodash" b
