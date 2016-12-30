@@ -1,3 +1,18 @@
+snippet html5 "html5 init" b
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>${1:Test}</title>
+		${2:link}
+	</head>
+	<body>
+		${0:body}
+	</body>
+</html>
+endsnippet
+
 snippet span. "<span> with class" w
 <span`!p snip.rv=' class="' if t[1] else ""`${1:name}`!p snip.rv = '"' if t[1] else ""`>${0:${VISUAL}}</span>
 endsnippet

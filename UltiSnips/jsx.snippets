@@ -92,6 +92,12 @@ each(${1:datas}, (${2:v}, ${3:i} ) => {
 })
 endsnippet
 
+snippet try "try catch" b
+try {
+	${1:${VISUAL}}
+} catch(e) {$2}$0
+endsnippet
+
 # ------------ 对象、数组内部 -------------
 
 snippet oo "对象化" w
@@ -443,7 +449,7 @@ import cx from 'classnames'
 endsnippet
 
 snippet immu "immutable" b
-import Immu from 'immutable'
+import ${1:\{Map as IMap\}} from 'immutable'
 endsnippet
 
 snippet uuid "uuid" b
@@ -458,3 +464,6 @@ snippet modash "modash" b
 import {${1:test,}} from './utils/modash.js'$0
 endsnippet
 
+snippet form_encode "form_encode" b
+import form_encode from 'form-urlencoded'
+endsnippet
