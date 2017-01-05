@@ -261,6 +261,13 @@ componentWillUnmount(){
 }$0
 endsnippet
 
+snippet gdp "getDefaultProps" b
+getDefaultProps() {
+	return $1
+}
+$0
+endsnippet
+
 snippet rcc "react create class" b
 const ${1:X} = React.createClass({
 	render(){
@@ -374,8 +381,8 @@ endsnippet
 
 snippet < "换行的jsx" w
 <$1>
-	${0:${VISUAL}}
-</$1>
+	${2:${VISUAL}}
+</$1>$0
 endsnippet
 
 snippet <> "jsx" w
@@ -400,6 +407,10 @@ endsnippet
 
 # ----------- 导出 -------------
 
+snippet exp "export" b
+export const ${1:name} = ${2:value}
+endsnippet
+
 snippet ed "export default" b
 export default $0
 endsnippet
@@ -412,7 +423,10 @@ snippet ef "导出函数" b
 export function ${1:name}(${2:arg}){
 	$0
 }
+endsnippet
 
+snippet e' "export string" b
+export const ${1:name} = '$2' $0
 endsnippet
 
 snippet e{ "导出对象" b
