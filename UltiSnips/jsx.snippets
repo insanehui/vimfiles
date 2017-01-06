@@ -68,6 +68,12 @@ if ( ${1:!}_.isNumber(${2:${VISUAL}}) ) {
 }
 endsnippet
 
+snippet str "判断是否为string" w
+if ( ${1:!}_.isString(${2:${VISUAL}}) ) {
+	$0
+}
+endsnippet
+
 snippet obj "判断是否为obj" w
 if ( ${1:!}_.isObject(${2:${VISUAL}}) ) {
 	$0
@@ -88,6 +94,12 @@ endsnippet
 
 snippet each "each" w
 each(${1:datas}, (${2:v}, ${3:i} ) => {
+	$0
+})
+endsnippet
+
+snippet forEach "forEach，用于Immutable" w
+forEach((${1:v}, ${2:i}) => {
 	$0
 })
 endsnippet
@@ -197,6 +209,10 @@ snippet s "this.state" b
 const s = this.state $0
 endsnippet
 
+snippet r "refs" b
+const r = this.refs$0
+endsnippet
+
 snippet ss "this.setState" b
 this.setState({ $0 })
 endsnippet
@@ -255,17 +271,16 @@ componentDidMount(){
 }$0
 endsnippet
 
-snippet cwum "componentWillUnmout" b
-componentWillUnmount(){
+snippet cdu "componentDidUpdate" b
+componentDidUpdate(pp, ps, pc){
 	$1
 }$0
 endsnippet
 
-snippet gdp "getDefaultProps" b
-getDefaultProps() {
-	return $1
-}
-$0
+snippet cwum "componentWillUnmout" b
+componentWillUnmount(){
+	$1
+}$0
 endsnippet
 
 snippet rcc "react create class" b
@@ -375,6 +390,7 @@ snippet rdc "reducer" b
 function ${1:name}(s${2:, a}) {
 	return s
 }
+$0
 endsnippet
 
 # -------------- jsx内部 ------------------
@@ -448,6 +464,10 @@ snippet css "cssobj.js" b
 import {${1:w}} from './utils/cssobj.js'
 endsnippet
 
+snippet editable "Editable" b
+import Editable from './utils/components/Editable.js'
+endsnippet
+
 snippet jss "定义jss对象" b
 const C = css({
 	$1
@@ -480,4 +500,8 @@ endsnippet
 
 snippet form_encode "form_encode" b
 import form_encode from 'form-urlencoded'
+endsnippet
+
+snippet yaml "yaml" b
+import yaml from 'js-yaml'
 endsnippet
