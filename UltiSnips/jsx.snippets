@@ -189,6 +189,14 @@ ${1:name}(${2:arg}) {
 }$0
 endsnippet
 
+# ----------- promise --------------
+
+snippet then "promise.then" w
+then(${1:res} => {
+	$0
+})
+endsnippet
+
 # ----------- eslint ---------------
 
 snippet lintpascal "忽略pascal的要求" b
@@ -409,8 +417,10 @@ snippet << "<xxx />" w
 <$1 />
 endsnippet
 
-snippet {/ "jsx注释" 
-{/* ${1:${VISUAL}} */}
+snippet /x "jsx注释" 
+{/*
+${1:${VISUAL}}
+*/}
 endsnippet
 
 snippet =x "jsx里属性赋值" w
