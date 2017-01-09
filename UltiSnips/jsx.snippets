@@ -12,6 +12,10 @@ snippet cl "console.log" w
 console.log(${1:"${2:value}"${3:, ${4:$2}}})
 endsnippet
 
+snippet ce "console.error" w
+console.error(${1:"${2:value}"${3:, ${4:$2}}})
+endsnippet
+
 # ------------------ 常用流程 ------------------
 
 snippet /* "块注释" w
@@ -379,7 +383,7 @@ ${1:v} = $1.set('${2:key}', ${3:$2})$0
 endsnippet
 
 snippet iget "immu get" w
-${1:v}.get('${3:key}')$0
+${1:v}.get(${2:'${3:key}'})$0
 endsnippet
 
 snippet idel "immu del" w
@@ -514,4 +518,8 @@ endsnippet
 
 snippet yaml "yaml" b
 import yaml from 'js-yaml'
+endsnippet
+
+snippet iframe "iframe" b
+import { get_parent_url } from './utils/iframe.js'
 endsnippet
