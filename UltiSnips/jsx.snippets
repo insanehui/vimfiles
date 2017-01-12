@@ -524,8 +524,17 @@ snippet iframe "iframe" b
 import { get_parent_url } from './utils/iframe.js'
 endsnippet
 
+snippet V "<V />组件" b
+import V from './utils/components/V.js'
+endsnippet
+
+snippet Div "<Div />组件" b
+import Div from './utils/components/Div.js'
+endsnippet
+
 # ------------------- 常用组件 -----------------------
 
 snippet <Editable "Editable" w
 <Editable ${1:value=\{$2\}}${3: onDone=\{\}}${4: is_editing}${5: multiline} />
 endsnippet
+
