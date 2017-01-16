@@ -1,0 +1,8 @@
+snippet pause "智能pause" b
+:: 智能pause
+@setlocal enableextensions enabledelayedexpansion
+set cmdname=%0
+if not x%cmdname::\=% == x%cmdname% (
+	pause
+)
+endsnippet
