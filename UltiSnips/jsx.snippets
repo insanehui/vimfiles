@@ -91,7 +91,7 @@ for (let ${1:i} of ${2:arr}) {
 endsnippet
 
 snippet map "map" w
-map(${1:${VISUAL}}, (${2:item}, ${3:i} ) => {
+map(${1:${2:name}, }(${3:item}, ${4:i} ) => {
 	$0
 })
 endsnippet
@@ -431,6 +431,11 @@ snippet =x "jsx里属性赋值" w
 ${1:attr}={${2:val}} $0
 endsnippet
 
+# 同=x
+snippet ={ "jsx里属性赋值" w
+${1:attr}={${2:val}} $0
+endsnippet
+
 snippet clsn "className=" w
 className={${1:cx(${2:cls}${3:, \{ ${4:key} : ${5:con} \}})}} $0
 endsnippet
@@ -524,6 +529,13 @@ snippet iframe "iframe" b
 import { get_parent_url } from './utils/iframe.js'
 endsnippet
 
+snippet H "<H />" b
+import H from './utils/components/H.js'
+endsnippet
+
+snippet V "<V />" b
+import V from './utils/components/V.js'
+endsnippet
 # ------------------- 常用组件 -----------------------
 
 snippet <Editable "Editable" w
