@@ -566,7 +566,27 @@ snippet Select "react-select组件" b
 <Select value="one" options={options} onChange={logChange} name={} />
 endsnippet
 
+snippet modal "react-modal" b
+import Modal from 'react-modal'
+endsnippet
+
+snippet Modal "react-modal组件" b
+<Modal
+	isOpen={}
+	style={}
+	contentLabel="Example Modal"
+	onAfterOpen={}
+	onRequestClose={}
+>
+	$0
+</Modal>
+endsnippet
+
 # ------------------- 常用组件 -----------------------
+
+snippet button "button" w
+<button onClick={null}>${1:Btn}</button>
+endsnippet
 
 snippet <Editable "Editable" w
 <Editable ${1:value=\{$2\}}${3: onDone=\{\}}${4: is_editing}${5: multiline} />
