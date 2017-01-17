@@ -370,11 +370,44 @@ command! -complete=command Sc so $MYVIMRC
 " ultisnips
 command! -complete=command Use UltiSnipsEdit
 
+function! SwitchWindowByClass(name) " {{{ 根据窗口类切换windows的窗口
+    call vimproc#system("nircmdc win activate class " . a:name)
+    call vimproc#system("nircmdc win max class " . a:name)
+endfunction
+" }}}
+
+function! SwitchWindowByName(name) " {{{ 根据进程名切换windows的窗口
+    call vimproc#system("nircmdc win activate process " . a:name)
+    call vimproc#system("nircmdc win max process " . a:name)
+endfunction
+" }}}
+"
+function! SwitchWindowById(name) " {{{ 根据窗口id切换windows的窗口
+    call vimproc#system("nircmdc win activate class " . a:name)
+    call vimproc#system("nircmdc win max class " . a:name)
+endfunction
+" }}}
+
+function! SwitchWindowByHandle(h) " {{{ 根据窗口句柄切换windows的窗口
+    " 注：h是变量的名字，还不代表变量的值（相当于"指针"的"指针"的关系）
+    " 故用exe来得到真正传入的变量
+    execute 'let handle_name=g:' . a:h 
+    " echo handle_name
+    call vimproc#system("nircmdc win activate handle 0x" . handle_name)
+    " call vimproc#system("nircmdc win max class " . a:name)
+endfunction
+" }}}
+
 " 切换到QQBrowser
-command! -complete=command Qb call vimproc#system("nircmdc win activate class 'QQBrowser_WidgetWin_1'") | call vimproc#system("nircmdc win max class 'QQBrowser_WidgetWin_1'")
+command! -complete=command Qb call SwitchWindowByClass('QQBrowser_WidgetWin_1')
 
 " 切换到chrome
-command! -complete=command Cr call vimproc#system("nircmdc win activate class 'Chrome_WidgetWin_1'") | call vimproc#system("nircmdc win max class 'Chrome_WidgetWin_1'")
+command! -complete=command Cr call SwitchWindowByName('chrome.exe')
+
+" 用法示例：let app='000A0324' 这里是用工具查到其句柄
+" :W app
+" 则切换到app对应的窗口，这对同时打开多个同类型的窗口（比如终端界面）时比较有用
+command! -nargs=+ -complete=command W call SwitchWindowByHandle(<q-args>)
 
 
 " vimshell
