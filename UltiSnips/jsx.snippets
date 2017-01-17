@@ -381,9 +381,9 @@ export default connect(sm, dm)($1)
 endsnippet
 
 snippet thunk "生成一个thunk" w
-(d${1:, getState}) => {
+d((d${1:, getState}) => {
 	${2:const s = getState()}
-}$0
+})$0
 endsnippet
 
 # -------------- immutable相关 ------------------
