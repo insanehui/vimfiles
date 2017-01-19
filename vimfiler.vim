@@ -12,6 +12,9 @@ call vimfiler#custom#profile('default', 'context', {
 autocmd FileType vimfiler call s:my_settings()
 function! s:my_settings() "{{{
 
+    " 可以循环搜索
+    setlocal wrapscan
+
     " 默认快捷键
     " 上一级    <Bspace>
     " 新建目录  K
