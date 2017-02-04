@@ -417,6 +417,7 @@ command! -complete=command Cr call SwitchWindowByName('chrome.exe')
 " :W app
 " 则切换到app对应的窗口，这对同时打开多个同类型的窗口（比如终端界面）时比较有用
 command! -nargs=+ -complete=command W call SwitchWindowByHandle(<q-args>)
+command! -nargs=+ -complete=command T call SwitchWindowByTitle(<q-args>)
 
 
 " vimshell
