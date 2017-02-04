@@ -15,6 +15,9 @@ if !has('win32')
     set rtp+=~/vimfiles
 endif
 
+" set rtp+=C:\Users\guanghui\Desktop\vim_json_test
+set rtp+=~/Desktop/vim_json_test
+
 " vundle用let来代替set rtp，见下：
 " 参考自：https://github.com/VundleVim/Vundle.vim/wiki/Tips-and-Tricks 
 " let win_shell = (has('win32') || has('win64')) && &shellcmdflag =~ '/'
@@ -140,7 +143,7 @@ let g:neocomplete#enable_at_startup = 1
 "{{{ 前端 
 Plugin 'pangloss/vim-javascript'
 Plugin 'maksimr/vim-jsbeautify'
-Plugin 'elzr/vim-json'
+" Plugin 'elzr/vim-json'
 
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
@@ -381,10 +384,16 @@ function! SwitchWindowByName(name) " {{{ 根据进程名切换windows的窗口
     call vimproc#system("nircmdc win max process " . a:name)
 endfunction
 " }}}
-"
+
 function! SwitchWindowById(name) " {{{ 根据窗口id切换windows的窗口
     call vimproc#system("nircmdc win activate class " . a:name)
     call vimproc#system("nircmdc win max class " . a:name)
+endfunction
+" }}}
+
+function! SwitchWindowByTitle(name) " {{{ 根据窗口标题切换windows的窗口
+    call vimproc#system("nircmdc win activate ititle " . a:name)
+    call vimproc#system("nircmdc win max ititle " . a:name)
 endfunction
 " }}}
 
@@ -414,7 +423,7 @@ command! -nargs=+ -complete=command W call SwitchWindowByHandle(<q-args>)
 " 后面根据需要再映射 当前目录，buffer目录等
 " nnoremap <silent> <Leader>sp   :<C-u>:VimShell -project<CR>
 " nnoremap <silent> <Leader>sc   :<C-u>:VimShellCurrentDir<CR>
-command! -complete=command S VimShellCurrentDir -buffer-name=sss
+" command! -complete=command S VimShellCurrentDir -buffer-name=sss
 
 "}}}
 
