@@ -15,9 +15,6 @@ if !has('win32')
     set rtp+=~/vimfiles
 endif
 
-" set rtp+=C:\Users\guanghui\Desktop\vim_json_test
-set rtp+=~/Desktop/vim_json_test
-
 " vundle用let来代替set rtp，见下：
 " 参考自：https://github.com/VundleVim/Vundle.vim/wiki/Tips-and-Tricks 
 " let win_shell = (has('win32') || has('win64')) && &shellcmdflag =~ '/'
@@ -143,7 +140,7 @@ let g:neocomplete#enable_at_startup = 1
 "{{{ 前端 
 Plugin 'pangloss/vim-javascript'
 Plugin 'maksimr/vim-jsbeautify'
-" Plugin 'elzr/vim-json'
+Plugin 'elzr/vim-json'
 
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
