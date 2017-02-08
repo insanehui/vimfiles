@@ -591,6 +591,7 @@ endsnippet
 snippet CodeMirror "code mirror组件" w
 <CodeMirror value={} onChange={new_txt=>{}} options={{mode:'yaml', lineNumbers:true}} />
 endsnippet
+
 # ------------------- 常用组件 -----------------------
 
 snippet button "button" w
@@ -603,5 +604,30 @@ endsnippet
 
 snippet checkbox "checkbox" b
 <input type='checkbox' checked={$1} onChange={} />
+endsnippet
+
+# ------------------- Jest测试 -----------------------
+
+snippet test "一个Jest的testing case" b
+test('${1:desc}', () => {
+	$0
+})
+endsnippet
+
+snippet tobe "expect(...).toBe(...)" b
+expect($1).toBe($2)
+endsnippet
+
+snippet test_table "使用用例表格来进行测试" b
+test('${1:desc}', () => {
+	const tb = [
+		$0
+	]
+
+	for (let i of tb) {
+		let [ret, ...para ] = i
+		expect(${2:$1}(...para)).${3:toBe}(ret)
+	}
+})
 endsnippet
 
