@@ -186,8 +186,8 @@ snippet f() "同一行内的匿名函数" w
 endsnippet
 
 snippet (f "闭包" w
-(()=>{
-	return ${1:${VISUAL}}
+(x=>{
+	${1:return ${2:${VISUAL}}}
 })()
 endsnippet
 
@@ -580,6 +580,33 @@ snippet Modal "react-modal组件" b
 >
 	$0
 </Modal>
+endsnippet
+
+# 还不完善，后续再补充了
+snippet {modal "react-modal一系列配套的东西" b
+onCustom() {
+	this.setState({ ${1:custom_modal}:true })
+}
+
+offCustom() { // 关闭对话框，之所有不命名为close，是为了与onCustom对应
+	this.setState({ ${1:custom_modal} : false })
+}
+
+CustomDlg() { // 自定义组件的弹出框。由于写在render里不支持代码折叠
+	const s = this.state 
+	return <Modal
+		isOpen={s.${1:custom_modal}}
+		style={{
+		content: {
+			...dlg,
+		}
+		}}
+		contentLabel="custom modal"
+		onRequestClose={this.offCustom}
+	>
+		haha
+	</Modal>
+}
 endsnippet
 
 snippet codemirror "react-codemirror" b
