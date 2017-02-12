@@ -1,7 +1,3 @@
-snippet cb "new check box" b
-[_] ${1:todo}
-endsnippet
-
 snippet utf "filet link" 
 <url:./filets/$0>
 endsnippet
@@ -12,5 +8,21 @@ endsnippet
 
 snippet uth "utl vimhelp" 
 <url:vimhelp:${1:help}>
+endsnippet
+
+snippet uti "utl set id"
+<?utl:id=$0?>
+endsnippet
+
+snippet utr "utl id"
+<url:#r=$0>
+endsnippet
+
+snippet utl "utl's url"
+<url:${0:${VISUAL}}>
+endsnippet
+
+snippet utv "utl vimscript" 
+<url:vimscript:${0:ls}>
 endsnippet
 

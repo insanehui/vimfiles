@@ -229,7 +229,7 @@ snippet r "refs" b
 const r = this.refs$0
 endsnippet
 
-snippet ss "this.setState" b
+snippet ss "this.setState" w
 this.setState({ $0 })
 endsnippet
 
@@ -349,6 +349,14 @@ static defaultProps = {
 }
 endsnippet
 
+snippet ps "设置p->s模式" b
+componentWillReceiveProps(np) {
+	this.setState({ ...np })
+	在构造函数里：
+	this.state = {...p}
+}
+endsnippet
+
 # ----------- redux ---------------
 
 snippet rcmp "redux component" b
@@ -386,21 +394,6 @@ d((d${1:, getState}) => {
 })$0
 endsnippet
 
-# -------------- immutable相关 ------------------
-
-snippet iset "immu set" w
-${1:v} = $1.set('${2:key}', ${3:$2})$0
-endsnippet
-
-snippet iget "immu get" w
-${1:v}.get(${2:'${3:key}'})$0
-endsnippet
-
-snippet idel "immu del" w
-${1:v} = $1.delete(${3:'${4:key}'})$0
-endsnippet
-
-# -------------- redux ------------------
 snippet df "inject a dispatch to props" b
 ${1:name}(${2:args}){
 	d({ type: '${3:$1}', ${4:$2}})
@@ -413,6 +406,43 @@ function ${1:name}(s${2:, a}) {
 	return s
 }
 $0
+endsnippet
+
+# -------------- freezer ------------------
+
+snippet freezer "导入freezer" b
+import Freezer from 'freezer-js'
+endsnippet
+
+snippet freezers "freezer的片段代码" b
+constructor(p) {
+	super(p)
+
+	this.store = new Freezer(p)
+	this.store.on('update', x=>{ this.forceUpdate() })
+}
+
+componentWillReceiveProps(np) {
+	this.store.set(new Freezer(np).get()) // p->s模式
+}
+endsnippet
+
+snippet frs "freezer模式下的state" b
+const s = this.store.get()
+endsnippet
+
+# -------------- immutable相关 ------------------
+
+snippet iset "immu set" w
+${1:v} = $1.set('${2:key}', ${3:$2})$0
+endsnippet
+
+snippet iget "immu get" w
+${1:v}.get(${2:'${3:key}'})$0
+endsnippet
+
+snippet idel "immu del" w
+${1:v} = $1.delete(${3:'${4:key}'})$0
 endsnippet
 
 # -------------- jsx内部 ------------------
