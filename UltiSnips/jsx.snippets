@@ -678,7 +678,7 @@ endsnippet
 snippet test_table "使用用例表格来进行测试" b
 test('${1:desc}', () => {
 	const tb = [
-		$0
+		$0 // 第一个值是返回，后面是参数系列
 	]
 
 	for (let i of tb) {
