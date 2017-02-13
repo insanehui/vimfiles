@@ -592,8 +592,12 @@ import Select from 'react-select'
 import 'react-select/dist/react-select.css'
 endsnippet
 
-snippet Select "react-select组件" b
-<Select value="one" options={options} onChange={logChange} name={} />
+snippet Select "react-select组件" w
+<Select value="one" options={[
+{
+	value : 'asp', 
+	label : 'Asp.net',
+},]} onChange={val=>{}} name={} />
 endsnippet
 
 snippet modal "react-modal" b
@@ -655,7 +659,7 @@ snippet button "button" w
 <button onClick={null}>${1:Btn}</button>
 endsnippet
 
-snippet <Editable "Editable" w
+snippet Editable "Editable" w
 <Editable ${1:value=\{$2\}}${3: onDone=\{\}}${4: is_editing}${5: multiline} />
 endsnippet
 
