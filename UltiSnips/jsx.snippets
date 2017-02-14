@@ -401,7 +401,7 @@ ${1:name}(${2:args}){
 endsnippet
 
 snippet rdc "reducer" b
-// ！！记得加到reducer_table里面！！！
+！！记得加到reducer_table里面！！！
 function ${1:name}(s${2:, a}) {
 	return s
 }
@@ -618,25 +618,30 @@ endsnippet
 
 # 还不完善，后续再补充了
 snippet {modal "react-modal一系列配套的东西" b
-onCustom() {
-	this.setState({ ${1:custom_modal}:true })
+open${1:Dlg}() {
+	this.setState({ ${2:dlg_on}:true })
 }
 
-offCustom() { // 关闭对话框，之所有不命名为close，是为了与onCustom对应
-	this.setState({ ${1:custom_modal} : false })
+以下加到state
+	$2 : false,
+以下加到render
+	{this.$1()}
+
+close$1() { 
+	this.setState({ $2 : false })
 }
 
-CustomDlg() { // 自定义组件的弹出框。由于写在render里不支持代码折叠
+$1() { 
 	const s = this.state 
 	return <Modal
-		isOpen={s.${1:custom_modal}}
+		isOpen={s.$2}
 		style={{
 		content: {
 			...dlg,
 		}
 		}}
-		contentLabel="custom modal"
-		onRequestClose={this.offCustom}
+		contentLabel="$1"
+		onRequestClose={this.close$1.bind(this)}
 	>
 		haha
 	</Modal>
