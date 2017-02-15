@@ -37,6 +37,10 @@ snippet J "自己的json utils" b
 J "utils/json"
 endsnippet
 
+snippet H "http utils" b
+H "utils/http"
+endsnippet
+
 snippet logstdout "import log to stdout" !b
 _ "utils/log/stdout"
 endsnippet
@@ -122,3 +126,6 @@ snippet lp "log.Println"
 log.Println(${0:${VISUAL}})
 endsnippet
 
+snippet utr "用utl来run当前文件" w
+<url:vimscript:!go run % ${1:args}>
+endsnippet
