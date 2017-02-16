@@ -12,11 +12,18 @@ snippet cl "console.log" w
 console.log(${1:"${2:value}"${3:, ${4:$2}}})
 endsnippet
 
+snippet cl` "console.log(`...`)" w
+console.log(\`$1\`)
+endsnippet
+
 snippet ce "console.error" w
 console.error(${1:"${2:value}"${3:, ${4:$2}}})
 endsnippet
 
 # ------------------ 常用流程 ------------------
+snippet ${ "补全${ }" w
+${$1}
+endsnippet
 
 snippet /* "块注释" w
 /* $1 */$0

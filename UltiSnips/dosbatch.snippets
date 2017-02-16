@@ -6,3 +6,9 @@ if not x%cmdname::\=% == x%cmdname% (
 	pause
 )
 endsnippet
+
+snippet pkg "打包脚本片段" b
+set name=${1:xx.zip}
+DEL %name% /Q
+7z a -tzip %name% ${2:file1 file2}
+endsnippet
