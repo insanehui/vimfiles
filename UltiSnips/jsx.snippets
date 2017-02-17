@@ -131,6 +131,13 @@ class ${1:Name}${2: extends ${3:Base}} {
 }
 endsnippet
 
+snippet ct "类的构造函数" b
+constructor(p) {
+	${1:super(p)}
+	$0
+}
+endsnippet
+
 # ------------ 对象、数组内部 -------------
 
 snippet oo "对象化" w
