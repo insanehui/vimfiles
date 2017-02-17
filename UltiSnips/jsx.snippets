@@ -125,6 +125,12 @@ try {
 } catch(e) {$2}$0
 endsnippet
 
+snippet class "类" b
+class ${1:Name}${2: extends ${3:Base}} {
+	${4:meth}$0
+}
+endsnippet
+
 # ------------ 对象、数组内部 -------------
 
 snippet oo "对象化" w
@@ -204,6 +210,15 @@ ${1:name}(${2:arg}) {
 }$0
 endsnippet
 
+snippet meth "类成员方法，大致同{f，但可递归" b
+${1:name}(${2:arg}) {
+	$3
+}${4:
+
+meth}
+endsnippet
+
+
 # ----------- promise --------------
 
 snippet then "promise.then" w
@@ -273,7 +288,7 @@ function ${1:Name}(p){
 } $0
 endsnippet
 
-snippet ct "构造函数constructor" b
+snippet rct "React类的构造函数constructor" b
 constructor(p) {
 	super(p)
 
