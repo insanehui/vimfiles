@@ -545,6 +545,20 @@ export const ${1:obj} = {
 }
 endsnippet
 
+snippet ecmp "导出一个react组件，用在会导出多个组件的文件中" b
+export class ${1:Test} extends PureComponent {
+	render() {
+		return <div>test</div>
+	}
+}
+endsnippet
+
+snippet efcmp "导出一个函数形态的组件" b
+export function ${1:Name}(p){
+	return $2
+}
+endsnippet
+
 # ------------------- 导入 -----------------------
 snippet imp "import" b
 import $1 from '$0'
@@ -693,6 +707,14 @@ endsnippet
 
 snippet fetch "nodejs的node-fetch" b
 import fetch from 'node-fetch'
+endsnippet
+
+snippet css_reset "css reset" b
+import './utils/css_preset.js'
+endsnippet
+
+snippet theme_github "github theme" b
+import {${1:Input}} from './utils/components/ThemeGitHub.js'
 endsnippet
 
 # ------------------- 常用组件 -----------------------
