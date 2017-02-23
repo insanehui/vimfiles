@@ -289,6 +289,41 @@ export default $1
 
 endsnippet
 
+snippet gcctx "getChildContext" b
+getChildContext() {
+	return {$1}
+}
+endsnippet
+
+snippet cctxs "子组件context的一系列代码" b
+static contextTypes = {
+}
+endsnippet
+
+snippet pctxs "父组件context的一系列代码" b
+static childContextTypes = {
+}
+
+getChildContext() {
+	return {}
+}
+endsnippet
+
+snippet rpt "React.PropTypes." w
+React.PropTypes.${1:string}
+endsnippet
+
+snippet pscmp "ps形式的组件" b
+${1:import React from 'react'
+}${2:import {PS} from './utils.js'
+
+}${3:export }class ${4:Test} extends PS {
+	render() {
+		return <div><div/>
+	}
+}
+endsnippet
+
 snippet fcmp "函数来表示一个对象" w
 function ${1:Name}(p){
 	return $2
