@@ -464,12 +464,10 @@ ${1:name}(${2:args}){
 },$0
 endsnippet
 
-snippet rdc "reducer" b
-！！记得加到reducer_table里面！！！
-function ${1:name}(s${2:, a}) {
+snippet rdc "reducer，放到reducer_table里面" b
+${1:name}(s${2:, a}) {
 	return s
-}
-$0
+},
 endsnippet
 
 # -------------- freezer ------------------
