@@ -341,7 +341,7 @@ function! NodejsRun()
     " call system('cd ' . expand('~/node_playground/') . ' & babel-node ' . expand('%') . ' & pause') "这种方式无法显示输出并且与用户交互
     execute '!cd ' . expand('~/node_playground/') . ' & babel-node ' . expand('%')
 endfunction
-autocmd BufRead *.js nnoremap <buffer> <F5> :call NodejsRun()<cr>
+autocmd BufRead,BufNewFile *.js nnoremap <buffer> <F5> :call NodejsRun()<cr>
 
 "}}}
 
