@@ -323,14 +323,26 @@ autocmd BufWritePost *.otl mkview
 function! IndexJsCopy() 
     call system('xcopy ' . expand('%:p:h') . '\*.* ' . expand('~/react_playground/src') . ' /e /y')
 endfunction
-function! IndexJsBuild() 
-    call IndexJsCopy()
-    execute ('!cd ' . expand('~/react_playground/src') . '&& npm run build ')
-endfunction
 " 快速拷贝到playground目录的快捷键
 autocmd BufRead index.js nnoremap <buffer> <s-cr> :call IndexJsCopy()<cr>
+
+" function! IndexJsBuild() 
+"     call IndexJsCopy()
+"     execute ('!cd ' . expand('~/react_playground/src') . '&& npm run build ')
+" endfunction
 " 编译快捷键，与go的保持一致
-autocmd BufRead index.js nnoremap <buffer> ,b :call IndexJsBuild()<cr>
+" 暂时注释掉，因为通常build操作都由make脚本来完成
+" autocmd BufRead index.js nnoremap <buffer> ,b :call IndexJsBuild()<cr>
+
+function! NodejsRun() 
+    " 把当前文件拷到playground
+    call system('copy ' . expand('%') . ' ' . expand('~/node_playground/'))
+    " 执行babel-node
+    " call system('cd ' . expand('~/node_playground/') . ' & babel-node ' . expand('%') . ' & pause') "这种方式无法显示输出并且与用户交互
+    execute '!cd ' . expand('~/node_playground/') . ' & babel-node ' . expand('%')
+endfunction
+autocmd BufRead *.js nnoremap <buffer> <F5> :call NodejsRun()<cr>
+
 "}}}
 
 "{{{ 全局命令
