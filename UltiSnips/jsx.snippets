@@ -29,6 +29,13 @@ snippet /* "块注释" w
 /* $1 */$0
 endsnippet
 
+# 注：这里警告的空格是正确的
+snippet /// "多行/* */注释" w
+/*
+ * $1
+ */
+endsnippet
+
 snippet con "const声明" w
 const ${1:name} = ${2:${VISUAL}}
 endsnippet
