@@ -1,0 +1,26 @@
+# ------------------- Jest测试 -----------------------
+# 从jsx.snippets中分离出来。因为该文件已经越来越大难以维护
+
+snippet test "一个Jest的testing case" b
+test('${1:desc}', () => {
+	$0
+})
+endsnippet
+
+snippet tobe "expect(...).toBe(...)" b
+expect($1).toBe($2)
+endsnippet
+
+snippet test_table "使用用例表格来进行测试" b
+test('${1:desc}', () => {
+	const tb = [
+		$0 // 第一个值是返回，后面是参数系列
+	]
+
+	for (let i of tb) {
+		let [ret, ...para ] = i
+		expect(${2:$1}(...para)).${3:toBe}(ret)
+	}
+})
+endsnippet
+

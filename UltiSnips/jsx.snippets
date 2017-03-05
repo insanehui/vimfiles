@@ -1,5 +1,6 @@
 # 自己常用的 js snips 都放这里，实际上不再区分jsx
 
+extends jest
 # ------------ console调试相关 ---------------------
 
 snippet cg "console.group" b
@@ -764,30 +765,5 @@ endsnippet
 
 snippet checkbox "checkbox" b
 <input type='checkbox' checked={$1} onChange={} />
-endsnippet
-
-# ------------------- Jest测试 -----------------------
-
-snippet test "一个Jest的testing case" b
-test('${1:desc}', () => {
-	$0
-})
-endsnippet
-
-snippet tobe "expect(...).toBe(...)" b
-expect($1).toBe($2)
-endsnippet
-
-snippet test_table "使用用例表格来进行测试" b
-test('${1:desc}', () => {
-	const tb = [
-		$0 // 第一个值是返回，后面是参数系列
-	]
-
-	for (let i of tb) {
-		let [ret, ...para ] = i
-		expect(${2:$1}(...para)).${3:toBe}(ret)
-	}
-})
 endsnippet
 
