@@ -214,7 +214,7 @@ snippet f() "同一行内的匿名函数" w
 endsnippet
 
 snippet (f "闭包" w
-(x=>{
+;(x=>{
 	${1:return ${2:${VISUAL}}}
 })()
 endsnippet
@@ -765,5 +765,14 @@ endsnippet
 
 snippet checkbox "checkbox" b
 <input type='checkbox' checked={$1} onChange={} />
+endsnippet
+
+# ------------------- 测试代码 -----------------------
+snippet test_logs "收集测试用例的日志" b
+console.groupCollapsed && console.groupCollapsed('############ $1 #############') 
+console.info($2, JSON.stringify($2, null, '  '))
+
+console.info(ret, JSON.stringify(ret, null, '  '))
+console.groupEnd && console.groupEnd()
 endsnippet
 
