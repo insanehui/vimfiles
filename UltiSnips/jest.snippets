@@ -11,15 +11,18 @@ snippet tobe "expect(...).toBe(...)" b
 expect($1).toBe($2)
 endsnippet
 
-snippet test_table "使用用例表格来进行测试" b
+snippet jtest_table "使用用例表格来进行测试" b
 test('${1:desc}', () => {
 	const tb = [
-		$0 // 第一个值是返回，后面是参数系列
+		[$0],
 	]
 
 	for (let i of tb) {
-		let [ret, ...para ] = i
-		expect(${2:$1}(...para)).${3:toBe}(ret)
+		const para = _.initial(i)
+		const hope = _.last(i)
+		const fact = ${2:$1}(...para)
+
+		expect(fact).${3:toBe}(hope)
 	}
 })
 endsnippet

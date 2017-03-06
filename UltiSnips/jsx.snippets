@@ -776,3 +776,17 @@ console.info(ret, JSON.stringify(ret, null, '  '))
 console.groupEnd && console.groupEnd()
 endsnippet
 
+snippet test_table "测试表格逻辑" b
+const tb = [
+	[$0],
+]
+
+for (let i of tb) {
+	const para = _.initial(i)
+	const hope = _.last(i)
+	const fact = ${2:$1}(...para)
+
+	// expect(fact).${3:toBe}(hope)
+}
+endsnippet
+
