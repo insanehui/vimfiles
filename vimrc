@@ -343,6 +343,18 @@ function! NodejsRun()
 endfunction
 autocmd BufRead,BufNewFile *.js nnoremap <buffer> <F5> :call NodejsRun()<cr>
 
+" react的快速run
+function! ReactRunCopy() 
+endfunction
+function! ReactRun()
+    " 这是临时用法，后续完善起来
+    if getline(1) =~# '\<React\>'
+        nnoremap <buffer> <F6> :call system('copy ' . expand('%') . ' ' . expand('~/react_playground/src/index.js'))<cr>
+    endif
+endfun
+
+autocmd BufNewFile,BufRead *.js call ReactRun()
+
 "}}}
 
 "{{{ 全局命令
