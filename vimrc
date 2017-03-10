@@ -326,34 +326,42 @@ endfunction
 " 快速拷贝到playground目录的快捷键
 autocmd BufRead index.js nnoremap <buffer> <s-cr> :call IndexJsCopy()<cr>
 
+" 暂时注释掉，因为通常build操作都由make脚本来完成
 " function! IndexJsBuild() 
 "     call IndexJsCopy()
 "     execute ('!cd ' . expand('~/react_playground/src') . '&& npm run build ')
 " endfunction
 " 编译快捷键，与go的保持一致
-" 暂时注释掉，因为通常build操作都由make脚本来完成
 " autocmd BufRead index.js nnoremap <buffer> ,b :call IndexJsBuild()<cr>
 
-function! NodejsRun() 
+" nodejs快速执行一个文件
+function! NodeRunFile() 
     " 把当前文件拷到playground
     call system('copy ' . expand('%') . ' ' . expand('~/node_playground/'))
     " 执行babel-node
     " call system('cd ' . expand('~/node_playground/') . ' & babel-node ' . expand('%') . ' & pause') "这种方式无法显示输出并且与用户交互
     execute '!cd ' . expand('~/node_playground/') . ' & babel-node ' . expand('%')
 endfunction
-autocmd BufRead,BufNewFile *.js nnoremap <buffer> <F5> :call NodejsRun()<cr>
+autocmd BufRead,BufNewFile *.js nnoremap <buffer> <F5> :call NodeRunFile()<cr>
 
-" react的快速run
-function! ReactRunCopy() 
+" nodejs快速执行一个工程
+function! NodeRunProj() 
+    " 把当前文件拷到playground
+    call IndexJsCopy()
+    " 执行babel-node
+    execute '!cd ' . expand('~/react_playground/') . ' & babel-node ' . expand('%')
 endfunction
-function! ReactRun()
+autocmd BufRead,BufNewFile index.js nnoremap <buffer> <C-F5> :call NodeRunProj()<cr>
+
+" react快速执行一个文件
+function! ReactRunFile()
     " 这是临时用法，后续完善起来
     if getline(1) =~# '\<React\>'
         nnoremap <buffer> <F6> :call system('copy ' . expand('%') . ' ' . expand('~/react_playground/src/index.js'))<cr>
     endif
 endfun
 
-autocmd BufNewFile,BufRead *.js call ReactRun()
+autocmd BufNewFile,BufRead *.js call ReactRunFile()
 
 "}}}
 
