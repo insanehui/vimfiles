@@ -324,7 +324,7 @@ function! IndexJsCopy()
     call system('xcopy ' . expand('%:p:h') . '\*.* ' . expand('~/react_playground/src') . ' /e /y')
 endfunction
 " 快速拷贝到playground目录的快捷键
-autocmd BufRead index.js nnoremap <buffer> <s-cr> :call IndexJsCopy()<cr>
+autocmd BufRead,BufNewFile index.js nnoremap <buffer> <s-cr> :call IndexJsCopy()<cr>
 
 " 暂时注释掉，因为通常build操作都由make脚本来完成
 " function! IndexJsBuild() 
@@ -337,10 +337,10 @@ autocmd BufRead index.js nnoremap <buffer> <s-cr> :call IndexJsCopy()<cr>
 " nodejs快速执行一个文件
 function! NodeRunFile() 
     " 把当前文件拷到playground
-    call system('copy ' . expand('%') . ' ' . expand('~/node_playground/'))
+    call system('copy ' . expand('%') . ' ' . expand('~/react_playground/src/index.js'))
     " 执行babel-node
     " call system('cd ' . expand('~/node_playground/') . ' & babel-node ' . expand('%') . ' & pause') "这种方式无法显示输出并且与用户交互
-    execute '!cd ' . expand('~/node_playground/') . ' & babel-node ' . expand('%')
+    execute '!cd ' . expand('~/react_playground/') . ' & babel-node ' . expand('%')
 endfunction
 autocmd BufRead,BufNewFile *.js nnoremap <buffer> <F5> :call NodeRunFile()<cr>
 
