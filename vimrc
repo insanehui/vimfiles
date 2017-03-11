@@ -340,7 +340,7 @@ function! NodeRunFile()
     call system('copy ' . expand('%') . ' ' . expand('~/react_playground/src/index.js'))
     " 执行babel-node
     " call system('cd ' . expand('~/node_playground/') . ' & babel-node ' . expand('%') . ' & pause') "这种方式无法显示输出并且与用户交互
-    execute '!cd ' . expand('~/react_playground/') . ' & babel-node ' . expand('%')
+    execute '!cd ' . expand('~/react_playground/') . ' & babel-node .'
 endfunction
 autocmd BufRead,BufNewFile *.js nnoremap <buffer> <F5> :call NodeRunFile()<cr>
 
@@ -349,7 +349,7 @@ function! NodeRunProj()
     " 把当前文件拷到playground
     call IndexJsCopy()
     " 执行babel-node
-    execute '!cd ' . expand('~/react_playground/') . ' & babel-node ' . expand('%')
+    execute '!cd ' . expand('~/react_playground/') . ' & babel-node .'
 endfunction
 autocmd BufRead,BufNewFile index.js nnoremap <buffer> <C-F5> :call NodeRunProj()<cr>
 
