@@ -30,6 +30,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'godlygeek/tabular'
 Plugin 'jeetsukumaran/vim-indentwise'
+Plugin 'ekalinin/Dockerfile.vim'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
