@@ -219,6 +219,7 @@ set ignorecase
 set smartcase
 set incsearch
 set shiftround
+set guifont=fixedsys:h12 "设置字体大小
 
 " 显示坐标、当前位置百分比
 set ruler
