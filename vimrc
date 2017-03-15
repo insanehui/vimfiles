@@ -149,13 +149,14 @@ let g:jsx_ext_required = 0
 "}}}
 
 "{{{ 主题配色
+" 暂时注释了这些主题，因为目前使用的是~/vimfiles/colors/vs.vim
 
 " 大合集
-Plugin 'flazz/vim-colorschemes'
+" Plugin 'flazz/vim-colorschemes'
 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-Plugin 'phd'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'tomasr/molokai'
+" Plugin 'phd'
 "}}}
 
 "{{{ markdown预览的插件 
