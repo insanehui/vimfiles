@@ -340,10 +340,10 @@ autocmd BufRead,BufNewFile index.js nnoremap <buffer> <s-cr> :call IndexJsCopy()
 " nodejs快速执行一个文件
 function! NodeRunFile() 
     " 把当前文件拷到playground
-    call system('copy ' . expand('%') . ' ' . expand('~/react_playground/src/index.js'))
+    call system('copy ' . expand('%') . ' ' . expand('~/react_playground/src/'))
     " 执行babel-node
     " call system('cd ' . expand('~/node_playground/') . ' & babel-node ' . expand('%') . ' & pause') "这种方式无法显示输出并且与用户交互
-    execute '!cd ' . expand('~/react_playground/') . ' & babel-node .'
+    execute '!start cmd /k cd ' . expand('~/react_playground/') . ' & babel-node src/' . expand('%') . ' & pause'
 endfunction
 autocmd BufRead,BufNewFile *.js nnoremap <buffer> <F5> :call NodeRunFile()<cr>
 
