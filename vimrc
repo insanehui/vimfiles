@@ -343,9 +343,20 @@ function! NodeRunFile()
     call system('copy ' . expand('%') . ' ' . expand('~/react_playground/src/'))
     " 执行babel-node
     " call system('cd ' . expand('~/node_playground/') . ' & babel-node ' . expand('%') . ' & pause') "这种方式无法显示输出并且与用户交互
-    execute '!start cmd /k cd ' . expand('~/react_playground/') . ' & babel-node src/' . expand('%') . ' & pause'
+    execute '!start cmd /k cd ' . expand('~/react_playground/') . ' & babel-node src/' . expand('%')
 endfunction
 autocmd BufRead,BufNewFile *.js nnoremap <buffer> <F5> :call NodeRunFile()<cr>
+
+" nodejs快速执行一个文件带参数
+function! NodeRunFileWithArgs() 
+    " 把当前文件拷到playground
+    call system('copy ' . expand('%') . ' ' . expand('~/react_playground/src/'))
+    call inputsave()
+    let args = input('Enter args: ')
+    call inputrestore()
+    execute '!start cmd /k cd ' . expand('~/react_playground/') . ' & babel-node src/' . expand('%') . ' ' . args
+endfunction
+autocmd BufRead,BufNewFile *.js nnoremap <buffer> <S-F5> :call NodeRunFileWithArgs()<cr>
 
 " nodejs快速执行一个工程
 function! NodeRunProj() 
