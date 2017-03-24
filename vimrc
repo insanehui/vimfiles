@@ -334,7 +334,6 @@ autocmd BufRead,BufNewFile index.js nnoremap <buffer> <s-cr> :call IndexJsCopy()
 "     call IndexJsCopy()
 "     execute ('!cd ' . expand('~/react_playground/src') . '&& npm run build ')
 " endfunction
-" 编译快捷键，与go的保持一致
 " autocmd BufRead index.js nnoremap <buffer> ,b :call IndexJsBuild()<cr>
 
 " nodejs快速执行一个文件
