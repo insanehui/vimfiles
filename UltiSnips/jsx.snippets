@@ -103,8 +103,8 @@ if ( ${1:!}_.isObject(${2:${VISUAL}}) ) {
 }
 endsnippet
 
-snippet forof[ "for ... of array" b
-for (let ${1:i} of ${2:arr}) {
+snippet forof "for ... of array" b
+for (const ${1:i} of ${2:arr}) {
 	${3:console.log($1)}
 }
 endsnippet
