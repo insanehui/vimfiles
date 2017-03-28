@@ -557,6 +557,9 @@ noremap ge :call vimproc#system('explorer /select,' . substitute(expand('%:p'), 
 " 打开git bash
 noremap gb :call vimproc#system_bg('C:\\Program\ Files\\Git\\git-bash.exe --cd=' . substitute(expand('%:p:h'), '\\', '\\\\', 'g'))<cr>
 
+" 打开cmd
+noremap <Leader>c :execute '!start cmd /k cd ' . expand('%:p:h')<cr>
+
 "{{{ 切换字符编码
 function! ToggleEncoding()
     if &encoding == "utf-8"
