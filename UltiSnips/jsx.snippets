@@ -4,7 +4,7 @@ extends jest, node
 # ------------ console调试相关 ---------------------
 
 snippet cg "console.group" b
-console.group("${1:label}")
+console.groupCollapsed("${1:label}")
 ${VISUAL}$0
 console.groupEnd()
 endsnippet
