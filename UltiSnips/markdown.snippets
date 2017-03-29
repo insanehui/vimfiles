@@ -26,3 +26,35 @@ snippet composer_api "comoser api doc tpl" b
 }
 \`\`\`
 endsnippet
+
+snippet url "链接url"
+[${1:${VISUAL:Text}}](${3:http://${2:www.url.com}})$0
+endsnippet
+
+snippet t1 "Title 1" b
+${1:${VISUAL:title}}
+=====================================
+endsnippet
+
+snippet t2 "Title 2" b
+${1:${VISUAL:title}}
+-------------------------------------
+endsnippet
+
+snippet h1 "h1" b
+# ${1:title}
+endsnippet
+
+snippet h2 "h2" b
+## ${1:title}
+endsnippet
+
+snippet h3 "h3" b
+### ${1:title}
+endsnippet
+
+snippet block "block" b
+\`\`\`${1:filetype}
+${2:${VISUAL}}
+\`\`\`
+endsnippet

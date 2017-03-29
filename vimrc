@@ -161,7 +161,7 @@ let g:jsx_ext_required = 0
 
 "{{{ markdown预览的插件 
 Plugin 'iamcco/markdown-preview.vim'
-let g:mkdp_path_to_chrome = "C:/Program Files (x86)/Tencent/QQBrowser/QQBrowser.exe"
+let g:mkdp_path_to_chrome = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
 " 设置 chrome 浏览器的路径（或是启动 chrome（或其他现代浏览器）的命令）
 
 let g:mkdp_auto_start = 0
