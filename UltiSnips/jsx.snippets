@@ -218,9 +218,9 @@ snippet f() "同一行内的匿名函数" w
 endsnippet
 
 snippet (f "闭包" w
-${1:;}(x=>{
-	${2:return ${3:${VISUAL}}}
-})()
+${1:;}((${2:x})=>{
+	${3:return ${4:${VISUAL}}}
+})($2)
 endsnippet
 
 snippet () "更简单的闭包" w
