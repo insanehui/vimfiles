@@ -217,8 +217,14 @@ snippet f() "同一行内的匿名函数" w
 (${2:argument}) => {${VISUAL}$0}
 endsnippet
 
-snippet (f "闭包" w
+snippet (f "纯闭包" w
 ${1:;}((${2:x})=>{
+	${3:return ${4:${VISUAL}}}
+})($2)
+endsnippet
+
+snippet (ff "不纯的闭包" w
+${1:;}(function(${2:x}){
 	${3:return ${4:${VISUAL}}}
 })($2)
 endsnippet
