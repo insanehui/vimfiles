@@ -6,4 +6,15 @@ snippet debug "require debug" b
 const debug = require('debug')('${1:main}')
 endsnippet
 
+snippet koa "require koa" b
+import koa from 'koa'
+endsnippet
+
+snippet koam "koa middleware" b
+async ${1:function}(ctx, next) { 
+	$0
+	await next()
+}${2:,}
+endsnippet
+
 
