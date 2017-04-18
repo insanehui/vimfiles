@@ -485,9 +485,11 @@ command! -nargs=+ -complete=command T call SwitchWindowByTitle(<q-args>)
 let maplocalleader=','
 
 " 用于vimoutliner ------------------------------
-" TODO: 可以优化成自动加上时间
 nmap ,x ,cb,cx
-
+" 在行尾增加一个时间戳
+nmap T A<space>[<C-R>=strftime("%c")<CR>]<Esc>
+" 打上[x]，并加上时间戳
+nmap X ,cb,cxT
 
 " utl ------------------------------
 nnoremap <c-cr> :Utl<cr>
