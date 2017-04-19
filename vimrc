@@ -492,7 +492,7 @@ nmap ,x ,cb,cx
 " 在行尾增加一个时间戳
 nmap T A<space>[<C-R>=strftime("%c")<CR>]<Esc>
 " 打上[x]，并加上时间戳
-nmap X ,cb,cxT
+nmap X I]<space><Esc>,Tx,DI[<Esc>,x
 
 " utl ------------------------------
 nnoremap <c-cr> :Utl<cr>
