@@ -7,8 +7,8 @@
 " 目前先应付好最近在nodejs中常用的debug, colors颜色
 
 function! s:set_ansi()
-    set conceallevel=3
-    set concealcursor=n
+    setlocal conceallevel=3
+    setlocal concealcursor=n
 
     " 必须要指定matchgroup才能conceal
 
