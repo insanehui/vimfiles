@@ -10,6 +10,18 @@ snippet koa "require koa" b
 import koa from 'koa'
 endsnippet
 
+snippet koas "koa代码片段" b
+import Koa from 'koa'
+
+const app = new Koa()
+
+app.use(ctx => {
+	ctx.body = 'hello koa' // 一个http服务器，任何请求返回haha
+})
+
+app.listen(3000)
+endsnippet
+
 snippet koam "koa middleware" b
 async ${1:function}(ctx, next) { 
 	$0
