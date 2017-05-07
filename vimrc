@@ -540,7 +540,7 @@ noremap <Leader>y "+y
 " 用 shift + insert 粘贴，不用\p
 " noremap <Leader>p "+p
 
-" tabular
+" tabular，生成表格
 " ？现在暂时不会如何映射成operator pending的模式
 vnoremap <Leader>t :Tabularize /
 " !!注：与 注释 的快捷键重复，但其是normal mode
