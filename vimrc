@@ -28,6 +28,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'godlygeek/tabular'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'ekalinin/Dockerfile.vim'
