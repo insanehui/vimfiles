@@ -48,3 +48,12 @@ endsnippet
 snippet R "import ramda" b
 import R from 'ramda'
 endsnippet
+
+snippet koa_loggers "koa_logger的一些配套代码" b
+const [log, debug] = (function(){
+	const x = ctx.state.logger
+	const log = x ? x(_log) : _log
+	const debug = x ? x(_debug) : _debug
+	return [log, debug]
+})()
+endsnippet
