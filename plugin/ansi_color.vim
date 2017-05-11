@@ -22,6 +22,11 @@ function! s:set_ansi()
 
     " ======================= 字体色 + 背景色 =====================================
     syn region ansiWhiteRed matchgroup=ansiCode start=/\e\[41m\e\[37m/ end=/\e\[39m\e\[49m/  concealends
+    syn region ansiWhiteGreen matchgroup=ansiCode start=/\e\[42m\e\[37m/ end=/\e\[39m\e\[49m/  concealends
+    syn region ansiWhiteYellow matchgroup=ansiCode start=/\e\[43m\e\[37m/ end=/\e\[39m\e\[49m/  concealends
+    syn region ansiWhiteBlue matchgroup=ansiCode start=/\e\[44m\e\[37m/ end=/\e\[39m\e\[49m/  concealends
+    syn region ansiWhiteMagenta matchgroup=ansiCode start=/\e\[45m\e\[37m/ end=/\e\[39m\e\[49m/  concealends
+    syn region ansiWhiteCyan matchgroup=ansiCode start=/\e\[46m\e\[37m/ end=/\e\[39m\e\[49m/  concealends
 
 endf
 
@@ -36,6 +41,11 @@ hi ansiMagenta             ctermfg=magenta      guifg=magenta
 hi ansiCyan             ctermfg=cyan      guifg=cyan
 
 hi ansiWhiteRed          ctermfg=white      ctermbg=red        guifg=White      guibg=Red      cterm=none         gui=none
+hi ansiWhiteGreen          ctermfg=white      ctermbg=green        guifg=White      guibg=Green
+hi ansiWhiteYellow          ctermfg=white      ctermbg=yellow        guifg=White      guibg=#666600
+hi ansiWhiteBlue          ctermfg=white      ctermbg=blue        guifg=White      guibg=Blue
+hi ansiWhiteMagenta          ctermfg=white      ctermbg=magenta        guifg=White      guibg=Magenta
+hi ansiWhiteCyan          ctermfg=white      ctermbg=cyan        guifg=White      guibg=Cyan
 
 hi link ansiCode Quote
 
