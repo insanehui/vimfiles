@@ -109,6 +109,13 @@ for (const ${1:i} of ${2:arr}) {
 }
 endsnippet
 
+snippet forin "for in 循环" b
+for(const key in $1) {
+	const ${2:item} = $1[key]
+	$0
+}
+endsnippet
+
 snippet map "map" w
 map(${1:${2:name}, }(${3:item}, ${4:i} ) => {
 	$0
