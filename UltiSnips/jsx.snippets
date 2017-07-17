@@ -247,6 +247,12 @@ ${1:name}(${2:arg}) {
 }$0
 endsnippet
 
+snippet {=> "自绑定的类成员方法" b
+${1:name} = ()=>{
+	$0
+}
+endsnippet
+
 snippet meth "类成员方法，大致同{f，但可递归" b
 ${1:name}(${2:arg}){
 	$3
