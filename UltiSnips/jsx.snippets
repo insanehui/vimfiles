@@ -478,8 +478,9 @@ const reducer_table = {
 }
 
 function reducer(s = freezer.get(), a) {
-	const f = reducer_table[a.type]
-	f && f(s, a)
+	const {type, ...data} = a
+	const f = reducer_table[type]
+	f && f(s, data)
 	return freezer.get()
 }
 
