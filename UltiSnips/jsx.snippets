@@ -459,6 +459,38 @@ endsnippet
 
 # ----------- redux ---------------
 
+snippet store.js "基于freezer的store.js的初始化" b
+import { createStore, 
+	applyMiddleware,
+} from 'redux'
+import _ from 'lodash'
+import thunk from 'redux-thunk'
+
+import Freezer from 'freezer-js'
+import {logger} from './utils/redux_middleware.js'
+
+const freezer = new Freezer({
+})
+
+const reducer_table = {
+	xxxx(s, a) {
+	},
+}
+
+function reducer(s = freezer.get(), a) {
+	const f = reducer_table[a.type]
+	f && f(s, a)
+	return freezer.get()
+}
+
+const createStoreWithMiddleware = applyMiddleware(
+	thunk,
+	logger,
+)(createStore)
+
+export default createStoreWithMiddleware(reducer)
+endsnippet
+
 snippet rcmp "redux component" b
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux'
