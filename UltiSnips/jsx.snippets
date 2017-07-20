@@ -1,6 +1,6 @@
 # 自己常用的 js snips 都放这里，实际上不再区分jsx
 
-extends jest, node
+extends jest, node, jss
 # ------------ console调试相关 ---------------------
 
 snippet cg "console.group" b
@@ -830,6 +830,12 @@ endsnippet
 
 snippet react_utils "react utils" b
 import {${1:styler}} from './utils/components/utils.js'
+endsnippet
+
+snippet styler "styler调用" w
+styler({
+	$1
+})$2
 endsnippet
 # ------------------- 常用组件 -----------------------
 
