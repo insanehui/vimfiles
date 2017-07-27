@@ -539,6 +539,14 @@ ${1:name}(s${2:, a}) {
 },
 endsnippet
 
+snippet selector "创建一个selector" b
+const ${1:name} = createSelector([$2], $3)
+endsnippet
+
+snippet reselect "import reselect" b
+import { createSelector } from 'reselect'
+endsnippet
+
 # -------------- freezer ------------------
 
 snippet freezer "导入freezer" b
@@ -610,6 +618,17 @@ endsnippet
 
 snippet clsn "className=" w
 className={${1:cx(${2:cls}${3:, \{ ${4:key} : ${5:con} \}})}} $0
+endsnippet
+
+snippet foreign "svg的foreignObject" b
+const foreign = {
+	x : 0,
+	y : 0,
+	width : 100,
+	height : 100,
+}
+<foreignObject {...foreign}>
+</foreignObject>
 endsnippet
 
 # ----------- 导出 -------------
