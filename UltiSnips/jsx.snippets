@@ -458,6 +458,9 @@ componentWillReceiveProps(np) {
 endsnippet
 
 # ----------- redux ---------------
+snippet d "dispatch action" w
+d({ type: '${1:name}', $2})
+endsnippet
 
 snippet store.js "基于freezer的store.js的初始化" b
 import { createStore, 
