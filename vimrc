@@ -328,7 +328,7 @@ autocmd BufWritePost *.otl mkview
 
 " 如果是index.js，定义一些快捷命令
 function! IndexJsCopy() 
-    call system('xcopy ' . expand('%:p:h') . '\*.* ' . expand('~/react_playground/src') . ' /e /y')
+    call system('xcopy ' . expand('%:p:h') . '\*.* ' . expand('~/react_playground2/src') . ' /e /y')
 endfunction
 " 快速拷贝到playground目录的快捷键
 autocmd BufRead,BufNewFile index.js nnoremap <buffer> <s-cr> :call IndexJsCopy()<cr>
@@ -374,7 +374,7 @@ autocmd BufRead,BufNewFile *.js nnoremap <buffer> <C-F5> :call NodeRunFileWithAr
 function! ReactRunFile()
     " 这是临时用法，后续完善起来
     if getline(1) =~# '\<React\>'
-        nnoremap <buffer> <F6> :call system('copy ' . expand('%') . ' ' . expand('~/react_playground/src/index.js'))<cr>
+        nnoremap <buffer> <F6> :call system('copy ' . expand('%') . ' ' . expand('~/react_playground2/src/index.js'))<cr>
     endif
 endfun
 
