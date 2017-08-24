@@ -499,14 +499,6 @@ snippet rcmp "redux component" b
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux'
 
-class ${1:ComponentName} extends PureComponent {
-
-	render() {
-		return <div>
-		</div>
-	}
-}
-
 const sm = s => {
 	return {
 	}
@@ -520,8 +512,14 @@ const dm = d => {
 	}
 }
 
-export default connect(sm, dm)($1)
+@connect(sm, dm)
+export default class ${1:ComponentName} extends PureComponent {
 
+	render() {
+		return <div>
+		</div>
+	}
+}
 endsnippet
 
 snippet thunk "生成一个thunk" w
