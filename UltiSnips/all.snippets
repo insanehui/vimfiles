@@ -1,23 +1,23 @@
 extends ansicolor
 
-snippet { "{ } completion" w
-{
-	${0:${VISUAL}}
-}
+#snippet { "{ } completion" w
+#{
+#	${0:${VISUAL}}
+#}
+#endsnippet
+
+snippet { "{}" w
+{${1:${VISUAL}}}$0
 endsnippet
 
-snippet {} "{ }在同一行" w
-{ ${1:${VISUAL}} }$0
-endsnippet
+#snippet [ "[ ]" w
+#[
+#	${0:${VISUAL}}
+#]
+#endsnippet
 
-snippet [ "[ ]" w
-[
-	${0:${VISUAL}}
-]
-endsnippet
-
-snippet [] "[ ] 在同一行" w
-[ ${1:${VISUAL}} ]$0
+snippet [ "[]" w
+[${1:${VISUAL}}]$0
 endsnippet
 
 snippet utl "utl's url"
