@@ -499,20 +499,9 @@ snippet rcmp "redux component" b
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux'
 
-const sm = s => {
-	return {
-	}
-}
+const _m = {}
 
-const dm = d => {
-	return {
-		some_action(){
-			// d({ type: 'some_action', })
-		},
-	}
-}
-
-@connect(sm, dm)
+@connect(_m.s, _m.d)
 export default class ${1:ComponentName} extends PureComponent {
 
 	render() {
