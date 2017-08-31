@@ -684,10 +684,14 @@ snippet css "cssobj.js" b
 import {${1:w}} from './utils/cssobj.js'
 endsnippet
 
-snippet jss "定义jss对象" b
+snippet css( "定义jss对象" b
 const C = css({
 	$1
 })$0
+endsnippet
+
+snippet jss "import react-jss" b
+import injectSheet from 'react-jss'
 endsnippet
 
 snippet _ "lodash" b
