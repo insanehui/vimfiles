@@ -458,6 +458,10 @@ componentWillReceiveProps(np) {
 endsnippet
 
 # ----------- redux ---------------
+snippet redux "自己的redux utils" b
+import {pick, action, connect} from '${1:.}./utils/redux.js'
+endsnippet
+
 snippet d "dispatch action" w
 d({ type: '${1:name}', $2})
 endsnippet
