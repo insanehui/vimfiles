@@ -501,11 +501,9 @@ endsnippet
 
 snippet rcmp "redux component" b
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux'
+import {connect} from '../utils/redux.js'
 
-const _m = {}
-
-@connect(_m.s, _m.d)
+@connect({})
 export default class ${1:ComponentName} extends PureComponent {
 
 	render() {
