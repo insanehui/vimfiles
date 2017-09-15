@@ -315,14 +315,11 @@ endsnippet
 snippet cmp "init a component file" b
 import React, { PureComponent } from 'react'
 
-class ${1:Test} extends PureComponent {
+export default class ${1:Test} extends PureComponent {
 	render() {
 		return ${2:<div>${3:test}</div>}
 	}
 }
-
-export default $1
-
 endsnippet
 
 snippet gcctx "getChildContext" b
