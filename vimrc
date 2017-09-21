@@ -50,7 +50,7 @@ Plugin 'sgur/unite-everything'
 Plugin 'Konfekt/FastFold'
 Plugin 'insanehui/bufexplorer.zip'
 " tpope大神也写了一个
-Plugin 'plasticboy/vim-markdown'
+" Plugin 'plasticboy/vim-markdown'
 
 Plugin 't9md/vim-choosewin'
 
