@@ -496,13 +496,23 @@ const createStoreWithMiddleware = applyMiddleware(
 export default createStoreWithMiddleware(reducer)
 endsnippet
 
-snippet rcmp "redux component" b
+snippet rcmp0 "初始化一个redux component文件" b
 import React, { PureComponent } from 'react';
 import {connect} from '../utils/redux.js'
 
 @connect({})
 export default class ${1:ComponentName} extends PureComponent {
 
+	render() {
+		return <div>
+		</div>
+	}
+}
+endsnippet
+
+snippet rcmp "仅仅初始化一个redux组件" b
+@connect({})
+${1:export default }class ${2:ComponentName} extends PureComponent {
 	render() {
 		return <div>
 		</div>
