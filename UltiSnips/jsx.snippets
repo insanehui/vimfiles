@@ -312,12 +312,20 @@ render(<App />, document.getElementById('root'))
 
 endsnippet
 
-snippet cmp "init a component file" b
+snippet cmp0 "init a component file" b
 import React, { PureComponent } from 'react'
 
 export default class ${1:Test} extends PureComponent {
 	render() {
 		return ${2:<div>${3:test}</div>}
+	}
+}
+endsnippet
+
+snippet cmp "仅初始化一个组件" b
+${1:export default }class ${2:Test} extends PureComponent {
+	render() {
+		return ${3:<div>${4:test}</div>}
 	}
 }
 endsnippet
