@@ -11,3 +11,19 @@ endsnippet
 snippet pointer "pointer指针" b
 cursor : 'pointer',
 endsnippet
+
+snippet scrollbar "指定滚动条的样式" b
+'::-webkit-scrollbar' : {
+	width : '9px',
+	height : '9px',
+	background : 'white',
+	borderLeft : '1px solid #e8e8e8',
+},
+'::-webkit-scrollbar-thumb' : {
+	borderWidth : '1px',
+	borderStyle : 'solid',
+	borderColor : '#fff',
+	borderRadius : '6px',
+	background : '#c9c9c9',
+}
+endsnippet
