@@ -285,6 +285,10 @@ snippet p "this.props" b
 const {$1} = this.props$0
 endsnippet
 
+snippet cp "props with classes" b
+const {classes:{$1}} = this.props
+endsnippet
+
 snippet s "this.state" b
 const {$1} = this.state $0
 endsnippet
@@ -466,6 +470,15 @@ snippet redux "自己的redux utils" b
 import {pick, action, connect} from '${1:.}./utils/redux.js'
 endsnippet
 
+snippet reduxs "在index中使用redux的代码零碎" b
+import { Provider } from 'react-redux'
+
+import store from './store.js'
+
+<Provider store={store} >
+</Provider>
+endsnippet
+
 snippet d "dispatch action" w
 d({ type: '${1:name}', $2})
 endsnippet
@@ -474,7 +487,6 @@ snippet store.js "基于freezer的store.js的初始化" b
 import { createStore, 
 	applyMiddleware,
 } from 'redux'
-import _ from 'lodash'
 import thunk from 'redux-thunk'
 
 import Freezer from 'freezer-js'
@@ -526,6 +538,11 @@ ${1:export default }class ${2:ComponentName} extends PureComponent {
 	}
 }
 endsnippet
+
+snippet connect "新的redux的connect" b
+@connect({
+$1})
+endsnippet	
 
 snippet thunk "生成一个thunk" w
 d((d${1:, getState}) => {
@@ -712,6 +729,11 @@ endsnippet
 
 snippet jss "import react-jss" b
 import injectSheet from 'react-jss'
+endsnippet
+
+snippet sheet "inject style sheet" b
+@injectSheet({
+})
 endsnippet
 
 snippet _ "lodash" b
