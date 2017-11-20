@@ -491,7 +491,8 @@ let maplocalleader=','
 " 用于vimoutliner ------------------------------
 nmap ,x ,cb,cx
 " 在行尾增加一个时间戳
-nmap T A<space>[<C-R>=strftime("%c")<CR>]<Esc>
+" nmap T A<space>[<C-R>=strftime("%c")<CR>]<Esc>
+nmap T A<space>[<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>]<Esc>
 " 打上[x]，并加上时间戳，这里,T 和 ,D是otl里的映射
 nmap X I]<space><Esc>,Tx,DI[<Esc>,x
 
