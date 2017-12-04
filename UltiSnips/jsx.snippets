@@ -734,9 +734,11 @@ snippet css "cssobj.js" b
 import {${1:w}} from './utils/cssobj.js'
 endsnippet
 
-snippet css( "定义jss对象" b
-const C = css({
-	$1
+snippet css( "应用全局css" b
+css({
+	'@global' : {
+		$1
+	}
 })$0
 endsnippet
 
