@@ -45,6 +45,11 @@ snippet yargs "require yars" b
 const args = require('yargs').config(require('./cfg.js')).argv 
 endsnippet
 
+snippet args "导入自定义的args" b
+import {args} from './utils/node/args.js'
+const {${1:port}} = args($2)
+endsnippet
+
 snippet R "import ramda" b
 import R from 'ramda'
 endsnippet
@@ -61,3 +66,9 @@ endsnippet
 snippet fs "导入fs" b
 const fs = require('fs-extra')
 endsnippet
+
+snippet path "导入path" b
+const path = require('path')
+endsnippet
+
+
