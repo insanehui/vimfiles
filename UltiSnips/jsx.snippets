@@ -925,6 +925,14 @@ snippet sortable "import react sortable hoc" b
 import {${1:SortableContainer, }${2:SortableElement, }${3:arrayMove}} from 'react-sortable-hoc'
 endsnippet
 
+snippet onsortend "react-sortable-hoc的onSortEnd" b
+onSortEnd = ({oldIndex, newIndex}) => {
+	this.setState({
+		items: arrayMove(this.state.items, oldIndex, newIndex),
+	})
+}
+endsnippet
+
 # ------------------- 测试代码 -----------------------
 snippet test_logs "收集测试用例的日志" b
 console.groupCollapsed && console.groupCollapsed('############ $1 #############') 
