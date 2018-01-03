@@ -8,6 +8,14 @@ alignItems : 'center', // 以direction为串轴
 }
 endsnippet
 
+snippet inblock "inline-block" w
+display : 'inline-block',
+endsnippet
+
+snippet block "display block" w
+display : 'block',
+endsnippet
+
 snippet pointer "pointer指针" b
 cursor : 'pointer',
 endsnippet
@@ -62,4 +70,28 @@ snippet btnstyle "按钮的样式" w
 		boxShadow : 'inset 0 2px 4px rgba(0,0,0,0.15)',
 	}, 
 }
+endsnippet
+
+snippet w100 "100%的width" w
+width : '${1:100}%',
+endsnippet
+
+snippet h100 "100%的height" w
+eight : '${1:100}%',
+endsnippet
+
+snippet rel "relative" w
+position : 'relative',
+endsnippet
+
+snippet abs "absolute" w
+position : 'absolute',
+endsnippet
+
+snippet iconbtn "icon button" w
+cursor : 'pointer',
+display : 'inline-block',
+'&:hover' : {
+	transform : 'translateY(1px)',
+},
 endsnippet
