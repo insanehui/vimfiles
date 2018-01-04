@@ -1,15 +1,31 @@
 # 一些常用的jss代码段，方便在react中快速输入样式
+snippet rl "一条rule" b
+${1:${VISUAL}} : {
+	$2
+},
+endsnippet
+
+snippet ellipsis "ellipsis" w
+	width : '100%',
+	textOverflow : 'ellipsis',
+	whiteSpace : 'nowrap',
+	overflow : 'hidden',
+endsnippet
 
 snippet flex "flex布局相关的样式" b
 display : 'flex',${1:
 flexDirection : 'column',}${2:
 justifyContent : 'space-between', }${3:
-alignItems : 'center', // 以direction为串轴
+alignItems : 'center',
 }
 endsnippet
 
 snippet inblock "inline-block" w
 display : 'inline-block',
+endsnippet
+
+snippet none "none" w
+display : 'none',
 endsnippet
 
 snippet block "display block" w
@@ -73,11 +89,11 @@ snippet btnstyle "按钮的样式" w
 endsnippet
 
 snippet w100 "100%的width" w
-width : '${1:100}%',
+width : ${1:'100%'},
 endsnippet
 
 snippet h100 "100%的height" w
-eight : '${1:100}%',
+height : ${1:'100%'},
 endsnippet
 
 snippet rel "relative" w
@@ -86,6 +102,10 @@ endsnippet
 
 snippet abs "absolute" w
 position : 'absolute',
+endsnippet
+
+snippet fixed "fixed" w
+position : 'fixed',
 endsnippet
 
 snippet iconbtn "icon button" w
