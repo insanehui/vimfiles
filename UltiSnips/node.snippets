@@ -6,6 +6,10 @@ snippet log "require debug" b
 const log = require('debug')('${1:main}')
 endsnippet
 
+snippet dirname "__dirname" w
+const d = path.resolve.bind(null, __dirname)
+endsnippet
+
 snippet koa "require koa" b
 import koa from 'koa'
 endsnippet
