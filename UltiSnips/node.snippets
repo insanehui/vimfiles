@@ -1,3 +1,13 @@
+snippet tempCd "tempCd import" b
+import tempCd from './utils/node/tempCd.js'
+endsnippet
+
+snippet tempCd( "use tempCd" w
+await tempCd(async ()=>{
+	${1:${VISUAL}}
+})
+endsnippet
+
 snippet shelljs "import shelljs" b
 import {exec} from 'shelljs'
 endsnippet
