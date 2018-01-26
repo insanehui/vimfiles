@@ -285,6 +285,10 @@ snippet lintnextline "对下一行不检查" b
 endsnippet
 
 # ----------- react ---------------
+snippet ref "ref" w
+ref={el=>this.$1=el} 
+endsnippet
+
 snippet prop-types "prop-types" b
 import {func} from 'prop-types'
 endsnippet
@@ -904,6 +908,10 @@ endsnippet
 
 snippet react_utils "react utils" b
 import {${1:styler, pick_store_decor}} from './utils/components/utils.js'
+endsnippet
+
+snippet textarea "import Textarea" b
+import Textarea from './utils/components/Textarea.js'
 endsnippet
 
 snippet styler "styler调用" w
