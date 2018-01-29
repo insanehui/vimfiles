@@ -514,8 +514,8 @@ nnoremap <silent> <Leader>o  :<C-u>Unite -vertical-preview -no-split file_mru<CR
 nnoremap <silent> <space>    :<C-u>Unite -vertical-preview -no-split -start-insert line<CR>
 nnoremap <silent> <Leader>d  :<C-u>Unite -buffer-name=directory -no-split -start-insert -default-action=vimfiler neomru/directory<CR>
 nnoremap <silent> <Leader>r  :<C-u>UniteResume<CR>
-" unite还提供了vimgrep, 但功能好像跟这个类似
-nnoremap <silent> <Leader>g  :<C-u>Unite -vertical-preview -no-split grep<CR><CR>
+" 直接用Unite grep，在windows上不支持
+nnoremap <silent> <Leader>g  :<C-u>Unite -vertical-preview -no-split vimgrep<CR><CR>
 
 " vimfiler
 nnoremap <silent> <Leader>f  :<C-u>VimFilerCurrentDir -auto-cd -buffer-name=vimfiler<CR>
