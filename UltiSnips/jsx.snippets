@@ -933,7 +933,11 @@ snippet checkbox "checkbox" b
 <input type='checkbox' checked={$1} onChange={} />
 endsnippet
 
-snippet sortable "import react sortable hoc" b
+snippet sortable "sortable" b
+import Sortable from '${1:.}/utils/components/Sortable.js'
+endsnippet
+
+snippet sortablehoc "import react sortable hoc" b
 import {${1:SortableContainer, }${2:SortableElement, }${3:arrayMove}} from 'react-sortable-hoc'
 endsnippet
 
