@@ -374,9 +374,9 @@ autocmd BufRead,BufNewFile *.js nnoremap <buffer> <C-F5> :call NodeRunFileWithAr
 " react快速执行一个文件
 function! ReactRunFile()
     " 这是临时用法，后续完善起来
-    if getline(1) =~# '\<React\>'
-        nnoremap <buffer> <F6> :call system('copy ' . expand('%') . ' ' . expand('~/react_playground2/src/index.js'))<cr>
-    endif
+    " if getline(1) =~# '\<React\>'
+    nnoremap <buffer> <F6> :call system('copy ' . expand('%') . ' ' . expand('~/react_playground2/src/index.js'))<cr>
+    " endif
 endfun
 
 autocmd BufNewFile,BufRead *.js call ReactRunFile()
