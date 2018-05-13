@@ -362,14 +362,12 @@ function! NodeRunFileWithArgs()
 endfunction
 autocmd BufRead,BufNewFile *.js nnoremap <buffer> <C-F5> :call NodeRunFileWithArgs()<cr>
 
-" nodejs快速执行一个工程, 好像不常用到
-" function! NodeRunProj() 
-"     " 把当前文件拷到playground
-"     call IndexJsCopy()
-"     " 执行babel-node
-"     execute '!cd ' . expand('~/react_playground/') . ' & babel-node .'
-" endfunction
-" autocmd BufRead,BufNewFile index.js nnoremap <buffer> <C-F5> :call NodeRunProj()<cr>
+" nodejs快速执行一个工程. 并以当前文件作为入口
+function! NodeRunProj() 
+    call system('xcopy ' . expand('%:p:h') . '\*.* ' . expand('~/react_playground/src') . ' /e /y')
+    execute '!start cmd /k cd ' . expand('~/react_playground/') . ' & babel-node src/' . expand('%')
+endfunction
+autocmd BufRead,BufNewFile *.js nnoremap <buffer> <S-F5> :call NodeRunProj()<cr>
 
 " react快速执行一个文件
 function! ReactRunFile()
