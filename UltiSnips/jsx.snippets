@@ -294,6 +294,10 @@ snippet lintnextline "对下一行不检查" b
 endsnippet
 
 # ----------- react ---------------
+snippet context "create a context" b
+const {Provider, Consumer} = React.createContext($1)
+endsnippet
+
 snippet ref "ref" w
 ref={el=>this.$1=el} 
 endsnippet
