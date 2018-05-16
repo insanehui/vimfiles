@@ -35,7 +35,7 @@ Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'ekalinin/Dockerfile.vim'
 
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 " Plugin 'tpope/vim-surround'
 " 以下这个fork支持函数
 Plugin 'LeszekSwirski/vim-surround'
@@ -45,7 +45,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
 Plugin 'Shougo/vimfiler.vim'
-Plugin 'Shougo/vinarise.vim'
+" Plugin 'Shougo/vinarise.vim'
 
 Plugin 'sgur/unite-everything'
 Plugin 'Konfekt/FastFold'
@@ -53,9 +53,9 @@ Plugin 'insanehui/bufexplorer.zip'
 " tpope大神也写了一个
 " Plugin 'plasticboy/vim-markdown'
 
-Plugin 't9md/vim-choosewin'
+" Plugin 't9md/vim-choosewin'
 
-Plugin 'amerlyq/nou.vim'
+" Plugin 'amerlyq/nou.vim'
 " Plugin 'vimoutliner/vimoutliner'
 Plugin 'insanehui/vimoutliner'
 Plugin 'utl.vim'
@@ -114,7 +114,7 @@ Plugin 'Shougo/vimproc.vim'
 "}}}
 
 "{{{ vimshell 
-Plugin 'Shougo/vimshell.vim'
+" Plugin 'Shougo/vimshell.vim'
 "}}}
 
 "{{{ neocomplete 
@@ -165,7 +165,7 @@ let g:jsx_ext_required = 0
 "}}}
 
 "{{{ markdown预览的插件 
-Plugin 'iamcco/markdown-preview.vim'
+" Plugin 'iamcco/markdown-preview.vim'
 let g:mkdp_path_to_chrome = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
 " 设置 chrome 浏览器的路径（或是启动 chrome（或其他现代浏览器）的命令）
 
@@ -197,7 +197,7 @@ call vundle#end()
 "{{{ 插件的配置
 source ~/vimfiles/unite-everything.vim
 source ~/vimfiles/unite.vim
-source ~/vimfiles/vimshell.vim
+" source ~/vimfiles/vimshell.vim
 source ~/vimfiles/vimfiler.vim
 "}}}
 
