@@ -55,8 +55,8 @@ snippet colors "import colors" b
 import 'colors'
 endsnippet
 
-snippet yargs "require yars" b
-const args = require('yargs').config(require('./cfg.js')).argv 
+snippet yargs "require yargs" b
+const argv = require('yargs')${1:.config(require('./cfg.js'))}.argv 
 endsnippet
 
 snippet args "导入自定义的args" b
