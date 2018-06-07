@@ -780,6 +780,14 @@ snippet sheet "inject style sheet" b
 $1})
 endsnippet
 
+snippet style "init a style file. instead of using react-jss inject" b
+import {css} from '${1:.}./utils/cssobj.js'
+
+export default css({
+	$2
+})
+endsnippet
+
 snippet _ "lodash" b
 import _ from 'lodash'
 endsnippet
