@@ -110,7 +110,8 @@ let g:UltiSnipsSnippetsDir = "~/vimfiles/UltiSnips"
 "}}}
 
 "{{{ vimproc 
-Plugin 'Shougo/vimproc.vim'
+" 好像使用了vim8之后，应该就不需要vimproc了
+" Plugin 'Shougo/vimproc.vim'
 "}}}
 
 "{{{ vimshell 
