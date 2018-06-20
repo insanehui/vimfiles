@@ -560,7 +560,8 @@ nnoremap <c-l> zl
 " noremap <Leader>o :browse old<cr>
 
 " 打开当前文件，这里传到vimproc#system处要转义一次"\"
-noremap ge :call vimproc#system('explorer /select,' . substitute(expand('%:p'), '\\', '\\\\', 'g'))<cr>
+" noremap ge :call vimproc#system('explorer /select,' . substitute(expand('%:p'), '\\', '\\\\', 'g'))<cr>
+noremap ge :execute '!start explorer /select,' . expand('%:p')<cr>
 
 " 打开git bash
 noremap gb :call vimproc#system_bg('C:\\Program\ Files\\Git\\git-bash.exe --cd=' . substitute(expand('%:p:h'), '\\', '\\\\', 'g'))<cr>
