@@ -145,10 +145,11 @@ let g:neocomplete#enable_at_startup = 1
 "}}}
 
 "{{{ 前端 
-Plugin 'pangloss/vim-javascript'
-Plugin 'maksimr/vim-jsbeautify'
+" 平时用得不多，注释掉
+" Plugin 'maksimr/vim-jsbeautify'
 Plugin 'elzr/vim-json'
 
+Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 
