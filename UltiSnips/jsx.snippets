@@ -344,6 +344,19 @@ render(<App />, document.getElementById('root'))
 
 endsnippet
 
+snippet react_test "react test" b
+import React from 'react'
+import { render } from 'react-dom'
+
+class Test extends React.PureComponent {
+	render() {
+		return <div>${1:test}</div>
+	}
+}
+
+render(<Test />, document.getElementById('root'))
+endsnippet
+
 snippet cmp0 "init a component file" b
 import React from 'react'
 
