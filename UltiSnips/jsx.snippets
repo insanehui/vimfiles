@@ -743,8 +743,12 @@ snippet isdev "isDev" b
 import isDev from '$1../utils/web/is_dev.js'
 endsnippet
 
-snippet rx "RxJS" b
-import Rx from 'rxjs/Rx'
+snippet rxjs "RxJS" b
+import {$0} from 'rxjs'
+endsnippet
+
+snippet rxop "rx operators" b
+import {$0} from 'rxjs/operators'
 endsnippet
 
 snippet rxpurecomponent "RxPureComponent" b
