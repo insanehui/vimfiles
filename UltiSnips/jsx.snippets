@@ -1022,3 +1022,10 @@ for (let i of tb) {
 }
 endsnippet
 
+snippet isdev "是否为测试环境" w
+process.env.NODE_ENV === 'development'
+endsnippet
+
+snippet react-router "react router" b
+import { BrowserRouter as Router, Route, ${1:Link, }${2:Swicth, }} from 'react-router-dom'
+endsnippet
