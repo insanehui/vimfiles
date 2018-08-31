@@ -503,6 +503,7 @@ nnoremap <c-cr> :Utl<cr>
 " bufexplorer
 " 仅取消 \be, \bs等
 let g:bufExplorerDisableDefaultKeyMapping=1
+nnoremap <silent> <Leader>fb :BufExplorer<CR>
 nnoremap <silent> <Leader>b :BufExplorer<CR>
 
 
