@@ -1,0 +1,1 @@
+setlocal fileencoding=euc-cn
