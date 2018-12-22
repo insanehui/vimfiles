@@ -381,6 +381,15 @@ endfun
 
 autocmd BufNewFile,BufRead *.js call ReactRunFile()
 
+function! Music2Jcx()
+    " 心得：这里用call system的话好像不能正确地执行管道
+    " 所以改用!start，并且要用cmd /c，这样会自动关闭黑窗口
+    " nnoremap <buffer> <s-cr> :call system('cmd /c msc2jcx < ' . expand('%') . ' >aa.jcx')<cr>
+    nnoremap <buffer> <s-cr> :execute '!start cmd /c msc2jcx < ' . expand('%') . ' \| iconv -f UTF-8 -t GB2312 >' . expand('%:t:r'). '.jcx'<cr>
+endfun
+
+autocmd BufNewFile,BufRead *.music call Music2Jcx()
+
 "}}}
 
 "{{{ 全局命令
