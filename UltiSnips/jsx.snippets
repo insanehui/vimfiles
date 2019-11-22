@@ -752,6 +752,14 @@ export function ${1:Name}(p){
 endsnippet
 
 # ------------------- 导入 -----------------------
+snippet bindState "Description" b
+import bindState from './utils/components/Formy/bindState.js'
+endsnippet
+
+snippet form "Formy Form" b
+import Form from './utils/components/Formy/Form.js'
+endsnippet
+
 snippet isdev "isDev" b
 import isDev from '$1../utils/web/is_dev.js'
 endsnippet
@@ -867,9 +875,8 @@ snippet Div "<Div />组件" b
 import Div from './utils/components/Div.js'
 endsnippet
 
-snippet select "react-select" b
-import Select from 'react-select'
-import 'react-select/dist/react-select.css'
+snippet select "自己的select组件" b
+import Select from './utils/components/Formy/Select.js'
 endsnippet
 
 snippet Select "react-select组件" w
@@ -1027,5 +1034,5 @@ process.env.NODE_ENV === 'development'
 endsnippet
 
 snippet react-router "react router" b
-import { BrowserRouter as Router, Route, ${1:Link, }${2:Swicth, }} from 'react-router-dom'
+import { BrowserRouter as Router, Route, ${1:Link, }${2:Switch, }} from 'react-router-dom'
 endsnippet
