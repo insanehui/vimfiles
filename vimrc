@@ -53,7 +53,7 @@ Plugin 'insanehui/bufexplorer.zip'
 " tpope大神也写了一个
 " Plugin 'plasticboy/vim-markdown'
 
-" Plugin 't9md/vim-choosewin'
+Plugin 't9md/vim-choosewin'
 
 " Plugin 'amerlyq/nou.vim'
 " Plugin 'vimoutliner/vimoutliner'
@@ -381,22 +381,21 @@ endfun
 
 autocmd BufNewFile,BufRead *.js call ReactRunFile()
 
-function! Music2Jcx()
-    " 心得：这里用call system的话好像不能正确地执行管道
-    " 所以改用!start，并且要用cmd /c，这样会自动关闭黑窗口
-    " nnoremap <buffer> <s-cr> :call system('cmd /c msc2jcx < ' . expand('%') . ' >aa.jcx')<cr>
-    nnoremap <buffer> <s-cr> :execute '!start cmd /c msc2jcx < ' . expand('%') . ' \| iconv -f UTF-8 -t GB2312 >' . expand('%:t:r'). '.jcx'<cr>
+" 将msc文件转为jcx文件
+function! Msc2Jcx()
+    execute '!start cmd /c msc2jcx2 < ' . expand('%') . ' \| iconv -f UTF-8 -t GBK >' . expand('%:t:r'). '.jcx & clip < ' . expand('%:t:r') . '.jcx '
 endfun
 
-autocmd BufNewFile,BufRead *.music call Music2Jcx()
-
-function! Music2Jcx2()
+function! SetMscFileHotkey()
     " 心得：这里用call system的话好像不能正确地执行管道
     " 所以改用!start，并且要用cmd /c，这样会自动关闭黑窗口
-    nnoremap <buffer> <s-cr> :execute '!start cmd /c msc2jcx2 < ' . expand('%') . ' \| iconv -f UTF-8 -t GB2312 >' . expand('%:t:r'). '.jcx & clip < ' . expand('%:t:r') . '.jcx ' <cr>
+    " 经尝试，要使用GBK，GB2312不好用
+    " nnoremap <buffer> <s-cr> :execute '!start cmd /c msc2jcx < ' . expand('%') . ' \| iconv -f UTF-8 -t GB2312 >' . expand('%:t:r'). '.jcx'<cr>
+    " nnoremap <buffer> <s-cr> :execute '!start cmd /c msc2jcx2 < ' . expand('%') . ' \| iconv -f UTF-8 -t GBK >' . expand('%:t:r'). '.jcx & clip < ' . expand('%:t:r') . '.jcx ' <cr>
+    nnoremap <buffer> <s-cr> :call Msc2Jcx()<cr>
 endfun
 
-autocmd BufNewFile,BufRead *.msc call Music2Jcx2()
+autocmd BufNewFile,BufRead *.msc call SetMscFileHotkey()
 
 "}}}
 
@@ -551,7 +550,10 @@ nmap <Leader><Space> gcc
 
 " choosewin -------------------
 " ctrl加-
-nmap   <Plug>(choosewin)
+" nmap   <Plug>(choosewin)
+nmap - <Plug>(choosewin)
+" 大字号的标签，用起来感觉很晃眼，暂时禁掉
+" let g:choosewin_overlay_enable = 1
 
 " 将词移到右边（交换两个词的位置）
 nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>:nohlsearch<CR>
