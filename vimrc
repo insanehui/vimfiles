@@ -383,7 +383,8 @@ autocmd BufNewFile,BufRead *.js call ReactRunFile()
 
 " 将msc文件转为jcx文件
 function! Msc2Jcx()
-    execute '!start cmd /c msc2jcx2 < ' . expand('%') . ' \| iconv -f UTF-8 -t GBK >' . expand('%:t:r'). '.jcx & clip < ' . expand('%:t:r') . '.jcx '
+    execute 'w'
+    execute '!start cmd /c msc2jcx2 < ' . expand('%') . ' \| iconv -f UTF-8 -t GBK >' . expand('%:t:r'). '.jcx & clip < ' . expand('%:t:r') . '.jcx & refreshMuse.ahk'
 endfun
 
 function! SetMscFileHotkey()
