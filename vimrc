@@ -400,6 +400,10 @@ autocmd BufNewFile,BufRead *.msc call SetMscFileHotkey()
 
 "}}}
 
+"{{{ ahk（autohotkey）文件执行快捷键
+autocmd BufNewFile,BufRead *.ahk nnoremap <buffer> <F5> :!start %<cr>
+"}}}
+
 "{{{ 将mc3文件转为jcx
 function! Msc2Jcx3()
     execute 'w'
