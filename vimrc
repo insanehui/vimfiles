@@ -400,6 +400,19 @@ autocmd BufNewFile,BufRead *.msc call SetMscFileHotkey()
 
 "}}}
 
+"{{{ 将mc3文件转为jcx
+function! Msc2Jcx3()
+    execute 'w'
+    execute '!start cmd /c msc2jcx3 < ' . expand('%') . ' \| iconv -f UTF-8 -t GBK >' . expand('%:t:r'). '.jcx & clip < ' . expand('%:t:r') . '.jcx & refreshMuse.ahk'
+endfun
+
+function! SetMc3Hotkey()
+    nnoremap <buffer> <s-cr> :call Msc2Jcx3()<cr>
+endfun
+
+autocmd BufNewFile,BufRead *.mc3 call SetMc3Hotkey()
+"}}}
+
 "{{{ 全局命令
 
 if !exists(":DiffOrig")
