@@ -61,6 +61,9 @@ Plugin 'insanehui/vimoutliner'
 Plugin 'utl.vim'
 let g:utl_cfg_hdl_mt_text_html='VIM'
 
+" 这个怎么不起作用？
+"let g:utl_cfg_hdl_mt_application_gp5 = ':silent !start "%P"'
+
 " 试了之后没有作用啊
 " Plugin 'AnsiEsc.vim'
 
@@ -407,11 +410,18 @@ autocmd BufNewFile,BufRead *.ahk nnoremap <buffer> <F5> :!start %<cr>
 "{{{ 将mc3文件转为jcx
 function! Msc2Jcx3()
     execute 'w'
-    execute '!start cmd /c msc2jcx3 < ' . expand('%') . ' \| iconv -f UTF-8 -t GBK >' . expand('%:t:r'). '.jcx & clip < ' . expand('%:t:r') . '.jcx & refreshMuse.ahk'
+    execute '!start cmd /c msc2jcx3 ' . expand('%') . ' \| iconv -f UTF-8 -t GBK >' . expand('%:t:r'). '.jcx & clip < ' . expand('%:t:r') . '.jcx & refreshMuse.ahk'
+endfun
+
+" mc3转gp5
+function! Msc2Gp5()
+    execute 'w'
+    execute '!start cmd /c msc2gp5 ' . expand('%') . ' >' . expand('%:t:r'). '.gp5 & start ' .expand('%:t:r') . '.gp5' 
 endfun
 
 function! SetMc3Hotkey()
     nnoremap <buffer> <s-cr> :call Msc2Jcx3()<cr>
+    nnoremap <buffer> <F5> :call Msc2Gp5()<cr>
 endfun
 
 autocmd BufNewFile,BufRead *.mc3 call SetMc3Hotkey()
