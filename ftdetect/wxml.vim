@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.wxml set filetype=jsx
+au BufRead,BufNewFile *.wxml set filetype=javascript.jsx
