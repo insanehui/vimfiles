@@ -416,7 +416,8 @@ endfun
 " mc3转gp5
 function! Msc2Gp5()
     execute 'w'
-    execute '!start cmd /c msc2gp5 ' . expand('%') . ' >' . expand('%:t:r'). '.gp5 & start ' .expand('%:t:r') . '.gp5' 
+    "execute '!start cmd /c msc2gp5 ' . expand('%') . ' >' . expand('%:t:r'). '.gp5 & start ' .expand('%:t:r') . '.gp5' 
+    execute '!start cmd /c msc2gp5 ' . expand('%') . ' >' . expand('%:t:r'). '.gp5'
 endfun
 
 function! SetMc3Hotkey()
