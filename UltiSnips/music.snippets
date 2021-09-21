@@ -13,8 +13,68 @@ tracks :
 <guitar> 0 0 (5.5.) | 6. 5. 1 | 7. - (5.5.) | 6. 5. 2 
 endsnippet
 
+snippet F3 "" w
+'F' : 3;X,X,1,3,4,3
+endsnippet
+
+snippet Ebmaj7 "" w
+'Ebmaj7' : 1;X,X,1,3,3,3
+endsnippet
+
+snippet Eb "" w
+'Eb' : 6;X,1,3,3,3,1
+endsnippet
+
+snippet F/bE3 "" w
+'F/bE' : 5;X,2,X,1,2,1
+endsnippet
+
 snippet Cadd9/E "" w
-Cadd9/E : 5;X,3,1,3,1,X
+'Cadd9/E' : 5;X,3,1,3,1,X
+endsnippet
+
+snippet Dsus4(7 "" w
+'Dsus4' : 7;X,X,0,1,2,4
+endsnippet
+
+snippet Dsus4 "" w
+'Dsus4' : 1;X,X,0,2,3,3
+endsnippet
+
+snippet Ebmaj73 "" w
+'Ebmaj7' : 3;X,4,3,1,1,1
+endsnippet
+
+snippet F#dim "" w
+'F#dim' : 3;X,X,2(1),3(3),2(2),3(4)
+endsnippet
+
+snippet F#m7-5 "" w
+'F#m7-5' : 3;X,X,2(1),3(2),3(3),3(4)
+endsnippet
+
+snippet Adim "" w
+'Adim' : 6;X,X,2(1),3(3),2(2),3(4)
+endsnippet
+
+snippet Em/D "" w
+'Em/D' : 1;X,X,0,0,0,0
+endsnippet
+
+snippet D/C "" w
+'D/C' : 1;X,3,0,2,3,2
+endsnippet
+
+snippet Aadd9- "" w
+'Aadd9-' : 4;X,0,X,3,2,3
+endsnippet
+
+snippet G(7 "" w
+'G(7)' : 7;X,4,3,1,2,1
+endsnippet
+
+snippet D(5 "" w
+'D(5)' : 5;X,1,3,3,3,1
 endsnippet
 
 snippet Bb/D "" w
@@ -158,7 +218,7 @@ snippet uAm7 "" w
 endsnippet
 
 snippet uFadd9 "" w
-'Fadd9' : 1;0,0,1((1),0
+'Fadd9' : 1;0,0,1(1),0
 endsnippet
 
 snippet uG# "" w
@@ -198,7 +258,15 @@ snippet F/G "" w
 endsnippet
 
 snippet B7 "" w
-'B7' : 1;X,2,1,2,0,2
+'B7' : ${1:1;X,2,1,2,0,2}${2:2;X,1,3,1,3,1}
+endsnippet
+
+snippet B7sus4 "" w
+'B7sus4' : 2;X,1,3,1,4,1
+endsnippet
+
+snippet B7sus2 "" w
+'B7sus2' : 2;X,1,3,1,1,1
 endsnippet
 
 snippet D6add11 "" w
@@ -206,11 +274,19 @@ snippet D6add11 "" w
 endsnippet
 
 snippet A7sus4 "" w
-'A7sus4' : 1;X,0,2,0,3,0
+'A7sus4' : 1;X,0,2(2),0,3(4),0
 endsnippet
 
 snippet G#dim "" w
 'G#dim' : 1;X,X,0,1,0,1
+endsnippet
+
+snippet #Cdim "" w
+'C#dim' : 3;X,2,3,1,3,1
+endsnippet
+
+snippet C#dim "" w
+'C#dim' : 3;X,2,3,1,3,1
 endsnippet
 
 snippet Fmaj7 "" w
@@ -225,12 +301,24 @@ snippet Bbsus2 "" w
 'Bbsus2' : 1;X,1,3,3,1,1
 endsnippet
 
+snippet Fsus28 "" w
+'Fsus2' : 8;X,1,3,3,1,1
+endsnippet
+
+snippet Fsus2 "" w
+'Fsus2' : 1;1(1),X,3(4),0,1(2),X
+endsnippet
+
+snippet G7sus4 "" w
+'G7sus4' : 1;3,X,3,0,1,X
+endsnippet
+
 snippet Bsus4 "" w
 'Bsus4' : 2;X,1,3,3,0,0
 endsnippet
 
 snippet Esus4 "" w
-'Esus4' : 3;0,X,X,2,3,3
+'Esus4' : ${1:1;0,2,2,2,0,0}${2:3;0,X,X,2,3,3}
 endsnippet
 
 snippet F#m11 "" w
@@ -255,6 +343,10 @@ endsnippet
 
 snippet D7 "" w
 'D7' : ${1:1;X,X,0,2,1,2}${2:5;X,1,3,1,3,1}
+endsnippet
+
+snippet D7sus4 "" w
+'D7sus4' : 1;X,X,0,2,1,3
 endsnippet
 
 snippet C#m7 "" w
@@ -361,8 +453,24 @@ snippet .F "F" w
 'F' : ${1:1;1,3,3,2,1,1}${2:8;X,1,3,3,3,1}
 endsnippet
 
+snippet G3 "" w
+'G(3)' : 3;1,3,3,2,1,1
+endsnippet
+
+snippet C8 "" w
+'C(8)' : 8;1,3,3,2,1,1
+endsnippet
+
 snippet .C "C" w
 'C' : ${1:1;X,3,2,0,1,0}${2:3;X,1,3,3,3,1}
+endsnippet
+
+snippet C/E "" w
+'C/E' : 1;0,X,2,0,1,0
+endsnippet
+
+snippet C(3 "C" w
+'C(3)' : 3;X,1,3,3,3,1
 endsnippet
 
 snippet Dm/F "Dm/F" w
@@ -489,6 +597,14 @@ snippet Dm7 "Dm7" w
 'Dm7' : 1;X,X,0,2(2),1(1),1(1)
 endsnippet
 
+snippet Dm7/G "Dm7/G" w
+'Dm7/G' : 1;3(3),X,0,2(2),1(1),1(1)
+endsnippet
+
+snippet A7sus2 "" w
+'A7sus2' : 1;X,0,X,0,0,0
+endsnippet
+
 snippet F#7sus4 "F#7sus4" w
 'F#7sus4' : 2;1,3,1,3,1,1
 endsnippet
@@ -545,6 +661,22 @@ snippet .D "D" w
 'D' : 1;X,X,0,2,3,2
 endsnippet
 
+snippet C10 "" w
+'C.' : 10;X,X,1,3,4,3
+endsnippet
+
+snippet D10 "" w
+'D.' : 9;X,X,0,3(2),2(1),2(1)
+endsnippet
+
+snippet G/F(7 "" w
+'G/F' : 7;X,2,X,1,2,1
+endsnippet
+
+snippet G/F "" w
+'G/F' : 1;1,X,0,0,0,3
+endsnippet
+
 snippet Cadd9 "Cadd9" w
 'Cadd9' : 1;X,3,2,0,3,0
 endsnippet
@@ -557,6 +689,9 @@ snippet C/G "C/G" w
 'C/G' : 1;3,X,2,0,1,0
 endsnippet
 
+snippet C7M9 "" w
+'C7M9' : 7;2,1,X,1,2,1
+endsnippet
 
 snippet #Cm "#Cm" w
 'C#m' : 4;X,1,3,3,2,1
@@ -595,9 +730,9 @@ G6 : 3;X,X,3,2,1,0
 endsnippet
 
 snippet Asus4 "" w
-Asus4 : 5;X,X,3,3,1,1
+Asus4 : ${1:1;X,0,2,2,3,0}${2:5;X,X,3,3,1,1}
 endsnippet
 
 snippet Em7 "" w
-Em7 : 1;0,2,2,0,3,3
+Em7 : ${1:1;0,2,2,0,3,3}${2:1;0,2,0,0,0,0}
 endsnippet

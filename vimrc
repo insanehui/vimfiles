@@ -209,6 +209,13 @@ source ~/vimfiles/vimfiler.vim
 filetype plugin indent on
 syntax on
 
+"{{{ 小程序的js文件类型设置，在jsx基础上添加一些扩展
+" 
+" 按道理说类型的识别应该是放在 ftdetect
+" 目录下，但是会被jsx的插件给覆盖，所以只能写到vimrc下了
+au BufRead,BufNewFile */1.js set filetype=javascript.jcx.wxjs
+" }}}
+
 "{{{ 主题设置
 " 同一个主题，似乎背景也可以有dark和light的模式
 if has('win32')
@@ -216,7 +223,6 @@ if has('win32')
 endif
 " set background=light 
 " }}}
-
 
 set viewdir=~/.vimview
 set backspace =indent,eol,start "使插入状态下能正常使用退格键
@@ -409,13 +415,13 @@ autocmd BufNewFile,BufRead *.ahk nnoremap <buffer> <F5> :!start %<cr>
 
 "{{{ 将mc3文件转为jcx
 function! Msc2Jcx3()
-    execute 'w'
+    execute 'wa'
     execute '!start cmd /c msc2jcx3 ' . expand('%') . ' \| iconv -f UTF-8 -t GBK >' . expand('%:t:r'). '.jcx & clip < ' . expand('%:t:r') . '.jcx & refreshMuse.ahk'
 endfun
 
 " mc3转gp5
 function! Msc2Gp5()
-    execute 'w'
+    execute 'wa'
     "execute '!start cmd /c msc2gp5 ' . expand('%') . ' >' . expand('%:t:r'). '.gp5 & start ' .expand('%:t:r') . '.gp5' 
     execute '!start cmd /c msc2gp5 ' . expand('%') . ' >' . expand('%:t:r'). '.gp5'
 endfun

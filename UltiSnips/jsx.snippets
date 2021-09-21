@@ -1,6 +1,6 @@
 # 自己常用的 js snips 都放这里，实际上不再区分jsx
 
-extends jest, node, jss
+extends jest, node, jss, xhtml
 # ------------ console调试相关 ---------------------
 
 snippet cg "console.group" b
@@ -654,20 +654,6 @@ endsnippet
 # -------------- jsx内部 ------------------
 snippet conx "一个react element变量" b
 const ${1:name} = ( <$2 )
-endsnippet
-
-snippet < "换行的jsx" w
-<$1>
-	${2:${VISUAL}}
-</$1>$0
-endsnippet
-
-snippet <> "jsx" w
-<$1>${0:${VISUAL}}</$1>
-endsnippet
-
-snippet << "<xxx />" w
-<$1 />
 endsnippet
 
 snippet /x "jsx注释" 
