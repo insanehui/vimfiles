@@ -213,7 +213,7 @@ syntax on
 " 
 " 按道理说类型的识别应该是放在 ftdetect
 " 目录下，但是会被jsx的插件给覆盖，所以只能写到vimrc下了
-au BufRead,BufNewFile */1.js set filetype=javascript.jcx.wxjs
+au BufRead,BufNewFile */WeChatProjects/*.js set filetype=javascript.jcx.wxjs
 " }}}
 
 "{{{ 主题设置
