@@ -1,12 +1,25 @@
 extends javascript, jsx
 
-snippet wx.redirectTo "" w
+snippet redirectTo "" w
 wx.redirectTo({url : '$0'})
 endsnippet
 
-snippet wx.setNavigationBarTitle "" w
+snippet navigateBack "" w
+wx.navigateBack()
+endsnippet
+
+snippet showModal "" w
+wx.showModal()
+endsnippet
+
+snippet navigateTo "" w
+wx.navigateTo({url : '$0'})
+endsnippet
+
+snippet setNavigationBarTitle "" w
 wx.setNavigationBarTitle({ title: $0, })
 endsnippet
+
 
 
 

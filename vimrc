@@ -317,16 +317,25 @@ endf
 
 "{{{ 自动命令 ======================================
 "
+"{{{ graduate.otl 回车键自动发送当前句子
+"autocmd BufRead graduate.otl nnoremap <cr> ^v$hypa，
+" 跟上句是等价的
+autocmd BufRead graduate.otl nnoremap <cr> ^v$hy<c-w><c-w>pa，<esc><c-w><c-w>
+"}}}
+"
+"
 " 全屏 -------------------------------------
 " （for Linux）
 " fun! ToggleFullscreen()
 "     call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
 " endf
 
+"{{{ 启动时最大化
 fun! Maximize() "for Windows
     call system("nircmdc win max class Vim")
 endf
 autocmd GUIEnter * call Maximize()
+"}}}
 
 " 自动CD到当前目录 --------------------------
 " set autochdir
