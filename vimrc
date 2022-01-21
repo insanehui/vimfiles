@@ -320,7 +320,7 @@ endf
 "{{{ graduate.otl 回车键自动发送当前句子
 "autocmd BufRead graduate.otl nnoremap <cr> ^v$hypa，
 " 跟上句是等价的
-autocmd BufRead graduate.otl nnoremap <cr> ^v$hy<c-w><c-w>pa，<esc><c-w><c-w>
+autocmd BufRead graduate.otl nnoremap <buffer> <cr> ^v$hy<c-w><c-w>pa，<esc><c-w><c-w>
 "}}}
 "
 "
@@ -422,10 +422,19 @@ autocmd BufNewFile,BufRead *.msc call SetMscFileHotkey()
 autocmd BufNewFile,BufRead *.ahk nnoremap <buffer> <F5> :!start %<cr>
 "}}}
 
-"{{{ 将mc3文件转为jcx
+"{{{ 将mc3的相关设置
+
+" 转jcx并刷新muse
 function! Msc2Jcx3()
     execute 'wa'
     execute '!start cmd /c msc2jcx3 ' . expand('%') . ' \| iconv -f UTF-8 -t GBK >' . expand('%:t:r'). '.jcx & clip < ' . expand('%:t:r') . '.jcx & refreshMuse.ahk'
+    "execute '!start cmd /c msc2jcx3 ' . expand('%') . ' \| iconv -f UTF-8 -t GBK >' . expand('%:t:r'). '.jcx'
+endfun
+
+" 转jcx并刷新有谱么
+function! Msc2Yoopume()
+    execute 'wa'
+    execute '!start cmd /c msc2jcx3 ' . expand('%') . ' \| iconv -f UTF-8 -t GBK >' . expand('%:t:r'). '.jcx & refreshYoopume.ahk '. expand('%:t:r'). '.jcx' 
 endfun
 
 " mc3转gp5
@@ -437,6 +446,9 @@ endfun
 
 function! SetMc3Hotkey()
     nnoremap <buffer> <s-cr> :call Msc2Jcx3()<cr>
+
+    " alt键 alt+enter
+    nnoremap <buffer> <F6> :call Msc2Yoopume()<cr>
     nnoremap <buffer> <F5> :call Msc2Gp5()<cr>
 endfun
 
